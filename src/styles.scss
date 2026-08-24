@@ -179,6 +179,128 @@
   --motion-press-distance: 1px;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 20rem;
+  color-scheme: light;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-width: 20rem;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+}
+
+:where(h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd) {
+  margin: 0;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  color: var(--color-text-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  text-wrap: balance;
+}
+
+p {
+  max-width: var(--layout-reading-max);
+}
+
+:where(button, input, select, textarea) {
+  color: inherit;
+  font: inherit;
+}
+
+:where(img, picture, svg) {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+a[href] {
+  color: var(--color-link);
+  text-decoration-color: currentcolor;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+  transition:
+    color var(--motion-duration-fast) var(--motion-ease-standard),
+    text-decoration-color var(--motion-duration-fast) var(--motion-ease-standard);
+}
+
+button {
+  min-height: 3.1rem;
+  padding: var(--space-3) var(--space-5);
+  border: var(--border-width-hairline) solid
+    var(--color-action-primary-background);
+  border-radius: var(--radius-pill);
+  appearance: none;
+  background: var(--color-action-primary-background);
+  color: var(--color-action-primary-text);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-compact);
+  transition:
+    background-color var(--motion-duration-standard) var(--motion-ease-standard),
+    border-color var(--motion-duration-standard) var(--motion-ease-standard),
+    color var(--motion-duration-fast) var(--motion-ease-standard),
+    transform var(--motion-duration-fast) var(--motion-ease-standard);
+}
+
+button:not(:disabled):active {
+  border-color: var(--color-action-primary-background-active);
+  background: var(--color-action-primary-background-active);
+  transform: translateY(var(--motion-press-distance));
+}
+
+button:disabled {
+  border-color: var(--color-action-disabled-border);
+  background: var(--color-action-disabled-background);
+  color: var(--color-action-disabled-text);
+  cursor: not-allowed;
+}
+
+:where(
+  a[href],
+  button,
+  input,
+  select,
+  textarea,
+  summary,
+  [tabindex]:not([tabindex="-1"])
+):focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus-outer);
+  outline-offset: var(--focus-ring-offset);
+  box-shadow: 0 0 0 var(--focus-ring-inner-width) var(--color-focus-inner);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a[href]:hover {
+    color: var(--color-link-hover);
+  }
+
+  button:not(:disabled):hover {
+    border-color: var(--color-action-primary-background-hover);
+    background: var(--color-action-primary-background-hover);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   :root {
     --motion-duration-fast: 0ms;
