@@ -163,7 +163,7 @@ export const pc01CaseStudy = {
     es: 'El proyecto usó gates repetibles de compilación y pruebas para backend y frontend, incluidas integraciones con SQL y un smoke test del recorrido entre módulos. Los errores estructurados, la auditoría, la correlación y los logs sin datos sensibles facilitaron el diagnóstico sin exponer payloads privados.',
   },
   outcome: {
-    en: 'The resulting core connected administration, customer and service management, scheduling, procurement, records, permissions, audit and notifications in one coherent workflow. Production rollout, external messaging validation and business impact are intentionally not claimed without additional confirmation.',
-    es: 'El núcleo resultante conectó administración, clientes, servicios, agenda, abastecimiento, expedientes, permisos, auditoría y notificaciones en un flujo coherente. El despliegue productivo, la validación externa de mensajería y el impacto comercial no se afirman sin confirmación adicional.',
+    en: 'The resulting core connected administration, customer and service management, scheduling, procurement, records, permissions, audit and notifications in one coherent workflow.',
+    es: 'El núcleo resultante conectó administración, clientes, servicios, agenda, abastecimiento, expedientes, permisos, auditoría y notificaciones en un flujo coherente.',
   },
 } as const satisfies CaseStudy;

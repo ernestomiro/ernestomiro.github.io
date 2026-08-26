@@ -112,7 +112,7 @@ export const pc02CaseStudy = {
     es: 'Las convenciones compartidas cubrieron logging estructurado, dependency injection, gestión de secretos, validación y revisión de código. Los flujos sensibles de seguridad se revisaron alrededor de la validación de tokens, el contexto del tenant y los datos protegidos, sin exponer hallazgos privados.',
   },
   outcome: {
-    en: 'The work established a consistent architectural and engineering foundation for a new platform generation, with explicit service boundaries, reusable security patterns and controlled asynchronous workflows. No commercial metrics or production-adoption claims are made.',
-    es: 'El trabajo estableció una base arquitectónica y de ingeniería consistente para una nueva generación de la plataforma, con límites de servicio explícitos, patrones reutilizables de seguridad y flujos asíncronos controlados. No se afirman métricas comerciales ni adopción en producción.',
+    en: 'The work established a consistent architectural and engineering foundation for a new platform generation, with explicit service boundaries, reusable security patterns and controlled asynchronous workflows.',
+    es: 'El trabajo estableció una base arquitectónica y de ingeniería consistente para una nueva generación de la plataforma, con límites de servicio explícitos, patrones reutilizables de seguridad y flujos asíncronos controlados.',
   },
 } as const satisfies CaseStudy;

@@ -1,4 +1,23 @@
-<main id="main-content" tabindex="-1">
+<main
+  id="main-content"
+  class="portfolio-home"
+  tabindex="-1"
+  appSectionReveal
+  appSectionDepth
+  data-depth-group="profile"
+>
+  <div class="portfolio-home__ambient" aria-hidden="true">
+    <span
+      class="portfolio-home__ambient-layer portfolio-home__ambient-layer--profile"
+    ></span>
+    <span
+      class="portfolio-home__ambient-layer portfolio-home__ambient-layer--evidence"
+    ></span>
+    <span
+      class="portfolio-home__ambient-layer portfolio-home__ambient-layer--contact"
+    ></span>
+  </div>
+
   <app-hero-section [content]="heroContent" />
   <app-about-section [content]="aboutContent" />
   <app-expertise-section [content]="expertiseContent" />

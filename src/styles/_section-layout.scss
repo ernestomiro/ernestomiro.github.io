@@ -122,3 +122,40 @@
   --section-text: var(--color-text-on-deep);
   --section-text-secondary: var(--color-text-on-deep);
 }
+
+.portfolio-home
+  .section:not(.section--surface-brand):not(.section--surface-deep) {
+  background: color-mix(
+    in srgb,
+    var(--section-background) 94%,
+    transparent
+  );
+}
+
+.portfolio-home[data-reveal-ready="true"] [data-reveal-state="pending"] {
+  opacity: 0;
+  transform: translateY(var(--space-4));
+}
+
+.portfolio-home[data-reveal-ready="true"] [data-reveal-state="visible"] {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity var(--motion-duration-slow) var(--motion-ease-emphasized)
+      var(--reveal-delay, 0ms),
+    transform var(--motion-duration-slow) var(--motion-ease-emphasized)
+      var(--reveal-delay, 0ms);
+}
+
+.portfolio-home[data-reveal-ready="true"]
+  .section__body[data-reveal-state="visible"] {
+  --reveal-delay: 80ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-home[data-reveal-ready="true"] [data-reveal-state] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

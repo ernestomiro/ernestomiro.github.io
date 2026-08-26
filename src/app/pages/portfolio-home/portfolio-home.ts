@@ -17,6 +17,8 @@ import { HeroSection } from '../../sections/hero/hero-section';
 import { ProjectsSection } from '../../sections/projects/projects-section';
 import { ServicesSection } from '../../sections/services/services-section';
 import { TechnologiesSection } from '../../sections/technologies/technologies-section';
+import { SectionDepth } from './section-depth';
+import { SectionReveal } from './section-reveal';
 
 @Component({
   selector: 'app-portfolio-home',
@@ -27,6 +29,8 @@ import { TechnologiesSection } from '../../sections/technologies/technologies-se
     ExperienceSection,
     HeroSection,
     ProjectsSection,
+    SectionDepth,
+    SectionReveal,
     ServicesSection,
     TechnologiesSection,
   ],
