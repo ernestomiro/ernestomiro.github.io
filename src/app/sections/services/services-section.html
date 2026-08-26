@@ -1,0 +1,26 @@
+<section id="services" class="section section--collection" aria-labelledby="services-title">
+  <div class="section__shell">
+    <header class="section__intro">
+      <div class="section__title-group">
+        <h2 id="services-title" tabindex="-1">{{ localize(content().title) }}</h2>
+      </div>
+      <p class="section__lead">{{ localize(content().introduction) }}</p>
+    </header>
+
+    <div class="section__body services-body">
+      <ul class="services-list">
+        @for (service of content().items; track service.id) {
+          <li class="service-card">
+            <h3>{{ localize(service.title) }}</h3>
+            <p>{{ localize(service.description) }}</p>
+          </li>
+        }
+      </ul>
+
+      <a class="services-contact" [href]="content().contactAction.href">
+        {{ localize(content().contactAction.label) }}
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,118 @@
+:host {
+  display: block;
+}
+
+.case-diagram {
+  display: grid;
+  gap: var(--space-5);
+  min-height: 20rem;
+  margin: 0;
+  padding: var(--space-card-inset);
+  border: var(--border-width-hairline) solid var(--color-border-subtle);
+  border-radius: var(--radius-panel);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-surface);
+}
+
+.case-diagram figcaption {
+  color: var(--color-text-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-title);
+}
+
+.case-diagram__canvas,
+.case-diagram__paths {
+  display: grid;
+}
+
+.case-diagram__canvas {
+  align-content: center;
+}
+
+.case-diagram__paths {
+  gap: var(--space-5);
+}
+
+.case-diagram__path,
+.case-diagram__annotations {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-diagram__path {
+  display: flex;
+  align-items: stretch;
+}
+
+.case-diagram__path li {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 0;
+  align-items: center;
+}
+
+.case-diagram__path li:not(:last-child)::after {
+  flex: none;
+  margin-inline: var(--space-2);
+  color: var(--color-accent);
+  content: '→';
+  font-weight: var(--font-weight-bold);
+}
+
+.case-diagram__path span {
+  display: grid;
+  min-height: 5rem;
+  flex: 1 1 auto;
+  place-items: center;
+  padding: var(--space-3);
+  border: var(--border-width-hairline) solid var(--color-border-functional);
+  border-radius: var(--radius-control);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-compact);
+  text-align: center;
+}
+
+.case-diagram__annotations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.case-diagram__annotations li {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-section-cool);
+  color: var(--color-text-heading);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+}
+
+@media (max-width: 63.999rem) {
+  .case-diagram {
+    min-height: 0;
+  }
+
+  .case-diagram__path {
+    flex-direction: column;
+  }
+
+  .case-diagram__path li {
+    flex-direction: column;
+  }
+
+  .case-diagram__path li:not(:last-child)::after {
+    margin: var(--space-1) 0;
+    content: '↓';
+  }
+
+  .case-diagram__path span {
+    width: 100%;
+    min-height: 0;
+  }
+}

@@ -1,0 +1,25 @@
+<section
+  id="expertise"
+  class="section section--collection"
+  aria-labelledby="expertise-title"
+>
+  <div class="section__shell">
+    <header class="section__intro">
+      <div class="section__title-group">
+        <h2 id="expertise-title" tabindex="-1">{{ localize(content().title) }}</h2>
+      </div>
+      @if (content().introduction; as introduction) {
+        <p class="section__lead">{{ localize(introduction) }}</p>
+      }
+    </header>
+
+    <ul class="section__body expertise-list">
+      @for (item of content().items; track item.id) {
+        <li class="expertise-card">
+          <h3>{{ localize(item.title) }}</h3>
+          <p>{{ localize(item.description) }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

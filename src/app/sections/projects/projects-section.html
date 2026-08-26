@@ -1,0 +1,22 @@
+<section
+  id="projects"
+  class="section section--feature section--surface-deep"
+  aria-labelledby="projects-title"
+>
+  <div class="section__shell">
+    <header class="section__intro">
+      <div class="section__title-group">
+        <h2 id="projects-title" tabindex="-1">{{ localize(content().title) }}</h2>
+      </div>
+      @if (content().introduction; as introduction) {
+        <p class="section__lead">{{ localize(introduction) }}</p>
+      }
+    </header>
+
+    <div class="section__body projects-list">
+      @for (project of content().items; track project.id) {
+        <app-project-card [project]="project" />
+      }
+    </div>
+  </div>
+</section>

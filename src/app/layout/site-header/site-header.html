@@ -1,0 +1,65 @@
+<header #siteHeader class="site-header">
+  <div class="layout-shell site-header__row">
+    <a
+      class="site-header__brand"
+      routerLink="/"
+      fragment="top"
+      [queryParams]="homeQueryParams()"
+      (click)="closeMenu()"
+    >
+      Ernesto Miro
+    </a>
+
+    <nav class="site-header__desktop-nav" [attr.aria-label]="label('navigation')">
+      @for (item of navigation(); track item.id) {
+        <a
+          routerLink="/"
+          [fragment]="item.id"
+          [queryParams]="homeQueryParams()"
+          [class.site-header__link--active]="activeSection() === item.id"
+          [attr.aria-current]="activeSection() === item.id ? 'location' : null"
+        >
+          {{ localize(item.label) }}
+        </a>
+      }
+    </nav>
+
+    <div class="site-header__controls">
+      <app-language-switcher />
+      <button
+        #menuButton
+        type="button"
+        class="site-header__menu-toggle"
+        aria-controls="mobile-primary-navigation"
+        [attr.aria-expanded]="menuOpen()"
+        (click)="toggleMenu()"
+      >
+        {{ label('menu') }}
+        <span aria-hidden="true">{{ menuOpen() ? '×' : '+' }}</span>
+      </button>
+    </div>
+  </div>
+
+  @if (menuOpen()) {
+    <nav
+      id="mobile-primary-navigation"
+      class="site-header__mobile-nav"
+      [attr.aria-label]="label('navigation')"
+    >
+      <div class="layout-shell site-header__mobile-links">
+        @for (item of navigation(); track item.id) {
+          <a
+            routerLink="/"
+            [fragment]="item.id"
+            [queryParams]="homeQueryParams()"
+            [class.site-header__link--active]="activeSection() === item.id"
+            [attr.aria-current]="activeSection() === item.id ? 'location' : null"
+            (click)="closeMenu()"
+          >
+            {{ localize(item.label) }}
+          </a>
+        }
+      </div>
+    </nav>
+  }
+</header>

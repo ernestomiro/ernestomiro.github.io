@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+.section__title-group h2 {
+  font-size: var(--type-section-title-size);
+  letter-spacing: var(--tracking-heading);
+}
+
+.section__title-group h2:focus {
+  outline: var(--focus-ring-width) solid var(--color-focus-outer);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-control);
+}
+
+.expertise-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--space-grid-gap);
+  margin-block-end: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.expertise-card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+  padding: var(--space-card-inset);
+  border: var(--border-width-hairline) solid var(--color-border-subtle);
+  border-radius: var(--radius-card);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-surface);
+}
+
+.expertise-card h3 {
+  font-size: var(--font-size-2xl);
+  letter-spacing: var(--tracking-title);
+}
+
+.expertise-card p {
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}

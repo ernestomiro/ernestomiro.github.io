@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.section__title-group h2 {
+  font-size: var(--type-section-title-size);
+  letter-spacing: var(--tracking-heading);
+}
+
+.section__title-group h2:focus {
+  outline: var(--focus-ring-width) solid var(--color-focus-outer);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-control);
+}
+
+.about-copy {
+  display: grid;
+  flex: 1.1 1 var(--layout-reading-compact);
+  gap: var(--space-4);
+  color: var(--color-text-secondary);
+  font-size: var(--type-lead-size);
+  line-height: var(--line-height-relaxed);
+}

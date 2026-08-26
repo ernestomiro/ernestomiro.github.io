@@ -1,0 +1,168 @@
+<main id="main-content" class="case-study-page">
+  @if (caseStudy(); as selectedCaseStudy) {
+    <article>
+      <header class="case-study-hero section section--feature section--surface-brand">
+        <div class="section__shell">
+          <div class="case-study-hero__content">
+            <a
+              class="case-study-back-link"
+              routerLink="/"
+              fragment="projects"
+              [queryParams]="backQueryParams()"
+            >
+              <span aria-hidden="true">←</span>
+              {{ label('backToProjects') }}
+            </a>
+
+            <div class="case-study-hero__heading">
+              @if (selectedCaseStudy.period; as period) {
+                <p class="case-study-period">{{ period }}</p>
+              }
+              <h1 #pageHeading tabindex="-1">{{ localize(selectedCaseStudy.title) }}</h1>
+              <p class="case-study-summary">{{ localize(selectedCaseStudy.summary) }}</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="section section--editorial" aria-labelledby="case-context-title">
+        <div class="section__shell case-study-grid">
+          <div class="case-study-narrative">
+            <h2 id="case-context-title">{{ label('context') }}</h2>
+            <p>{{ localize(selectedCaseStudy.context) }}</p>
+          </div>
+          <div class="case-study-narrative">
+            <h2>{{ label('problem') }}</h2>
+            <p>{{ localize(selectedCaseStudy.problem) }}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--editorial section--surface-deep" aria-labelledby="case-role-title">
+        <div class="section__shell case-study-grid">
+          <div class="case-study-narrative">
+            <h2 id="case-role-title">{{ label('roleAndScope') }}</h2>
+            <p>{{ localize(selectedCaseStudy.roleAndScope) }}</p>
+          </div>
+          <div class="case-study-narrative">
+            <h2>{{ label('solutionAndArchitecture') }}</h2>
+            <p>{{ localize(selectedCaseStudy.solutionAndArchitecture) }}</p>
+          </div>
+        </div>
+      </section>
+
+      @if (selectedCaseStudy.diagrams?.length) {
+        <section
+          class="section section--collection"
+          aria-labelledby="case-system-maps-title"
+        >
+          <div class="section__shell">
+            <div class="section__title-group">
+              <h2 id="case-system-maps-title">{{ label('systemMaps') }}</h2>
+            </div>
+
+            <div class="section__body case-diagrams">
+              @for (diagram of selectedCaseStudy.diagrams; track diagram.id) {
+                <app-case-study-diagram [diagram]="diagram" />
+              }
+            </div>
+          </div>
+        </section>
+      }
+
+      <section
+        class="section section--collection section--surface-warm"
+        aria-labelledby="case-technologies-title"
+      >
+        <div class="section__shell">
+          <div class="section__title-group">
+            <h2 id="case-technologies-title">{{ label('technologies') }}</h2>
+          </div>
+
+          <div class="section__body technology-groups">
+            @for (group of selectedCaseStudy.technologies; track group.id) {
+              <section class="technology-group" [attr.aria-labelledby]="group.id + '-title'">
+                <h3 [id]="group.id + '-title'">{{ localize(group.label) }}</h3>
+                @if (group.rationale; as rationale) {
+                  <p>{{ localize(rationale) }}</p>
+                }
+                <ul class="technology-list">
+                  @for (technology of group.items; track technology) {
+                    <li>{{ technology }}</li>
+                  }
+                </ul>
+              </section>
+            }
+          </div>
+        </div>
+      </section>
+
+      @if (selectedCaseStudy.decisions?.length || selectedCaseStudy.challenges?.length) {
+        <section class="section section--collection section--surface-deep">
+          <div class="section__shell case-study-grid">
+            @if (selectedCaseStudy.decisions?.length) {
+              <div class="case-study-narrative">
+                <h2>{{ label('decisionsAndTradeoffs') }}</h2>
+                <ol class="decision-list">
+                  @for (decision of selectedCaseStudy.decisions; track decision.id) {
+                    <li>
+                      <h3>{{ localize(decision.title) }}</h3>
+                      <p>{{ localize(decision.description) }}</p>
+                      @if (decision.tradeoff; as tradeoff) {
+                        <p class="decision-tradeoff">
+                          <strong>{{ label('tradeoff') }}:</strong>
+                          {{ localize(tradeoff) }}
+                        </p>
+                      }
+                    </li>
+                  }
+                </ol>
+              </div>
+            }
+
+            @if (selectedCaseStudy.challenges?.length) {
+              <div class="case-study-narrative">
+                <h2>{{ label('challenges') }}</h2>
+                <ul class="challenge-list">
+                  @for (challenge of selectedCaseStudy.challenges; track $index) {
+                    <li>{{ localize(challenge) }}</li>
+                  }
+                </ul>
+              </div>
+            }
+          </div>
+        </section>
+      }
+
+      @if (selectedCaseStudy.engineeringQuality || selectedCaseStudy.outcome) {
+        <section class="section section--editorial" aria-labelledby="case-quality-title">
+          <div class="section__shell case-study-grid">
+            @if (selectedCaseStudy.engineeringQuality; as engineeringQuality) {
+              <div class="case-study-narrative">
+                <h2 id="case-quality-title">{{ label('engineeringQuality') }}</h2>
+                <p>{{ localize(engineeringQuality) }}</p>
+              </div>
+            }
+            @if (selectedCaseStudy.outcome; as outcome) {
+              <div class="case-study-narrative">
+                <h2>{{ label('outcome') }}</h2>
+                <p>{{ localize(outcome) }}</p>
+              </div>
+            }
+          </div>
+        </section>
+      }
+    </article>
+  } @else {
+    <section class="not-found section section--closing section--surface-brand">
+      <div class="section__shell not-found__content">
+        <h1 #pageHeading tabindex="-1">{{ label('notFoundTitle') }}</h1>
+        <p>{{ label('notFoundMessage') }}</p>
+        <a routerLink="/" fragment="projects" [queryParams]="backQueryParams()">
+          <span aria-hidden="true">←</span>
+          {{ label('backToProjects') }}
+        </a>
+      </div>
+    </section>
+  }
+</main>

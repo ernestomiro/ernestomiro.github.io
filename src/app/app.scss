@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 1;
+  inset-block-start: var(--space-3);
+  inset-inline-start: var(--space-3);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-control);
+  background: var(--color-section-deep);
+  clip-path: inset(50%);
+  color: var(--color-text-on-deep);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  white-space: nowrap;
+}
+
+.skip-link:focus-visible {
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip-path: none;
+}

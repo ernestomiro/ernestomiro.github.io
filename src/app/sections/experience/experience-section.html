@@ -1,0 +1,29 @@
+<section
+  id="experience"
+  class="section section--collection"
+  aria-labelledby="experience-title"
+>
+  <div class="section__shell">
+    <header class="section__intro">
+      <div class="section__title-group">
+        <h2 id="experience-title" tabindex="-1">{{ localize(content().title) }}</h2>
+      </div>
+      @if (content().introduction; as introduction) {
+        <p class="section__lead">{{ localize(introduction) }}</p>
+      }
+    </header>
+
+    <ol class="section__body experience-list">
+      @for (entry of content().items; track entry.id) {
+        <li class="experience-entry">
+          <p class="experience-entry__period">{{ entry.period }}</p>
+          <div class="experience-entry__content">
+            <h3>{{ localize(entry.title) }}</h3>
+            <p class="experience-entry__role">{{ localize(entry.role) }}</p>
+            <p class="experience-entry__summary">{{ localize(entry.summary) }}</p>
+          </div>
+        </li>
+      }
+    </ol>
+  </div>
+</section>

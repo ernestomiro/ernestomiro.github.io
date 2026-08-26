@@ -1,3 +1,5 @@
+@use "styles/section-layout";
+
 @font-face {
   font-family: "Manrope";
   font-style: normal;
@@ -143,6 +145,7 @@
   --layout-reading-max: 42rem;
   --layout-reading-compact: 34rem;
   --layout-gutter-inline: clamp(1rem, 3vw, 3rem);
+  --layout-header-height: 5rem;
   --layout-shell-width: min(
     calc(100% - var(--layout-gutter-inline) - var(--layout-gutter-inline)),
     var(--layout-container-max)
@@ -187,9 +190,14 @@
 
 html {
   min-width: 20rem;
+  scroll-behavior: smooth;
   color-scheme: light;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+}
+
+:where(main, section[id]) {
+  scroll-margin-block-start: var(--layout-header-height);
 }
 
 body {
@@ -302,6 +310,10 @@ button:disabled {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   :root {
     --motion-duration-fast: 0ms;
     --motion-duration-standard: 0ms;

@@ -1,0 +1,29 @@
+<figure class="case-diagram">
+  <figcaption>{{ localize(diagram().title) }}</figcaption>
+
+  <div
+    class="case-diagram__canvas"
+    role="img"
+    [attr.aria-label]="localize(diagram().accessibleName)"
+  >
+    <div class="case-diagram__paths" aria-hidden="true">
+      @for (path of diagram().paths; track path.id) {
+        <ol class="case-diagram__path">
+          @for (node of path.nodes; track $index) {
+            <li>
+              <span>{{ localize(node) }}</span>
+            </li>
+          }
+        </ol>
+      }
+
+      @if (diagram().annotations; as annotations) {
+        <ul class="case-diagram__annotations">
+          @for (annotation of annotations; track $index) {
+            <li>{{ localize(annotation) }}</li>
+          }
+        </ul>
+      }
+    </div>
+  </div>
+</figure>

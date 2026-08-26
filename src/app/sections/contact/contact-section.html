@@ -1,0 +1,28 @@
+<section
+  id="contact"
+  class="section section--closing section--surface-brand"
+  aria-labelledby="contact-title"
+>
+  <div class="section__shell">
+    <header class="section__intro">
+      <div class="section__title-group">
+        <h2 id="contact-title" tabindex="-1">{{ localize(content().title) }}</h2>
+      </div>
+      @if (content().introduction; as introduction) {
+        <p class="section__lead">{{ localize(introduction) }}</p>
+      }
+    </header>
+
+    <ul class="section__body contact-list">
+      @for (channel of content().channels; track channel.id) {
+        <li>
+          <a class="contact-channel" [href]="channel.href" [attr.aria-label]="localize(channel.accessibleName)">
+            <span class="contact-channel__label">{{ localize(channel.label) }}</span>
+            <span class="contact-channel__value">{{ channel.displayValue }}</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

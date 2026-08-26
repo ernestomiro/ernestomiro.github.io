@@ -1,0 +1,18 @@
+<section id="top" class="hero-section" aria-labelledby="hero-title">
+  <div class="layout-shell hero-section__shell">
+    <div class="hero-section__content">
+      <p class="hero-section__name">Ernesto Miro</p>
+      <h1 id="hero-title" tabindex="-1">{{ localize(content().headline) }}</h1>
+      <p class="hero-section__lead">{{ localize(content().lead) }}</p>
+
+      <div class="hero-section__actions">
+        <a class="hero-action hero-action--primary" [href]="content().primaryAction.href">
+          {{ localize(content().primaryAction.label) }}
+        </a>
+        <a class="hero-action hero-action--secondary" [href]="content().secondaryAction.href">
+          {{ localize(content().secondaryAction.label) }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

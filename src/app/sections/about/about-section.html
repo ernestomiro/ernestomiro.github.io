@@ -1,0 +1,19 @@
+<section
+  id="about"
+  class="section section--editorial"
+  aria-labelledby="about-title"
+>
+  <div class="section__shell">
+    <header class="section__intro">
+      <div class="section__title-group">
+        <h2 id="about-title" tabindex="-1">{{ localize(content().title) }}</h2>
+      </div>
+
+      <div class="about-copy">
+        @for (paragraph of content().paragraphs; track $index) {
+          <p>{{ localize(paragraph) }}</p>
+        }
+      </div>
+    </header>
+  </div>
+</section>

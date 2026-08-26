@@ -1,0 +1,37 @@
+:host {
+  display: block;
+}
+
+.language-switcher {
+  display: inline-flex;
+  padding: var(--space-1);
+  border: var(--border-width-hairline) solid var(--color-border-on-dark);
+  border-radius: var(--radius-pill);
+}
+
+.language-switcher button {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: var(--space-2) var(--space-3);
+  border: 0;
+  background: transparent;
+  color: var(--color-text-on-deep);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--tracking-caption);
+}
+
+.language-switcher button:focus-visible {
+  outline-color: var(--color-focus-on-dark);
+  box-shadow: none;
+}
+
+.language-switcher__option--active {
+  background: var(--color-on-brand) !important;
+  color: var(--color-brand-deep) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .language-switcher button:not(.language-switcher__option--active):hover {
+    background: color-mix(in srgb, var(--color-on-brand) 10%, transparent);
+  }
+}
