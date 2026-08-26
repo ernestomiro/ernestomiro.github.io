@@ -98,11 +98,18 @@
       </section>
 
       @if (selectedCaseStudy.decisions?.length || selectedCaseStudy.challenges?.length) {
-        <section class="section section--collection section--surface-deep">
+        <section
+          class="section section--collection section--surface-deep"
+          [attr.aria-labelledby]="
+            selectedCaseStudy.decisions?.length
+              ? 'case-decisions-title'
+              : 'case-challenges-title'
+          "
+        >
           <div class="section__shell case-study-grid">
             @if (selectedCaseStudy.decisions?.length) {
               <div class="case-study-narrative">
-                <h2>{{ label('decisionsAndTradeoffs') }}</h2>
+                <h2 id="case-decisions-title">{{ label('decisionsAndTradeoffs') }}</h2>
                 <ol class="decision-list">
                   @for (decision of selectedCaseStudy.decisions; track decision.id) {
                     <li>
@@ -122,7 +129,7 @@
 
             @if (selectedCaseStudy.challenges?.length) {
               <div class="case-study-narrative">
-                <h2>{{ label('challenges') }}</h2>
+                <h2 id="case-challenges-title">{{ label('challenges') }}</h2>
                 <ul class="challenge-list">
                   @for (challenge of selectedCaseStudy.challenges; track $index) {
                     <li>{{ localize(challenge) }}</li>
@@ -135,7 +142,14 @@
       }
 
       @if (selectedCaseStudy.engineeringQuality || selectedCaseStudy.outcome) {
-        <section class="section section--editorial" aria-labelledby="case-quality-title">
+        <section
+          class="section section--editorial"
+          [attr.aria-labelledby]="
+            selectedCaseStudy.engineeringQuality
+              ? 'case-quality-title'
+              : 'case-outcome-title'
+          "
+        >
           <div class="section__shell case-study-grid">
             @if (selectedCaseStudy.engineeringQuality; as engineeringQuality) {
               <div class="case-study-narrative">
@@ -145,7 +159,7 @@
             }
             @if (selectedCaseStudy.outcome; as outcome) {
               <div class="case-study-narrative">
-                <h2>{{ label('outcome') }}</h2>
+                <h2 id="case-outcome-title">{{ label('outcome') }}</h2>
                 <p>{{ localize(outcome) }}</p>
               </div>
             }

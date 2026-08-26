@@ -6,8 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "postbuild": "node scripts/create-pages-404.mjs",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "watch": "ng build --watch --configuration development"
   },
   "prettier": {
     "printWidth": 100,

@@ -1,10 +1,25 @@
-import { afterNextRender, Component, inject, OnDestroy } from '@angular/core';
+import {
+  afterNextRender,
+  Component,
+  computed,
+  inject,
+  OnDestroy,
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { footerContent, navigationContent } from './content/portfolio-content.data';
+import {
+  LocalizedText,
+  selectLocalizedText,
+} from './content/portfolio-content.models';
 import { SiteHeader } from './layout/site-header/site-header';
 import { SiteFooter } from './layout/site-footer/site-footer';
 import { LanguageState } from './language/language-state';
 import { SectionNavigation } from './navigation/section-navigation';
+
+const skipLinkText = {
+  en: 'Skip to main content',
+  es: 'Saltar al contenido principal',
+} as const satisfies LocalizedText;
 
 @Component({
   selector: 'app-root',
@@ -18,6 +33,9 @@ export class App implements OnDestroy {
   private readonly sectionNavigation = inject(SectionNavigation);
   protected readonly navigationContent = navigationContent;
   protected readonly footerContent = footerContent;
+  protected readonly skipLinkLabel = computed(() =>
+    selectLocalizedText(skipLinkText, this.languageState.language()),
+  );
 
   constructor() {
     afterNextRender(() => this.sectionNavigation.start());
