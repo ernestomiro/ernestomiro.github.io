@@ -373,12 +373,12 @@ export const contactContent = {
 } as const satisfies ContactContent;
 
 export const footerContent = {
-  name: 'Ernesto Miro',
+  name: 'Ernesto Miro Peraza',
   resumeLabel: {
     en: 'Download resume (English)',
     es: 'Descargar CV (inglés)',
   },
   resumeHref: '/documents/ernesto-miro-resume-en.pdf',
-  resumeFileName: 'Ernesto_Miro_Resume_EN.pdf',
-  copyrightOwner: 'Ernesto Miro',
+  resumeFileName: 'Ernesto_Miro_Peraza_Resume_EN.pdf',
+  copyrightOwner: 'Ernesto Miro Peraza',
 } as const satisfies FooterContent;
