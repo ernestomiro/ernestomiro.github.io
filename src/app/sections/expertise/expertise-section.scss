@@ -42,3 +42,72 @@
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
 }
+
+.expertise-methodology {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: var(--space-6) var(--space-layout-gap);
+  margin-block-start: var(--space-heading-gap);
+  padding: var(--space-card-inset);
+  border: var(--border-width-hairline) solid var(--color-border-on-dark);
+  border-inline-start: var(--border-width-emphasis) solid var(--color-accent);
+  border-radius: var(--radius-panel);
+  background: var(--color-section-deep);
+  box-shadow: var(--shadow-elevated);
+  color: var(--color-text-on-deep);
+}
+
+.expertise-methodology__content {
+  display: grid;
+  flex: 1 1 var(--layout-reading-compact);
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.expertise-methodology__label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-label);
+  line-height: var(--line-height-compact);
+  text-transform: uppercase;
+}
+
+.expertise-methodology h3 {
+  max-width: 24ch;
+  color: var(--color-text-on-deep);
+  font-size: var(--font-size-3xl);
+  letter-spacing: var(--tracking-title);
+}
+
+.expertise-methodology__content > :last-child {
+  max-width: var(--layout-reading-max);
+  line-height: var(--line-height-relaxed);
+}
+
+.expertise-methodology__link {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 2.75rem;
+  padding: var(--space-3) var(--space-5);
+  border: var(--border-width-hairline) solid var(--color-border-on-dark);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-on-deep);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+}
+
+.expertise-methodology__link:focus-visible {
+  outline-color: var(--color-focus-on-dark);
+  box-shadow: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .expertise-methodology__link:hover {
+    color: var(--color-text-on-deep);
+    text-decoration-color: currentColor;
+  }
+}

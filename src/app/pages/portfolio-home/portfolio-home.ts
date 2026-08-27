@@ -9,6 +9,7 @@ import {
   servicesContent,
   technologiesContent,
 } from '../../content/portfolio-content.data';
+import { methodologyContent } from '../../content/methodology/methodology.data';
 import { LanguageCode } from '../../content/portfolio-content.models';
 import { AboutSection } from '../../sections/about/about-section';
 import { ContactSection } from '../../sections/contact/contact-section';
@@ -63,6 +64,7 @@ export class PortfolioHomePage {
   protected readonly heroContent = heroContent;
   protected readonly aboutContent = aboutContent;
   protected readonly expertiseContent = expertiseContent;
+  protected readonly methodologyTeaser = methodologyContent.teaser;
   protected readonly technologiesContent = technologiesContent;
   protected readonly projectsContent = projectsContent;
   protected readonly experienceContent = experienceContent;

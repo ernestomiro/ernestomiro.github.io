@@ -21,5 +21,24 @@
         </li>
       }
     </ul>
+
+    <article class="expertise-methodology">
+      <div class="expertise-methodology__content">
+        <p class="expertise-methodology__label">
+          {{ localize(methodology().label) }}
+        </p>
+        <h3>{{ localize(methodology().title) }}</h3>
+        <p>{{ localize(methodology().description) }}</p>
+      </div>
+
+      <a
+        class="expertise-methodology__link"
+        [routerLink]="methodology().path"
+        [queryParams]="methodologyQueryParams()"
+      >
+        {{ localize(methodology().actionLabel) }}
+        <span aria-hidden="true">→</span>
+      </a>
+    </article>
   </div>
 </section>
