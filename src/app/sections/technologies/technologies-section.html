@@ -1,14 +1,17 @@
 <section
   id="technologies"
-  class="section section--collection section--surface-warm"
+  class="section section--collection section--surface-warm section--chapter-member"
   aria-labelledby="technologies-title"
 >
   <div class="section__shell">
     <header class="section__intro">
       <div class="section__title-group">
-        <h2 id="technologies-title" tabindex="-1">
-          {{ localize(content().title) }}
-        </h2>
+        <div class="section__title-lockup">
+          <h3 id="technologies-title" tabindex="-1">
+            {{ localize(content().title) }}
+          </h3>
+          <span class="section__title-line" aria-hidden="true"></span>
+        </div>
       </div>
       <p class="section__lead">{{ localize(content().introduction) }}</p>
     </header>
@@ -16,7 +19,7 @@
     <div class="section__body technology-groups">
       @for (group of content().groups; track group.id) {
         <section class="technology-group" [attr.aria-labelledby]="group.id + '-title'">
-          <h3 [id]="group.id + '-title'">{{ localize(group.label) }}</h3>
+          <h4 [id]="group.id + '-title'">{{ localize(group.label) }}</h4>
           <ul>
             @for (technology of group.items; track technology) {
               <li>{{ technology }}</li>

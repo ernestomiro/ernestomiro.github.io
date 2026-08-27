@@ -1,12 +1,15 @@
 <section
   id="expertise"
-  class="section section--collection"
+  class="section section--collection section--chapter-member"
   aria-labelledby="expertise-title"
 >
   <div class="section__shell">
     <header class="section__intro">
       <div class="section__title-group">
-        <h2 id="expertise-title" tabindex="-1">{{ localize(content().title) }}</h2>
+        <div class="section__title-lockup">
+          <h3 id="expertise-title" tabindex="-1">{{ localize(content().title) }}</h3>
+          <span class="section__title-line" aria-hidden="true"></span>
+        </div>
       </div>
       @if (content().introduction; as introduction) {
         <p class="section__lead">{{ localize(introduction) }}</p>
@@ -16,29 +19,29 @@
     <ul class="section__body expertise-list">
       @for (item of content().items; track item.id) {
         <li class="expertise-card">
-          <h3>{{ localize(item.title) }}</h3>
+          <h4>{{ localize(item.title) }}</h4>
           <p>{{ localize(item.description) }}</p>
         </li>
       }
     </ul>
 
-    <article class="expertise-methodology">
+    <a
+      class="expertise-methodology"
+      [routerLink]="methodology().path"
+      [queryParams]="methodologyQueryParams()"
+    >
       <div class="expertise-methodology__content">
         <p class="expertise-methodology__label">
           {{ localize(methodology().label) }}
         </p>
-        <h3>{{ localize(methodology().title) }}</h3>
+        <h4>{{ localize(methodology().title) }}</h4>
         <p>{{ localize(methodology().description) }}</p>
       </div>
 
-      <a
-        class="expertise-methodology__link"
-        [routerLink]="methodology().path"
-        [queryParams]="methodologyQueryParams()"
-      >
+      <span class="expertise-methodology__link">
         {{ localize(methodology().actionLabel) }}
         <span aria-hidden="true">→</span>
-      </a>
-    </article>
+      </span>
+    </a>
   </div>
 </section>

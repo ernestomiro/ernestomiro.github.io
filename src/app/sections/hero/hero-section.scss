@@ -63,21 +63,35 @@
   text-transform: uppercase;
 }
 
-.hero-section__name::before {
+.hero-section__marker {
+  display: block;
   width: var(--space-7);
   height: var(--border-width-emphasis);
   flex: none;
   background: var(--color-accent);
-  content: '';
+}
+
+.hero-section__title {
+  display: grid;
+  width: fit-content;
+  max-width: 100%;
+  gap: var(--space-4);
 }
 
 .hero-section h1 {
-  width: fit-content;
   max-width: 24ch;
   color: var(--color-text-on-brand);
   font-size: var(--type-display-size);
   letter-spacing: var(--tracking-display);
   line-height: var(--line-height-solid);
+}
+
+.hero-section__title-line {
+  display: block;
+  width: 100%;
+  height: var(--border-width-emphasis);
+  margin-block-start: var(--space-3);
+  background: var(--color-accent);
 }
 
 .hero-section h1:focus {
@@ -137,6 +151,10 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .hero-action:not(:active):hover {
+    transform: scale(var(--motion-hover-scale-control));
+  }
+
   .hero-action--primary:hover {
     background: var(--color-surface);
     color: var(--color-brand-deep);

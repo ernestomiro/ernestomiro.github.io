@@ -19,10 +19,15 @@
 
 .case-study-back-link,
 .not-found a {
+  display: inline-flex;
   width: fit-content;
+  align-items: center;
   color: var(--color-text-on-brand);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
+  transition:
+    color var(--motion-duration-fast) var(--motion-ease-standard),
+    transform var(--motion-duration-fast) var(--motion-ease-standard);
 }
 
 .case-study-back-link {
@@ -180,4 +185,12 @@
 .not-found a:focus-visible {
   outline-color: var(--color-focus-on-dark);
   box-shadow: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .case-study-back-link:hover,
+  .not-found a:hover {
+    color: var(--color-text-on-brand);
+    transform: scale(var(--motion-hover-scale-compact));
+  }
 }

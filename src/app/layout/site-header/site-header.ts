@@ -14,15 +14,20 @@ import { RouterLink } from '@angular/router';
 import {
   LocalizedText,
   NavigationItem,
+  ResumeContent,
   selectLocalizedText,
 } from '../../content/portfolio-content.models';
 import { LanguageState } from '../../language/language-state';
 import { SectionNavigation } from '../../navigation/section-navigation';
 import { LanguageSwitcher } from '../language-switcher/language-switcher';
 
-const desktopMediaQuery = '(min-width: 62rem)';
+const desktopMediaQuery = '(min-width: 70rem)';
 
 const headerLabels = {
+  identity: {
+    en: 'Senior Software Engineer',
+    es: 'Ingeniero de software sénior',
+  },
   navigation: {
     en: 'Primary navigation',
     es: 'Navegación principal',
@@ -50,6 +55,7 @@ export class SiteHeader {
   private readonly menuButton = viewChild.required<ElementRef<HTMLButtonElement>>('menuButton');
 
   readonly navigation = input.required<readonly NavigationItem[]>();
+  readonly resume = input.required<ResumeContent>();
 
   protected readonly menuOpen = signal(false);
   protected readonly activeSection = this.sectionNavigation.activeSection;

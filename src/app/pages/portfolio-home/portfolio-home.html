@@ -20,13 +20,32 @@
 
   <app-hero-section [content]="heroContent" />
   <app-about-section [content]="aboutContent" />
-  <app-expertise-section
-    [content]="expertiseContent"
-    [methodology]="methodologyTeaser"
-  />
-  <app-technologies-section [content]="technologiesContent" />
+  <app-services-section [content]="servicesContent" />
   <app-projects-section [content]="projectsContent" />
   <app-experience-section [content]="experienceContent" />
-  <app-services-section [content]="servicesContent" />
+
+  <section
+    id="capabilities"
+    class="portfolio-home__capabilities"
+    aria-labelledby="capabilities-title"
+  >
+    <header class="section__intro portfolio-home__capabilities-header">
+      <div class="layout-shell">
+        <div class="section__title-lockup">
+          <h2 id="capabilities-title" tabindex="-1">
+            {{ localize(capabilitiesContent.title) }}
+          </h2>
+          <span class="section__title-line" aria-hidden="true"></span>
+        </div>
+      </div>
+    </header>
+
+    <app-expertise-section
+      [content]="expertiseContent"
+      [methodology]="methodologyTeaser"
+    />
+    <app-technologies-section [content]="technologiesContent" />
+  </section>
+
   <app-contact-section [content]="contactContent" />
 </main>

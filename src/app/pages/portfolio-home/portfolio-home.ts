@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, effect, inject } from '@angular/core';
 import {
   aboutContent,
+  capabilitiesContent,
   contactContent,
   expertiseContent,
   experienceContent,
@@ -10,7 +11,11 @@ import {
   technologiesContent,
 } from '../../content/portfolio-content.data';
 import { methodologyContent } from '../../content/methodology/methodology.data';
-import { LanguageCode } from '../../content/portfolio-content.models';
+import {
+  LanguageCode,
+  LocalizedText,
+  selectLocalizedText,
+} from '../../content/portfolio-content.models';
 import { AboutSection } from '../../sections/about/about-section';
 import { ContactSection } from '../../sections/contact/contact-section';
 import { ExpertiseSection } from '../../sections/expertise/expertise-section';
@@ -26,14 +31,14 @@ import { SectionReveal } from './section-reveal';
 
 const homeMetadata = {
   en: {
-    title: 'Ernesto Miro Peraza | Senior Software Engineer',
+    title: 'Ernesto Miró Peraza | Senior Software Engineer',
     description:
       'Senior software engineer specializing in full-stack development, enterprise software, cloud architecture, SaaS platforms, integrations, and technical leadership.',
   },
   es: {
-    title: 'Ernesto Miro Peraza | Ingeniero de Software Senior',
+    title: 'Ernesto Miró Peraza | Ingeniero de software sénior',
     description:
-      'Ingeniero de software senior especializado en desarrollo Full Stack, software empresarial, arquitectura cloud, plataformas SaaS, integraciones y liderazgo técnico.',
+      'Ingeniero de software sénior especializado en desarrollo Full Stack, software empresarial, arquitectura cloud, plataformas SaaS, integraciones y liderazgo técnico.',
   },
 } as const satisfies Readonly<
   Record<LanguageCode, { readonly title: string; readonly description: string }>
@@ -63,6 +68,7 @@ export class PortfolioHomePage {
 
   protected readonly heroContent = heroContent;
   protected readonly aboutContent = aboutContent;
+  protected readonly capabilitiesContent = capabilitiesContent;
   protected readonly expertiseContent = expertiseContent;
   protected readonly methodologyTeaser = methodologyContent.teaser;
   protected readonly technologiesContent = technologiesContent;
@@ -70,6 +76,10 @@ export class PortfolioHomePage {
   protected readonly experienceContent = experienceContent;
   protected readonly servicesContent = servicesContent;
   protected readonly contactContent = contactContent;
+
+  protected localize(text: LocalizedText): string {
+    return selectLocalizedText(text, this.languageState.language());
+  }
 
   private readonly metadataEffect = effect(() => {
     const language = this.languageState.language();

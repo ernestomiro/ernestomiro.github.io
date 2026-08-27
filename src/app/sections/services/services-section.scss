@@ -75,9 +75,10 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .services-contact:hover {
+  .services-contact:not(:active):hover {
     border-color: var(--color-action-primary-background-hover);
     background: var(--color-action-primary-background-hover);
     color: var(--color-action-primary-text);
+    transform: scale(var(--motion-hover-scale-control));
   }
 }

@@ -75,7 +75,7 @@ export class CaseStudyPage {
 
     if (caseStudy) {
       this.pageMetadata.update({
-        title: `${selectLocalizedText(caseStudy.title, language)} | Ernesto Miro Peraza`,
+        title: `${selectLocalizedText(caseStudy.title, language)} | Ernesto Miró Peraza`,
         description: selectLocalizedText(caseStudy.summary, language),
         canonicalPath: `/projects/${caseStudy.slug}`,
         language,
@@ -85,7 +85,7 @@ export class CaseStudyPage {
     }
 
     this.pageMetadata.update({
-      title: `${selectLocalizedText(pageLabels.notFoundTitle, language)} | Ernesto Miro Peraza`,
+      title: `${selectLocalizedText(pageLabels.notFoundTitle, language)} | Ernesto Miró Peraza`,
       description: selectLocalizedText(pageLabels.notFoundMessage, language),
       canonicalPath: '/404',
       language,

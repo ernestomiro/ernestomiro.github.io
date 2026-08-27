@@ -6,7 +6,10 @@
   <div class="section__shell">
     <header class="section__intro">
       <div class="section__title-group">
-        <h2 id="projects-title" tabindex="-1">{{ localize(content().title) }}</h2>
+        <div class="section__title-lockup">
+          <h2 id="projects-title" tabindex="-1">{{ localize(content().title) }}</h2>
+          <span class="section__title-line" aria-hidden="true"></span>
+        </div>
       </div>
       @if (content().introduction; as introduction) {
         <p class="section__lead">{{ localize(introduction) }}</p>

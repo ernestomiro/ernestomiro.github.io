@@ -1,8 +1,14 @@
 <section id="top" class="hero-section" aria-labelledby="hero-title">
   <div class="layout-shell hero-section__shell">
     <div class="hero-section__content">
-      <p class="hero-section__name">Ernesto Miro Peraza</p>
-      <h1 id="hero-title" tabindex="-1">{{ localize(content().headline) }}</h1>
+      <p class="hero-section__name">
+        <span class="hero-section__marker" aria-hidden="true"></span>
+        Ernesto Miró Peraza
+      </p>
+      <div class="hero-section__title">
+        <h1 id="hero-title" tabindex="-1">{{ localize(content().headline) }}</h1>
+        <span class="hero-section__title-line" aria-hidden="true"></span>
+      </div>
       <p class="hero-section__lead">{{ localize(content().lead) }}</p>
 
       <div class="hero-section__actions">

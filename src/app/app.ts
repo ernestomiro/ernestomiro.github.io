@@ -6,7 +6,11 @@ import {
   OnDestroy,
 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { footerContent, navigationContent } from './content/portfolio-content.data';
+import {
+  footerContent,
+  navigationContent,
+  resumeContent,
+} from './content/portfolio-content.data';
 import {
   LocalizedText,
   selectLocalizedText,
@@ -32,6 +36,7 @@ export class App implements OnDestroy {
   private readonly languageState = inject(LanguageState);
   private readonly sectionNavigation = inject(SectionNavigation);
   protected readonly navigationContent = navigationContent;
+  protected readonly resumeContent = resumeContent;
   protected readonly footerContent = footerContent;
   protected readonly skipLinkLabel = computed(() =>
     selectLocalizedText(skipLinkText, this.languageState.language()),

@@ -7,7 +7,7 @@
       [queryParams]="homeQueryParams()"
       (click)="closeMenu()"
     >
-      Ernesto Miro Peraza
+      {{ label('identity') }}
     </a>
 
     <nav class="site-header__desktop-nav" [attr.aria-label]="label('navigation')">
@@ -22,6 +22,15 @@
           {{ localize(item.label) }}
         </a>
       }
+
+      <a
+        class="site-header__resume"
+        [href]="resume().href"
+        [attr.download]="resume().fileName"
+      >
+        <span>{{ localize(resume().label) }}</span>
+        <span aria-hidden="true">↓</span>
+      </a>
     </nav>
 
     <div class="site-header__controls">
@@ -59,6 +68,17 @@
             {{ localize(item.label) }}
           </a>
         }
+
+
+        <a
+          class="site-header__resume"
+          [href]="resume().href"
+          [attr.download]="resume().fileName"
+          (click)="closeMenu()"
+        >
+          <span>{{ localize(resume().label) }}</span>
+          <span aria-hidden="true">↓</span>
+        </a>
       </div>
     </nav>
   }

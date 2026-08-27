@@ -1,6 +1,7 @@
 import { caseStudies } from './case-studies/case-studies.data';
 import {
   AboutContent,
+  CapabilitiesContent,
   ContactContent,
   ExpertiseContent,
   ExperienceContent,
@@ -8,11 +9,17 @@ import {
   HeroContent,
   NavigationItem,
   ProjectsContent,
+  ResumeContent,
   ServicesContent,
   TechnologiesContent,
 } from './portfolio-content.models';
 
 export const navigationContent = [
+  {
+    id: 'services',
+    label: { en: 'Services', es: 'Servicios' },
+    href: '#services',
+  },
   {
     id: 'projects',
     label: { en: 'Projects', es: 'Proyectos' },
@@ -24,9 +31,9 @@ export const navigationContent = [
     href: '#experience',
   },
   {
-    id: 'services',
-    label: { en: 'Services', es: 'Servicios' },
-    href: '#services',
+    id: 'capabilities',
+    label: { en: 'Capabilities', es: 'Capacidades' },
+    href: '#capabilities',
   },
   {
     id: 'contact',
@@ -72,6 +79,13 @@ export const aboutContent = {
     },
   ],
 } as const satisfies AboutContent;
+
+export const capabilitiesContent = {
+  title: {
+    en: 'Capabilities',
+    es: 'Capacidades',
+  },
+} as const satisfies CapabilitiesContent;
 
 export const expertiseContent = {
   title: {
@@ -373,13 +387,17 @@ export const contactContent = {
   ],
 } as const satisfies ContactContent;
 
-export const footerContent = {
-  name: 'Ernesto Miro Peraza',
-  resumeLabel: {
+export const resumeContent = {
+  label: {
     en: 'Download resume (English)',
     es: 'Descargar CV (inglés)',
   },
-  resumeHref: '/documents/ernesto-miro-resume-en.pdf',
-  resumeFileName: 'Ernesto_Miro_Peraza_Resume_EN.pdf',
-  copyrightOwner: 'Ernesto Miro Peraza',
+  href: '/documents/ernesto-miro-resume-en.pdf',
+  fileName: 'Ernesto_Miro_Peraza_Resume_EN.pdf',
+} as const satisfies ResumeContent;
+
+export const footerContent = {
+  name: 'Ernesto Miró Peraza',
+  resume: resumeContent,
+  copyrightOwner: 'Ernesto Miró Peraza',
 } as const satisfies FooterContent;

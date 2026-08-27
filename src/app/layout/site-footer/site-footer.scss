@@ -63,9 +63,10 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .site-footer__resume:hover {
+  .site-footer__resume:not(:active):hover {
     background: color-mix(in srgb, var(--color-on-brand) 10%, transparent);
     color: var(--color-text-on-deep);
+    transform: scale(var(--motion-hover-scale-control));
   }
 }
 

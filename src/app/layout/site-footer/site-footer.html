@@ -4,10 +4,10 @@
 
     <a
       class="site-footer__resume"
-      [href]="content().resumeHref"
-      [attr.download]="content().resumeFileName"
+      [href]="content().resume.href"
+      [attr.download]="content().resume.fileName"
     >
-      <span>{{ localize(content().resumeLabel) }}</span>
+      <span>{{ localize(content().resume.label) }}</span>
       <span aria-hidden="true">↓</span>
     </a>
 

@@ -157,6 +157,40 @@
   z-index: 1;
 }
 
+.portfolio-home__capabilities {
+  background: color-mix(
+    in srgb,
+    var(--color-section-cool) 86%,
+    transparent
+  );
+}
+
+.portfolio-home__capabilities-header {
+  padding-block: clamp(var(--space-7), 6vw, var(--space-8));
+  background: color-mix(
+    in srgb,
+    var(--color-section-deep) 94%,
+    transparent
+  );
+  color: var(--color-text-on-deep);
+}
+
+.portfolio-home__capabilities-header h2 {
+  color: var(--color-text-on-deep);
+  font-size: var(--type-section-title-size);
+  letter-spacing: var(--tracking-heading);
+}
+
+.portfolio-home__capabilities-header h2:focus {
+  outline: var(--focus-ring-width) solid var(--color-focus-on-dark);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-control);
+}
+
+.portfolio-home__capabilities > :is(app-expertise-section, app-technologies-section) {
+  display: block;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .portfolio-home__ambient-layer {
     transition: none;

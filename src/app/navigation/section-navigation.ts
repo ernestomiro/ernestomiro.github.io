@@ -5,9 +5,10 @@ import { Subscription, filter } from 'rxjs';
 import { NavigationSectionId, SectionId } from '../content/portfolio-content.models';
 
 const observedSectionIds: readonly NavigationSectionId[] = [
+  'services',
   'projects',
   'experience',
-  'services',
+  'capabilities',
   'contact',
 ];
 
@@ -18,6 +19,7 @@ const sectionHeadingIds: Readonly<Record<SectionId, string>> = {
   technologies: 'technologies-title',
   projects: 'projects-title',
   experience: 'experience-title',
+  capabilities: 'capabilities-title',
   services: 'services-title',
   contact: 'contact-title',
 };

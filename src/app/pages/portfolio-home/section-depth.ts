@@ -13,11 +13,11 @@ type DepthGroup = 'profile' | 'evidence' | 'contact';
 const depthGroupSections = [
   { id: 'top', group: 'profile' },
   { id: 'about', group: 'profile' },
-  { id: 'expertise', group: 'profile' },
-  { id: 'technologies', group: 'profile' },
+  { id: 'services', group: 'profile' },
   { id: 'projects', group: 'evidence' },
   { id: 'experience', group: 'evidence' },
-  { id: 'services', group: 'contact' },
+  { id: 'expertise', group: 'evidence' },
+  { id: 'technologies', group: 'evidence' },
   { id: 'contact', group: 'contact' },
 ] as const satisfies readonly { id: string; group: DepthGroup }[];
 

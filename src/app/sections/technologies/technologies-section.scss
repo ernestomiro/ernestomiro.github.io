@@ -2,12 +2,12 @@
   display: block;
 }
 
-.section__title-group h2 {
-  font-size: var(--type-section-title-size);
+.section__title-group h3 {
+  font-size: var(--type-panel-title-size);
   letter-spacing: var(--tracking-heading);
 }
 
-.section__title-group h2:focus {
+.section__title-group h3:focus {
   outline: var(--focus-ring-width) solid var(--color-focus-outer);
   outline-offset: var(--focus-ring-offset);
   border-radius: var(--radius-control);
@@ -24,7 +24,7 @@
   border-block-start: var(--border-width-emphasis) solid var(--color-border-functional);
 }
 
-.technology-group h3 {
+.technology-group h4 {
   font-size: var(--font-size-lg);
   letter-spacing: var(--tracking-title);
 }

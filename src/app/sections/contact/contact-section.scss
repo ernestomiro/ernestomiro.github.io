@@ -66,8 +66,9 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .contact-channel:hover {
+  .contact-channel:not(:active):hover {
     background: color-mix(in srgb, var(--color-on-brand) 10%, transparent);
     color: var(--color-text-on-brand);
+    transform: scale(var(--motion-hover-scale-card));
   }
 }

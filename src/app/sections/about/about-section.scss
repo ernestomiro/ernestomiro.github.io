@@ -2,6 +2,10 @@
   display: block;
 }
 
+.about-section {
+  padding-block: clamp(var(--space-6), 6vw, var(--space-8));
+}
+
 .section__title-group h2 {
   font-size: var(--type-section-title-size);
   letter-spacing: var(--tracking-heading);

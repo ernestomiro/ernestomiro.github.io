@@ -6,8 +6,8 @@ export const methodologyRoutePath = 'methodology/ai-assisted-engineering' as con
 export const methodologyContent = {
   metadata: {
     title: {
-      en: 'AI-Assisted Engineering | Ernesto Miro Peraza',
-      es: 'Ingeniería asistida por IA | Ernesto Miro Peraza',
+      en: 'AI-Assisted Engineering | Ernesto Miró Peraza',
+      es: 'Ingeniería asistida por IA | Ernesto Miró Peraza',
     },
     description: {
       en: 'A documented engineering workflow combining persistent context, explicit guardrails, incremental implementation, verification, and human decision gates.',
@@ -216,4 +216,3 @@ export const methodologyContent = {
     },
   },
 } as const satisfies MethodologyContent;
-
