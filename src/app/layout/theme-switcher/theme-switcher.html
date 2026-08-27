@@ -1,0 +1,63 @@
+<div class="theme-switcher">
+  <button
+    #trigger
+    type="button"
+    class="theme-switcher__trigger"
+    aria-controls="theme-switcher-options"
+    [attr.aria-expanded]="panelOpen()"
+    [attr.aria-label]="triggerLabel()"
+    [attr.title]="triggerLabel()"
+    (click)="togglePanel()"
+  >
+    <span
+      class="theme-preview"
+      [attr.data-theme-preview]="currentThemeId()"
+      aria-hidden="true"
+    >
+      <span class="theme-preview__swatch"></span>
+      <span class="theme-preview__swatch"></span>
+      <span class="theme-preview__swatch theme-preview__swatch--accent"></span>
+    </span>
+    <span class="theme-switcher__chevron" aria-hidden="true">▾</span>
+  </button>
+
+  @if (panelOpen()) {
+    <div id="theme-switcher-options" class="theme-switcher__panel">
+      <p id="theme-switcher-title" class="theme-switcher__title">
+        {{ groupLabel() }}
+      </p>
+
+      <div
+        class="theme-switcher__options"
+        role="group"
+        aria-labelledby="theme-switcher-title"
+      >
+        @for (theme of themes; track theme.id) {
+          <button
+            type="button"
+            class="theme-switcher__option"
+            [class.theme-switcher__option--active]="currentThemeId() === theme.id"
+            [attr.aria-pressed]="currentThemeId() === theme.id"
+            (click)="select(theme.id)"
+          >
+            <span
+              class="theme-preview theme-preview--option"
+              [attr.data-theme-preview]="theme.id"
+              aria-hidden="true"
+            >
+              <span class="theme-preview__swatch"></span>
+              <span class="theme-preview__swatch"></span>
+              <span
+                class="theme-preview__swatch theme-preview__swatch--accent"
+              ></span>
+            </span>
+            <span>{{ themeLabel(theme) }}</span>
+            <span class="theme-switcher__check" aria-hidden="true">
+              {{ currentThemeId() === theme.id ? '✓' : '' }}
+            </span>
+          </button>
+        }
+      </div>
+    </div>
+  }
+</div>

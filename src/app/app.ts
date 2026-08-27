@@ -19,6 +19,7 @@ import { SiteHeader } from './layout/site-header/site-header';
 import { SiteFooter } from './layout/site-footer/site-footer';
 import { LanguageState } from './language/language-state';
 import { SectionNavigation } from './navigation/section-navigation';
+import { ThemeState } from './theme/theme-state';
 
 const skipLinkText = {
   en: 'Skip to main content',
@@ -28,7 +29,7 @@ const skipLinkText = {
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, SiteFooter, SiteHeader],
-  providers: [LanguageState],
+  providers: [LanguageState, ThemeState],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

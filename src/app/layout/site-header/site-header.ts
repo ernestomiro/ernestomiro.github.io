@@ -20,6 +20,7 @@ import {
 import { LanguageState } from '../../language/language-state';
 import { SectionNavigation } from '../../navigation/section-navigation';
 import { LanguageSwitcher } from '../language-switcher/language-switcher';
+import { ThemeSwitcher } from '../theme-switcher/theme-switcher';
 
 const desktopMediaQuery = '(min-width: 70rem)';
 
@@ -42,7 +43,7 @@ type HeaderLabel = keyof typeof headerLabels;
 
 @Component({
   selector: 'app-site-header',
-  imports: [LanguageSwitcher, RouterLink],
+  imports: [LanguageSwitcher, RouterLink, ThemeSwitcher],
   templateUrl: './site-header.html',
   styleUrl: './site-header.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
