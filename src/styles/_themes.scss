@@ -16,6 +16,36 @@
   --theme-beige-black-accent: #a5693b;
 }
 
+[data-theme-preview='slate-cream'] {
+  --theme-preview-primary: var(--theme-slate-cream-primary);
+  --theme-preview-secondary: var(--theme-slate-cream-secondary);
+  --theme-preview-accent: var(--theme-slate-cream-accent);
+}
+
+[data-theme-preview='white-linen'] {
+  --theme-preview-primary: var(--theme-white-linen-primary);
+  --theme-preview-secondary: var(--theme-white-linen-secondary);
+  --theme-preview-accent: var(--theme-white-linen-accent);
+}
+
+[data-theme-preview='sage-wood'] {
+  --theme-preview-primary: var(--theme-sage-wood-primary);
+  --theme-preview-secondary: var(--theme-sage-wood-secondary);
+  --theme-preview-accent: var(--theme-sage-wood-accent);
+}
+
+[data-theme-preview='taupe-gold'] {
+  --theme-preview-primary: var(--theme-taupe-gold-primary);
+  --theme-preview-secondary: var(--theme-taupe-gold-secondary);
+  --theme-preview-accent: var(--theme-taupe-gold-accent);
+}
+
+[data-theme-preview='beige-black'] {
+  --theme-preview-primary: var(--theme-beige-black-primary);
+  --theme-preview-secondary: var(--theme-beige-black-secondary);
+  --theme-preview-accent: var(--theme-beige-black-accent);
+}
+
 html[data-theme='white-linen'] {
   --color-brand: #75665a;
   --color-brand-hover: #67594e;

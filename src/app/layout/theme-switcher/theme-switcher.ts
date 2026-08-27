@@ -5,6 +5,7 @@ import {
   ElementRef,
   HostListener,
   inject,
+  input,
   signal,
   viewChild,
 } from '@angular/core';
@@ -42,9 +43,13 @@ export class ThemeSwitcher {
   private readonly themeState = inject(ThemeState);
   private readonly trigger = viewChild.required<ElementRef<HTMLButtonElement>>('trigger');
 
+  readonly idPrefix = input('theme-switcher');
+
   protected readonly themes = supportedThemes;
   protected readonly panelOpen = signal(false);
   protected readonly currentThemeId = this.themeState.theme;
+  protected readonly optionsId = computed(() => this.idPrefix() + '-options');
+  protected readonly titleId = computed(() => this.idPrefix() + '-title');
   protected readonly currentTheme = computed(
     () =>
       this.themes.find((theme) => theme.id === this.currentThemeId()) ??

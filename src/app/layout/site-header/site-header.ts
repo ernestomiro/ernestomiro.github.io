@@ -33,6 +33,10 @@ const headerLabels = {
     en: 'Primary navigation',
     es: 'Navegación principal',
   },
+  preferences: {
+    en: 'Display preferences',
+    es: 'Preferencias de visualización',
+  },
   menu: {
     en: 'Menu',
     es: 'Menú',

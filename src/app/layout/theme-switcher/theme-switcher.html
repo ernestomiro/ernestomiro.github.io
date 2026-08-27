@@ -3,7 +3,7 @@
     #trigger
     type="button"
     class="theme-switcher__trigger"
-    aria-controls="theme-switcher-options"
+    [attr.aria-controls]="optionsId()"
     [attr.aria-expanded]="panelOpen()"
     [attr.aria-label]="triggerLabel()"
     [attr.title]="triggerLabel()"
@@ -22,15 +22,15 @@
   </button>
 
   @if (panelOpen()) {
-    <div id="theme-switcher-options" class="theme-switcher__panel">
-      <p id="theme-switcher-title" class="theme-switcher__title">
+    <div [id]="optionsId()" class="theme-switcher__panel">
+      <p [id]="titleId()" class="theme-switcher__title">
         {{ groupLabel() }}
       </p>
 
       <div
         class="theme-switcher__options"
         role="group"
-        aria-labelledby="theme-switcher-title"
+        [attr.aria-labelledby]="titleId()"
       >
         @for (theme of themes; track theme.id) {
           <button

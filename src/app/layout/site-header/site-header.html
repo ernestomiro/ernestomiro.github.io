@@ -34,8 +34,10 @@
     </nav>
 
     <div class="site-header__controls">
-      <app-theme-switcher />
-      <app-language-switcher />
+      <div class="site-header__desktop-preferences">
+        <app-theme-switcher idPrefix="desktop-theme-switcher" />
+        <app-language-switcher />
+      </div>
       <button
         #menuButton
         type="button"
@@ -51,25 +53,37 @@
   </div>
 
   @if (menuOpen()) {
-    <nav
+    <div
       id="mobile-primary-navigation"
       class="site-header__mobile-nav"
-      [attr.aria-label]="label('navigation')"
     >
       <div class="layout-shell site-header__mobile-links">
-        @for (item of navigation(); track item.id) {
-          <a
-            routerLink="/"
-            [fragment]="item.id"
-            [queryParams]="homeQueryParams()"
-            [class.site-header__link--active]="activeSection() === item.id"
-            [attr.aria-current]="activeSection() === item.id ? 'location' : null"
-            (click)="closeMenu()"
-          >
-            {{ localize(item.label) }}
-          </a>
-        }
+        <nav
+          class="site-header__mobile-primary-links"
+          [attr.aria-label]="label('navigation')"
+        >
+          @for (item of navigation(); track item.id) {
+            <a
+              routerLink="/"
+              [fragment]="item.id"
+              [queryParams]="homeQueryParams()"
+              [class.site-header__link--active]="activeSection() === item.id"
+              [attr.aria-current]="activeSection() === item.id ? 'location' : null"
+              (click)="closeMenu()"
+            >
+              {{ localize(item.label) }}
+            </a>
+          }
+        </nav>
 
+        <div
+          class="site-header__mobile-preferences"
+          role="group"
+          [attr.aria-label]="label('preferences')"
+        >
+          <app-theme-switcher idPrefix="mobile-theme-switcher" />
+          <app-language-switcher />
+        </div>
 
         <a
           class="site-header__resume"
@@ -81,6 +95,6 @@
           <span aria-hidden="true">↓</span>
         </a>
       </div>
-    </nav>
+    </div>
   }
 </header>
