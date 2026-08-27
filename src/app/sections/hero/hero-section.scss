@@ -48,7 +48,7 @@
 
 .hero-section__content {
   display: grid;
-  width: min(100%, 56rem);
+  width: 100%;
   gap: var(--space-5);
 }
 
@@ -73,7 +73,7 @@
 
 .hero-section h1 {
   width: fit-content;
-  max-width: 11ch;
+  max-width: 24ch;
   color: var(--color-text-on-brand);
   font-size: var(--type-display-size);
   letter-spacing: var(--tracking-display);

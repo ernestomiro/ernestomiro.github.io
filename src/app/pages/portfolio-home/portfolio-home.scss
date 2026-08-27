@@ -12,57 +12,135 @@
   z-index: 0;
   inset: 0;
   overflow: hidden;
-  background: var(--color-section-cool);
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--color-brand-deep) 18%, var(--color-section-cool))
+        0%,
+      var(--color-section-cool) 48%,
+      color-mix(in srgb, var(--color-accent) 8%, var(--color-section-cool)) 100%
+    );
   pointer-events: none;
 }
 
 .portfolio-home__ambient-layer {
   position: absolute;
-  inset: -12%;
+  inset: 0;
   opacity: 0;
-  transition: opacity var(--motion-duration-slow) var(--motion-ease-emphasized);
+  transition: opacity
+    calc(var(--motion-duration-slow) + var(--motion-duration-standard))
+    var(--motion-ease-emphasized);
+}
+
+.portfolio-home__ambient-layer::before,
+.portfolio-home__ambient-layer::after {
+  position: absolute;
+  content: '';
+}
+
+.portfolio-home__ambient-layer::before {
+  width: clamp(30rem, 68vmax, 72rem);
+  height: clamp(30rem, 68vmax, 72rem);
+  border: clamp(5rem, 11vw, 11rem) solid
+    color-mix(in srgb, var(--ambient-ring-color) 42%, transparent);
+  border-radius: var(--radius-round);
+}
+
+.portfolio-home__ambient-layer::after {
+  width: clamp(22rem, 46vw, 48rem);
+  height: 120%;
+  background: linear-gradient(
+    148deg,
+    transparent 8%,
+    color-mix(in srgb, var(--ambient-plane-color) 42%, transparent) 36%,
+    color-mix(in srgb, var(--ambient-plane-color) 18%, transparent) 62%,
+    transparent 84%
+  );
+  transform: rotate(var(--ambient-plane-angle));
 }
 
 .portfolio-home__ambient-layer--profile {
+  --ambient-ring-color: var(--color-brand);
+  --ambient-plane-color: var(--color-on-brand);
+  --ambient-plane-angle: 8deg;
+
   background:
     radial-gradient(
-      circle at 82% 16%,
-      color-mix(in srgb, var(--color-accent) 14%, transparent),
-      transparent 36%
+      ellipse 42% 36% at 84% 18%,
+      color-mix(in srgb, var(--color-accent) 28%, transparent),
+      transparent 72%
     ),
     radial-gradient(
-      circle at 16% 74%,
-      color-mix(in srgb, var(--color-brand) 22%, transparent),
-      transparent 44%
+      ellipse 48% 58% at 12% 82%,
+      color-mix(in srgb, var(--color-brand) 38%, transparent),
+      transparent 74%
     );
+}
+
+.portfolio-home__ambient-layer--profile::before {
+  inset-block-start: -32%;
+  inset-inline-end: -20%;
+}
+
+.portfolio-home__ambient-layer--profile::after {
+  inset-block-start: -10%;
+  inset-inline-start: 18%;
 }
 
 .portfolio-home__ambient-layer--evidence {
+  --ambient-ring-color: var(--color-brand-deep);
+  --ambient-plane-color: var(--color-brand);
+  --ambient-plane-angle: -12deg;
+
   background:
     radial-gradient(
-      circle at 18% 22%,
-      color-mix(in srgb, var(--color-brand-deep) 24%, transparent),
-      transparent 42%
+      ellipse 52% 42% at 12% 20%,
+      color-mix(in srgb, var(--color-brand-deep) 40%, transparent),
+      transparent 70%
     ),
     radial-gradient(
-      circle at 86% 72%,
-      color-mix(in srgb, var(--color-brand) 18%, transparent),
-      transparent 40%
+      ellipse 44% 54% at 88% 78%,
+      color-mix(in srgb, var(--color-brand) 34%, transparent),
+      transparent 72%
     );
 }
 
+.portfolio-home__ambient-layer--evidence::before {
+  inset-block-end: -36%;
+  inset-inline-start: -24%;
+}
+
+.portfolio-home__ambient-layer--evidence::after {
+  inset-block-start: -18%;
+  inset-inline-end: 16%;
+}
+
 .portfolio-home__ambient-layer--contact {
+  --ambient-ring-color: var(--color-accent);
+  --ambient-plane-color: var(--color-brand);
+  --ambient-plane-angle: 14deg;
+
   background:
     radial-gradient(
-      circle at 76% 24%,
-      color-mix(in srgb, var(--color-accent) 18%, transparent),
-      transparent 38%
+      ellipse 46% 40% at 78% 18%,
+      color-mix(in srgb, var(--color-accent) 34%, transparent),
+      transparent 70%
     ),
     radial-gradient(
-      circle at 20% 82%,
-      color-mix(in srgb, var(--color-brand) 16%, transparent),
-      transparent 42%
+      ellipse 52% 58% at 18% 86%,
+      color-mix(in srgb, var(--color-brand) 32%, transparent),
+      transparent 74%
     );
+}
+
+.portfolio-home__ambient-layer--contact::before {
+  inset-block-start: -40%;
+  inset-inline-start: -18%;
+}
+
+.portfolio-home__ambient-layer--contact::after {
+  inset-block-start: -12%;
+  inset-inline-end: 8%;
 }
 
 .portfolio-home[data-depth-group="profile"]
