@@ -204,11 +204,12 @@ export const projectsContent = {
     en: 'Projects / Case Studies',
     es: 'Proyectos / Casos de estudio',
   },
-  items: caseStudies.map(({ id, slug, title, summary, period }) => ({
+  items: caseStudies.map(({ id, slug, title, role, summary, period }) => ({
     id,
     caseStudyId: id,
     slug,
     title,
+    role,
     summary,
     period,
   })),

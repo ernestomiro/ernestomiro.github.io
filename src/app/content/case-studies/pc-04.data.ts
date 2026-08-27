@@ -7,6 +7,10 @@ export const pc04CaseStudy = {
     en: 'Evolution of a Multi-Tenant EdTech Cloud Platform',
     es: 'Evolución de una plataforma EdTech cloud multi-tenant',
   },
+  role: {
+    en: 'Full-Stack Engineering, Cloud Platform Evolution & Integrations',
+    es: 'Ingeniería Full Stack, evolución de plataforma cloud e integraciones',
+  },
   summary: {
     en: 'Long-term evolution of a multi-tenant EdTech platform spanning distributed services, role-specific web applications, identity and rostering integrations, virtual-machine operations, data workflows and cloud delivery.',
     es: 'Evolución prolongada de una plataforma EdTech multi-tenant que integraba servicios distribuidos, aplicaciones web por tipo de usuario, identidad y rostering, operaciones de máquinas virtuales, flujos de datos y entrega cloud.',

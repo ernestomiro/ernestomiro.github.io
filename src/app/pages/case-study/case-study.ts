@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  effect,
   ElementRef,
   inject,
   viewChild,
@@ -13,6 +14,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { findCaseStudyBySlug } from '../../content/case-studies/case-studies.data';
 import { LocalizedText, selectLocalizedText } from '../../content/portfolio-content.models';
 import { LanguageState } from '../../language/language-state';
+import { PageMetadata } from '../../metadata/page-metadata';
 import { CaseStudyDiagramComponent } from './case-study-diagram/case-study-diagram';
 
 const pageLabels = {
@@ -51,6 +53,7 @@ export class CaseStudyPage {
   private readonly document = inject(DOCUMENT);
   private readonly route = inject(ActivatedRoute);
   private readonly languageState = inject(LanguageState);
+  private readonly pageMetadata = inject(PageMetadata);
   private readonly routeParams = toSignal(this.route.paramMap, {
     initialValue: this.route.snapshot.paramMap,
   });
@@ -65,6 +68,29 @@ export class CaseStudyPage {
   protected readonly backQueryParams = computed(() =>
     this.languageState.language() === 'es' ? { lang: 'es' } : null,
   );
+
+  private readonly metadataEffect = effect(() => {
+    const language = this.languageState.language();
+    const caseStudy = this.caseStudy();
+
+    if (caseStudy) {
+      this.pageMetadata.update({
+        title: `${selectLocalizedText(caseStudy.title, language)} | Ernesto Miro Peraza`,
+        description: selectLocalizedText(caseStudy.summary, language),
+        canonicalPath: `/projects/${caseStudy.slug}`,
+        language,
+      });
+
+      return;
+    }
+
+    this.pageMetadata.update({
+      title: `${selectLocalizedText(pageLabels.notFoundTitle, language)} | Ernesto Miro Peraza`,
+      description: selectLocalizedText(pageLabels.notFoundMessage, language),
+      canonicalPath: '/404',
+      language,
+    });
+  });
 
   constructor() {
     afterNextRender(() => {

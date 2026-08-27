@@ -34,6 +34,7 @@ export interface CaseStudy {
   readonly id: CaseStudyId;
   readonly slug: CaseStudySlug;
   readonly title: LocalizedText;
+  readonly role: LocalizedText;
   readonly summary: LocalizedText;
   readonly period?: string;
   readonly context: LocalizedText;

@@ -77,7 +77,7 @@ export interface ProjectSummary {
   readonly slug: string;
   readonly title: LocalizedText;
   readonly summary: LocalizedText;
-  readonly role?: LocalizedText;
+  readonly role: LocalizedText;
   readonly period?: string;
 }
 

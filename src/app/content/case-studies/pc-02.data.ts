@@ -7,6 +7,10 @@ export const pc02CaseStudy = {
     en: 'Distributed SaaS Platform for Education Operations',
     es: 'Plataforma SaaS distribuida para operaciones educativas',
   },
+  role: {
+    en: 'Full-Stack Engineering, Distributed Architecture & Technical Leadership',
+    es: 'Ingeniería Full Stack, arquitectura distribuida y liderazgo técnico',
+  },
   summary: {
     en: 'Design and implementation of a new generation of multi-tenant SaaS capabilities, combining a single-entry gateway, distributed services, tenant-aware authorization and cross-cloud orchestration.',
     es: 'Diseño e implementación de una nueva generación de capacidades SaaS multi-tenant, combinando un gateway de entrada único, servicios distribuidos, autorización consciente del tenant y orquestación entre clouds.',

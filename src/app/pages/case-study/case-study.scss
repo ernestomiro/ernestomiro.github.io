@@ -66,6 +66,13 @@
   line-height: var(--line-height-relaxed);
 }
 
+.case-study-role {
+  max-width: var(--layout-reading-compact);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-body);
+}
+
 .case-study-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));

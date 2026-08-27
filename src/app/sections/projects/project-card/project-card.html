@@ -4,9 +4,7 @@
       <p class="project-card__period">{{ period }}</p>
     }
     <h3>{{ localize(project().title) }}</h3>
-    @if (project().role; as role) {
-      <p class="project-card__role">{{ localize(role) }}</p>
-    }
+    <p class="project-card__role">{{ localize(project().role) }}</p>
     <p class="project-card__summary">{{ localize(project().summary) }}</p>
   </div>
 
