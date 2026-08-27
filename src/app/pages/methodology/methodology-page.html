@@ -1,12 +1,12 @@
-<main id="main-content" class="methodology-page">
+<main id="main-content" class="page">
   <article>
     <header
-      class="methodology-hero section section--feature section--surface-brand"
+      class="hero section section--feature section--surface-brand"
     >
       <div class="section__shell">
-        <div class="methodology-hero__content">
+        <div class="hero-content grid">
           <a
-            class="methodology-back-link"
+            class="back"
             routerLink="/"
             fragment="expertise"
             [queryParams]="homeQueryParams()"
@@ -15,12 +15,12 @@
             {{ localize(content.hero.backLabel) }}
           </a>
 
-          <div class="methodology-hero__heading">
-            <p class="methodology-label">{{ localize(content.hero.label) }}</p>
+          <div class="grid gap-medium">
+            <p class="label">{{ localize(content.hero.label) }}</p>
             <h1 #pageHeading tabindex="-1">
               {{ localize(content.hero.headline) }}
             </h1>
-            <p class="methodology-hero__lead">
+            <p class="lead">
               {{ localize(content.hero.lead) }}
             </p>
           </div>
@@ -35,7 +35,7 @@
       <div class="section__shell">
         <header class="section__intro">
           <div class="section__title-group">
-            <h2 id="methodology-workflow-title">
+            <h2 id="methodology-workflow-title" class="panel-title">
               {{ localize(content.workflow.title) }}
             </h2>
           </div>
@@ -44,14 +44,14 @@
           </p>
         </header>
 
-        <ol class="section__body methodology-flow">
+        <ol class="section__body flow copy reset-list centered">
           @for (stage of content.workflow.stages; track stage.id; let index = $index) {
             <li>
-              <span class="methodology-flow__index" aria-hidden="true">
+              <span class="step-number" aria-hidden="true">
                 {{ index + 1 }}
               </span>
-              <div class="methodology-flow__content">
-                <h3>{{ localize(stage.title) }}</h3>
+              <div class="step-card grid">
+                <h3 class="item-title">{{ localize(stage.title) }}</h3>
                 <p>{{ localize(stage.description) }}</p>
               </div>
             </li>
@@ -65,10 +65,10 @@
       aria-labelledby="methodology-human-gate-title"
     >
       <div class="section__shell">
-        <div class="methodology-gate">
-          <span class="methodology-gate__marker" aria-hidden="true"></span>
-          <div class="methodology-gate__content">
-            <h2 id="methodology-human-gate-title">
+        <div class="gate copy centered">
+          <span class="gate-marker" aria-hidden="true"></span>
+          <div class="grid gap-medium">
+            <h2 id="methodology-human-gate-title" class="panel-title">
               {{ localize(content.humanGate.title) }}
             </h2>
             <p>{{ localize(content.humanGate.body) }}</p>
@@ -83,15 +83,15 @@
     >
       <div class="section__shell">
         <div class="section__title-group">
-          <h2 id="methodology-evidence-title">
+          <h2 id="methodology-evidence-title" class="panel-title">
             {{ localize(content.evidence.title) }}
           </h2>
         </div>
 
-        <ul class="section__body methodology-evidence">
+        <ul class="section__body evidence copy reset-list">
           @for (item of content.evidence.items; track item.id) {
-            <li>
-              <h3>{{ localize(item.title) }}</h3>
+            <li class="grid">
+              <h3 class="item-title">{{ localize(item.title) }}</h3>
               <p>{{ localize(item.description) }}</p>
             </li>
           }
@@ -103,17 +103,17 @@
       class="section section--closing section--surface-brand"
       aria-labelledby="methodology-closing-title"
     >
-      <div class="section__shell methodology-closing">
-        <div class="methodology-closing__content">
-          <h2 id="methodology-closing-title">
+      <div class="section__shell closing copy">
+        <div class="grid gap-medium">
+          <h2 id="methodology-closing-title" class="panel-title">
             {{ localize(content.closing.title) }}
           </h2>
           <p>{{ localize(content.closing.body) }}</p>
         </div>
 
-        <div class="methodology-closing__actions">
+        <div class="actions">
           <a
-            class="methodology-action methodology-action--primary"
+            class="cta cta--primary"
             routerLink="/"
             [fragment]="content.closing.primaryAction.fragment"
             [queryParams]="homeQueryParams()"
@@ -121,7 +121,7 @@
             {{ localize(content.closing.primaryAction.label) }}
           </a>
           <a
-            class="methodology-action methodology-action--secondary"
+            class="cta"
             routerLink="/"
             [fragment]="content.closing.secondaryAction.fragment"
             [queryParams]="homeQueryParams()"
@@ -133,4 +133,3 @@
     </section>
   </article>
 </main>
-
