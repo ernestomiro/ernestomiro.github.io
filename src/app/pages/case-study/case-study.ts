@@ -15,6 +15,7 @@ import { findCaseStudyBySlug } from '../../content/case-studies/case-studies.dat
 import { LocalizedText, selectLocalizedText } from '../../content/portfolio-content.models';
 import { LanguageState } from '../../language/language-state';
 import { PageMetadata } from '../../metadata/page-metadata';
+import { SectionReveal } from '../../motion/section-reveal';
 import { CaseStudyDiagramComponent } from './case-study-diagram/case-study-diagram';
 
 const pageLabels = {
@@ -44,7 +45,7 @@ type PageLabel = keyof typeof pageLabels;
 
 @Component({
   selector: 'app-case-study',
-  imports: [CaseStudyDiagramComponent, RouterLink],
+  imports: [CaseStudyDiagramComponent, RouterLink, SectionReveal],
   templateUrl: './case-study.html',
   styleUrl: './case-study.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

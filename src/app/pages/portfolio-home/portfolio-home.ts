@@ -26,8 +26,8 @@ import { ServicesSection } from '../../sections/services/services-section';
 import { TechnologiesSection } from '../../sections/technologies/technologies-section';
 import { LanguageState } from '../../language/language-state';
 import { PageMetadata } from '../../metadata/page-metadata';
+import { SectionReveal } from '../../motion/section-reveal';
 import { SectionDepth } from './section-depth';
-import { SectionReveal } from './section-reveal';
 
 const homeMetadata = {
   en: {

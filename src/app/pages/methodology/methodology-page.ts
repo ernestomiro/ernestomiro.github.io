@@ -20,10 +20,11 @@ import {
 } from '../../content/portfolio-content.models';
 import { LanguageState } from '../../language/language-state';
 import { PageMetadata } from '../../metadata/page-metadata';
+import { SectionReveal } from '../../motion/section-reveal';
 
 @Component({
   selector: 'app-methodology-page',
-  imports: [RouterLink],
+  imports: [RouterLink, SectionReveal],
   templateUrl: './methodology-page.html',
   styleUrl: './methodology-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -62,4 +63,3 @@ export class MethodologyPage {
     return selectLocalizedText(text, this.languageState.language());
   }
 }
-

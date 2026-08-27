@@ -1,4 +1,8 @@
-<main id="main-content" class="case-study-page">
+<main
+  id="main-content"
+  class="case-study-page route-depth-page page-reveal"
+  appSectionReveal
+>
   @if (caseStudy(); as selectedCaseStudy) {
     <article>
       <header class="case-study-hero section section--feature section--surface-brand">
@@ -27,7 +31,7 @@
       </header>
 
       <section class="section section--editorial" aria-labelledby="case-context-title">
-        <div class="section__shell case-study-grid">
+        <div class="section__shell case-study-grid" data-reveal-block>
           <div class="case-study-narrative">
             <h2 id="case-context-title">{{ label('context') }}</h2>
             <p>{{ localize(selectedCaseStudy.context) }}</p>
@@ -40,7 +44,7 @@
       </section>
 
       <section class="section section--editorial section--surface-deep" aria-labelledby="case-role-title">
-        <div class="section__shell case-study-grid">
+        <div class="section__shell case-study-grid" data-reveal-block>
           <div class="case-study-narrative">
             <h2 id="case-role-title">{{ label('roleAndScope') }}</h2>
             <p>{{ localize(selectedCaseStudy.roleAndScope) }}</p>
@@ -58,7 +62,7 @@
           aria-labelledby="case-system-maps-title"
         >
           <div class="section__shell">
-            <div class="section__title-group">
+            <div class="section__title-group" data-reveal-block>
               <h2 id="case-system-maps-title">{{ label('systemMaps') }}</h2>
             </div>
 
@@ -76,7 +80,7 @@
         aria-labelledby="case-technologies-title"
       >
         <div class="section__shell">
-          <div class="section__title-group">
+          <div class="section__title-group" data-reveal-block>
             <h2 id="case-technologies-title">{{ label('technologies') }}</h2>
           </div>
 
@@ -107,7 +111,7 @@
               : 'case-challenges-title'
           "
         >
-          <div class="section__shell case-study-grid">
+          <div class="section__shell case-study-grid" data-reveal-block>
             @if (selectedCaseStudy.decisions?.length) {
               <div class="case-study-narrative">
                 <h2 id="case-decisions-title">{{ label('decisionsAndTradeoffs') }}</h2>
@@ -151,7 +155,7 @@
               : 'case-outcome-title'
           "
         >
-          <div class="section__shell case-study-grid">
+          <div class="section__shell case-study-grid" data-reveal-block>
             @if (selectedCaseStudy.engineeringQuality; as engineeringQuality) {
               <div class="case-study-narrative">
                 <h2 id="case-quality-title">{{ label('engineeringQuality') }}</h2>
@@ -170,7 +174,7 @@
     </article>
   } @else {
     <section class="not-found section section--closing section--surface-brand">
-      <div class="section__shell not-found__content">
+      <div class="section__shell not-found__content" data-reveal-block>
         <h1 #pageHeading tabindex="-1">{{ label('notFoundTitle') }}</h1>
         <p>{{ label('notFoundMessage') }}</p>
         <a routerLink="/" fragment="projects" [queryParams]="backQueryParams()">

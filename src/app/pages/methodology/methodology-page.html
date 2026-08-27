@@ -1,4 +1,8 @@
-<main id="main-content" class="page">
+<main
+  id="main-content"
+  class="page route-depth-page page-reveal"
+  appSectionReveal
+>
   <article>
     <header
       class="hero section section--feature section--surface-brand"
@@ -65,7 +69,7 @@
       aria-labelledby="methodology-human-gate-title"
     >
       <div class="section__shell">
-        <div class="gate copy centered">
+        <div class="gate copy centered" data-reveal-block>
           <span class="gate-marker" aria-hidden="true"></span>
           <div class="grid gap-medium">
             <h2 id="methodology-human-gate-title" class="panel-title">
@@ -82,7 +86,7 @@
       aria-labelledby="methodology-evidence-title"
     >
       <div class="section__shell">
-        <div class="section__title-group">
+        <div class="section__title-group" data-reveal-block>
           <h2 id="methodology-evidence-title" class="panel-title">
             {{ localize(content.evidence.title) }}
           </h2>
@@ -103,7 +107,7 @@
       class="section section--closing section--surface-brand"
       aria-labelledby="methodology-closing-title"
     >
-      <div class="section__shell closing copy">
+      <div class="section__shell closing copy" data-reveal-block>
         <div class="grid gap-medium">
           <h2 id="methodology-closing-title" class="panel-title">
             {{ localize(content.closing.title) }}

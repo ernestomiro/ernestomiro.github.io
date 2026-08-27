@@ -8,7 +8,8 @@ import {
   PLATFORM_ID,
 } from '@angular/core';
 
-const revealTargetSelector = '.section__intro, .section__body';
+const revealTargetSelector =
+  '[data-reveal-block], .section__intro, .section__body';
 const revealStateAttribute = 'data-reveal-state';
 
 @Directive({

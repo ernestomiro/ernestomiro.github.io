@@ -3,6 +3,9 @@
 }
 
 .portfolio-home {
+  --depth-surface-coverage: 78%;
+  --depth-chapter-header-coverage: 88%;
+
   position: relative;
   isolation: isolate;
 }
@@ -158,18 +161,14 @@
 }
 
 .portfolio-home__capabilities {
-  background: color-mix(
-    in srgb,
-    var(--color-section-cool) 86%,
-    transparent
-  );
+  background: transparent;
 }
 
 .portfolio-home__capabilities-header {
   padding-block: clamp(var(--space-7), 6vw, var(--space-8));
   background: color-mix(
     in srgb,
-    var(--color-section-deep) 94%,
+    var(--color-section-deep) var(--depth-chapter-header-coverage),
     transparent
   );
   color: var(--color-text-on-deep);
