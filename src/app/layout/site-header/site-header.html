@@ -66,32 +66,23 @@
       class="d"
     >
       <div class="layout-shell dc">
-        <div
-          class="ds"
-          role="group"
-          aria-labelledby="mobile-navigation-section-title"
-        >
-          <p
-            id="mobile-navigation-section-title"
-            class="dt"
-          >
-            {{ label('navigationSection') }}
-          </p>
-          <nav [attr.aria-label]="label('navigation')">
-            @for (item of navigation(); track item.id) {
-              <a
-                routerLink="/"
-                [fragment]="item.id"
-                [queryParams]="homeQueryParams()"
-                [class.a]="activeSection() === item.id"
-                [attr.aria-current]="activeSection() === item.id ? 'location' : null"
-                (click)="closeMenu()"
-              >
-                {{ localize(item.label) }}
-              </a>
-            }
-          </nav>
+        <nav class="ds" [attr.aria-label]="label('navigation')">
+          @for (item of navigation(); track item.id) {
+            <a
+              routerLink="/"
+              [fragment]="item.id"
+              [queryParams]="homeQueryParams()"
+              [class.a]="activeSection() === item.id"
+              [attr.aria-current]="activeSection() === item.id ? 'location' : null"
+              (click)="closeMenu()"
+            >
+              {{ localize(item.label) }}
+            </a>
+          }
+        </nav>
 
+        <div class="ds s">
+          <app-theme-switcher idPrefix="mobile-theme-switcher" />
           <a
             class="cv"
             [href]="resume().href"
@@ -101,22 +92,6 @@
             <span>{{ localize(resume().label) }}</span>
             <span aria-hidden="true">↓</span>
           </a>
-        </div>
-
-        <div
-          class="ds s"
-          role="group"
-          aria-labelledby="mobile-settings-section-title"
-        >
-          <p
-            id="mobile-settings-section-title"
-            class="dt"
-          >
-            {{ label('settingsSection') }}
-          </p>
-          <div>
-            <app-theme-switcher idPrefix="mobile-theme-switcher" />
-          </div>
         </div>
       </div>
     </div>
