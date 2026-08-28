@@ -188,6 +188,7 @@
   .n a:hover,
   .d a:hover,
   .cv:hover {
+    color: var(--color-text-on-deep);
     text-decoration-color: currentcolor;
     transform: scale(var(--motion-hover-scale-compact));
   }

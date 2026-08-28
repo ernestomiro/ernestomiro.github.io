@@ -200,6 +200,7 @@ export const technologiesContent = {
         'Google Cloud Pub/Sub',
         'Google Cloud Tasks',
         'Google Cloud Scheduler',
+        'Google Cloud Workflows',
         'Google Cloud Functions / Firebase Functions',
         'Google Cloud Build',
         'Google Secret Manager',
@@ -229,6 +230,20 @@ export const technologiesContent = {
         es: 'Comunicación en tiempo real',
       },
       items: ['Server-Sent Events', 'WebSockets', 'GraphQL Subscriptions'],
+    },
+    {
+      id: 'architecture-and-event-processing',
+      label: {
+        en: 'Architecture & Event Processing',
+        es: 'Arquitectura y procesamiento de eventos',
+      },
+      items: [
+        'Event-driven architecture',
+        'Asynchronous workflows',
+        'Webhooks',
+        'State machines',
+        'Idempotent processing',
+      ],
     },
     {
       id: 'identity-and-security',

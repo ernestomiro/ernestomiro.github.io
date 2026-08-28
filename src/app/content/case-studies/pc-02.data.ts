@@ -46,9 +46,26 @@ export const pc02CaseStudy = {
       ],
     },
     {
-      id: 'data-and-messaging',
-      label: { en: 'Data & Messaging', es: 'Datos y mensajería' },
-      items: ['Firestore', 'Google Cloud Pub/Sub', 'Google Cloud Tasks'],
+      id: 'data',
+      label: { en: 'Data', es: 'Datos' },
+      items: ['Firestore'],
+    },
+    {
+      id: 'architecture-and-event-processing',
+      label: {
+        en: 'Architecture & Event Processing',
+        es: 'Arquitectura y procesamiento de eventos',
+      },
+      items: [
+        'Event-driven architecture',
+        'Asynchronous workflows',
+        'Google Cloud Pub/Sub',
+        'Google Cloud Tasks',
+        'Webhooks',
+        'State machines',
+        'Idempotent processing',
+        'Rate limiting',
+      ],
     },
     {
       id: 'identity-and-security',
