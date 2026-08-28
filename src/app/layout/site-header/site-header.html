@@ -1,16 +1,16 @@
-<header #siteHeader class="site-header">
-  <div class="layout-shell site-header__row">
+<header #siteHeader>
+  <div class="layout-shell r">
     <button
       #menuButton
       type="button"
-      class="site-header__menu-toggle"
+      class="m"
       aria-controls="mobile-primary-navigation"
       [attr.aria-expanded]="menuOpen()"
       [attr.aria-label]="label(menuOpen() ? 'closeMenu' : 'menu')"
-      [class.site-header__menu-toggle--open]="menuOpen()"
+      [class.o]="menuOpen()"
       (click)="toggleMenu()"
     >
-      <span class="site-header__hamburger" aria-hidden="true">
+      <span class="g" aria-hidden="true">
         <span></span>
         <span></span>
         <span></span>
@@ -18,22 +18,22 @@
     </button>
 
     <a
-      class="site-header__brand"
+      class="b"
       routerLink="/"
       fragment="top"
       [queryParams]="homeQueryParams()"
       (click)="closeMenu()"
     >
-      <span class="site-header__brand-role">{{ label('identity') }}</span>
+      <span class="i">{{ label('identity') }}</span>
     </a>
 
-    <nav class="site-header__desktop-nav" [attr.aria-label]="label('navigation')">
+    <nav class="n" [attr.aria-label]="label('navigation')">
       @for (item of navigation(); track item.id) {
         <a
           routerLink="/"
           [fragment]="item.id"
           [queryParams]="homeQueryParams()"
-          [class.site-header__link--active]="activeSection() === item.id"
+          [class.a]="activeSection() === item.id"
           [attr.aria-current]="activeSection() === item.id ? 'location' : null"
         >
           {{ localize(item.label) }}
@@ -41,12 +41,12 @@
       }
     </nav>
 
-    <div class="site-header__controls">
-      <div class="site-header__desktop-preferences">
+    <div class="c">
+      <div class="p">
         <app-theme-switcher idPrefix="desktop-theme-switcher" />
         <app-language-switcher />
         <a
-          class="site-header__resume"
+          class="cv"
           [href]="resume().href"
           [attr.download]="resume().fileName"
         >
@@ -54,7 +54,7 @@
           <span aria-hidden="true">↓</span>
         </a>
       </div>
-      <div class="site-header__mobile-language">
+      <div class="l">
         <app-language-switcher />
       </div>
     </div>
@@ -63,30 +63,27 @@
   @if (menuOpen()) {
     <div
       id="mobile-primary-navigation"
-      class="site-header__mobile-nav"
+      class="d"
     >
-      <div class="layout-shell site-header__mobile-links">
+      <div class="layout-shell dc">
         <div
-          class="site-header__mobile-section"
+          class="ds"
           role="group"
           aria-labelledby="mobile-navigation-section-title"
         >
           <p
             id="mobile-navigation-section-title"
-            class="site-header__mobile-section-title"
+            class="dt"
           >
             {{ label('navigationSection') }}
           </p>
-          <nav
-            class="site-header__mobile-primary-links"
-            [attr.aria-label]="label('navigation')"
-          >
+          <nav [attr.aria-label]="label('navigation')">
             @for (item of navigation(); track item.id) {
               <a
                 routerLink="/"
                 [fragment]="item.id"
                 [queryParams]="homeQueryParams()"
-                [class.site-header__link--active]="activeSection() === item.id"
+                [class.a]="activeSection() === item.id"
                 [attr.aria-current]="activeSection() === item.id ? 'location' : null"
                 (click)="closeMenu()"
               >
@@ -96,7 +93,7 @@
           </nav>
 
           <a
-            class="site-header__resume"
+            class="cv"
             [href]="resume().href"
             [attr.download]="resume().fileName"
             (click)="closeMenu()"
@@ -107,17 +104,17 @@
         </div>
 
         <div
-          class="site-header__mobile-section site-header__mobile-section--settings"
+          class="ds s"
           role="group"
           aria-labelledby="mobile-settings-section-title"
         >
           <p
             id="mobile-settings-section-title"
-            class="site-header__mobile-section-title"
+            class="dt"
           >
             {{ label('settingsSection') }}
           </p>
-          <div class="site-header__mobile-preferences">
+          <div>
             <app-theme-switcher idPrefix="mobile-theme-switcher" />
           </div>
         </div>

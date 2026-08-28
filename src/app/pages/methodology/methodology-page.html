@@ -8,7 +8,7 @@
       class="hero section section--feature section--surface-brand"
     >
       <div class="section__shell">
-        <div class="hero-content grid">
+        <div class="hero-copy grid">
           <a
             class="back"
             routerLink="/"
@@ -19,9 +19,9 @@
             {{ localize(content.hero.backLabel) }}
           </a>
 
-          <div class="grid gap-medium">
+          <div class="grid gap">
             <p class="label">{{ localize(content.hero.label) }}</p>
-            <div class="section__title-lockup hero-title-lockup">
+            <div class="section__title-lockup hero-title">
               <h1 #pageHeading tabindex="-1">
                 {{ localize(content.hero.headline) }}
               </h1>
@@ -43,7 +43,7 @@
         <header class="section__intro">
           <div class="section__title-group">
             <div class="section__title-lockup">
-              <h2 id="methodology-workflow-title" class="panel-title">
+              <h2 id="methodology-workflow-title" class="title">
                 {{ localize(content.workflow.title) }}
               </h2>
               <span class="section__title-line" aria-hidden="true"></span>
@@ -54,14 +54,14 @@
           </p>
         </header>
 
-        <ol class="section__body flow copy reset-list centered">
+        <ol class="section__body flow copy list center grid">
           @for (stage of content.workflow.stages; track stage.id; let index = $index) {
             <li>
-              <span class="step-number" aria-hidden="true">
+              <span class="number" aria-hidden="true">
                 {{ index + 1 }}
               </span>
-              <div class="step-card grid">
-                <h3 class="item-title">{{ localize(stage.title) }}</h3>
+              <div class="card grid">
+                <h3 class="item">{{ localize(stage.title) }}</h3>
                 <p>{{ localize(stage.description) }}</p>
               </div>
             </li>
@@ -75,11 +75,11 @@
       aria-labelledby="methodology-human-gate-title"
     >
       <div class="section__shell">
-        <div class="gate copy centered" data-reveal-block>
-          <span class="gate-marker" aria-hidden="true"></span>
-          <div class="grid gap-medium">
+        <div class="gate copy center grid" data-reveal-block>
+          <span class="marker" aria-hidden="true"></span>
+          <div class="grid gap">
             <div class="section__title-lockup">
-              <h2 id="methodology-human-gate-title" class="panel-title">
+              <h2 id="methodology-human-gate-title" class="title">
                 {{ localize(content.humanGate.title) }}
               </h2>
               <span class="section__title-line" aria-hidden="true"></span>
@@ -97,17 +97,17 @@
       <div class="section__shell">
         <div class="section__title-group" data-reveal-block>
           <div class="section__title-lockup">
-            <h2 id="methodology-evidence-title" class="panel-title">
+            <h2 id="methodology-evidence-title" class="title">
               {{ localize(content.evidence.title) }}
             </h2>
             <span class="section__title-line" aria-hidden="true"></span>
           </div>
         </div>
 
-        <ul class="section__body evidence copy reset-list">
+        <ul class="section__body evidence copy list grid">
           @for (item of content.evidence.items; track item.id) {
             <li class="grid">
-              <h3 class="item-title">{{ localize(item.title) }}</h3>
+              <h3 class="item">{{ localize(item.title) }}</h3>
               <p>{{ localize(item.description) }}</p>
             </li>
           }
@@ -119,10 +119,10 @@
       class="section section--closing section--surface-brand"
       aria-labelledby="methodology-closing-title"
     >
-      <div class="section__shell closing copy" data-reveal-block>
-        <div class="grid gap-medium">
+      <div class="section__shell closing copy grid" data-reveal-block>
+        <div class="grid gap">
           <div class="section__title-lockup">
-            <h2 id="methodology-closing-title" class="panel-title">
+            <h2 id="methodology-closing-title" class="title">
               {{ localize(content.closing.title) }}
             </h2>
             <span class="section__title-line" aria-hidden="true"></span>
@@ -132,7 +132,7 @@
 
         <div class="actions">
           <a
-            class="cta cta--primary"
+            class="cta primary"
             routerLink="/"
             [fragment]="content.closing.primaryAction.fragment"
             [queryParams]="homeQueryParams()"

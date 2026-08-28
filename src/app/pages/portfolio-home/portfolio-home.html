@@ -1,21 +1,15 @@
 <main
   id="main-content"
-  class="portfolio-home page-reveal"
+  class="home page-reveal"
   tabindex="-1"
   appSectionReveal
   appSectionDepth
   data-depth-group="profile"
 >
-  <div class="portfolio-home__ambient" aria-hidden="true">
-    <span
-      class="portfolio-home__ambient-layer portfolio-home__ambient-layer--profile"
-    ></span>
-    <span
-      class="portfolio-home__ambient-layer portfolio-home__ambient-layer--evidence"
-    ></span>
-    <span
-      class="portfolio-home__ambient-layer portfolio-home__ambient-layer--contact"
-    ></span>
+  <div class="ambient" aria-hidden="true">
+    <span class="layer profile"></span>
+    <span class="layer evidence"></span>
+    <span class="layer contact"></span>
   </div>
 
   <app-hero-section [content]="heroContent" />
@@ -25,10 +19,10 @@
 
   <section
     id="capabilities"
-    class="portfolio-home__capabilities"
+    class="capabilities"
     aria-labelledby="capabilities-title"
   >
-    <header class="section__intro portfolio-home__capabilities-header">
+    <header class="section__intro capabilities-header">
       <div class="layout-shell">
         <div class="section__title-lockup">
           <h2 id="capabilities-title" tabindex="-1">

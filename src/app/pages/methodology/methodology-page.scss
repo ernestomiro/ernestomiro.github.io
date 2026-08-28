@@ -6,26 +6,26 @@
   display: grid;
 }
 
-.gap-medium {
+.gap {
   gap: var(--space-5);
 }
 
-.reset-list {
+.list {
   padding: 0;
   list-style: none;
 }
 
-.centered {
+.center {
   margin-inline: auto;
 }
 
-.hero-content {
+.hero-copy {
   width: 100%;
   min-width: 0;
   gap: var(--space-heading-gap);
 }
 
-.hero-title-lockup {
+.hero-title {
   width: 100%;
 }
 
@@ -73,13 +73,12 @@ h1:focus {
   line-height: var(--line-height-relaxed);
 }
 
-.panel-title {
+.title {
   font-size: var(--type-panel-title-size);
   letter-spacing: var(--tracking-title);
 }
 
 .flow {
-  display: grid;
   max-width: 58rem;
 }
 
@@ -101,7 +100,7 @@ h1:focus {
   content: "";
 }
 
-.step-number {
+.number {
   position: relative;
   z-index: 1;
   display: grid;
@@ -116,20 +115,20 @@ h1:focus {
   font-weight: var(--font-weight-bold);
 }
 
-.step-card,
+.card,
 .evidence li {
   border: var(--border-width-hairline) solid var(--color-border-subtle);
   border-radius: var(--radius-card);
 }
 
-.step-card {
+.card {
   gap: var(--space-3);
   padding: var(--space-5);
   background: var(--color-surface-raised);
   box-shadow: var(--shadow-surface);
 }
 
-.item-title {
+.item {
   font-size: var(--font-size-xl);
   letter-spacing: var(--tracking-title);
 }
@@ -139,7 +138,6 @@ h1:focus {
 }
 
 .gate {
-  display: grid;
   grid-template-columns: var(--space-7) minmax(0, var(--layout-reading-max));
   gap: var(--space-6);
   align-items: start;
@@ -150,7 +148,7 @@ h1:focus {
   background: color-mix(in srgb, var(--color-section-brand) 24%, transparent);
 }
 
-.gate-marker {
+.marker {
   width: var(--space-6);
   height: var(--space-6);
   margin-block-start: var(--space-2);
@@ -161,7 +159,6 @@ h1:focus {
 }
 
 .evidence {
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
   gap: var(--space-grid-gap);
   margin-block-end: 0;
@@ -175,7 +172,6 @@ h1:focus {
 }
 
 .closing {
-  display: grid;
   grid-template-columns: repeat(
     auto-fit,
     minmax(min(100%, var(--layout-reading-compact)), 1fr)
@@ -195,12 +191,10 @@ h1:focus {
   padding: var(--space-3) var(--space-5);
   border: var(--border-width-hairline) solid var(--color-border-on-dark);
   border-radius: var(--radius-pill);
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
   text-decoration: none;
 }
 
-.cta--primary {
+.primary {
   border-color: var(--color-surface-raised);
   background: var(--color-surface-raised);
   color: var(--color-text-heading);
@@ -219,7 +213,7 @@ h1:focus {
     transform: scale(var(--motion-hover-scale-compact));
   }
 
-  .cta--primary:hover {
+  .primary:hover {
     color: var(--color-text-heading);
   }
 }
