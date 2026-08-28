@@ -9,7 +9,7 @@
 .theme-switcher__trigger {
   display: inline-flex;
   min-width: 3.75rem;
-  min-height: 2.75rem;
+  min-height: var(--header-action-height, 2.75rem);
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
