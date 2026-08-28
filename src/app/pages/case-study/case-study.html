@@ -22,7 +22,10 @@
               @if (selectedCaseStudy.period; as period) {
                 <p class="case-study-period">{{ period }}</p>
               }
-              <h1 #pageHeading tabindex="-1">{{ localize(selectedCaseStudy.title) }}</h1>
+              <div class="section__title-lockup case-study-hero__title-lockup">
+                <h1 #pageHeading tabindex="-1">{{ localize(selectedCaseStudy.title) }}</h1>
+                <span class="section__title-line" aria-hidden="true"></span>
+              </div>
               <p class="case-study-role">{{ localize(selectedCaseStudy.role) }}</p>
               <p class="case-study-summary">{{ localize(selectedCaseStudy.summary) }}</p>
             </div>
@@ -33,11 +36,17 @@
       <section class="section section--editorial" aria-labelledby="case-context-title">
         <div class="section__shell case-study-grid" data-reveal-block>
           <div class="case-study-narrative">
-            <h2 id="case-context-title">{{ label('context') }}</h2>
+            <div class="section__title-lockup">
+              <h2 id="case-context-title">{{ label('context') }}</h2>
+              <span class="section__title-line" aria-hidden="true"></span>
+            </div>
             <p>{{ localize(selectedCaseStudy.context) }}</p>
           </div>
           <div class="case-study-narrative">
-            <h2>{{ label('problem') }}</h2>
+            <div class="section__title-lockup">
+              <h2>{{ label('problem') }}</h2>
+              <span class="section__title-line" aria-hidden="true"></span>
+            </div>
             <p>{{ localize(selectedCaseStudy.problem) }}</p>
           </div>
         </div>
@@ -46,11 +55,17 @@
       <section class="section section--editorial section--surface-deep" aria-labelledby="case-role-title">
         <div class="section__shell case-study-grid" data-reveal-block>
           <div class="case-study-narrative">
-            <h2 id="case-role-title">{{ label('roleAndScope') }}</h2>
+            <div class="section__title-lockup">
+              <h2 id="case-role-title">{{ label('roleAndScope') }}</h2>
+              <span class="section__title-line" aria-hidden="true"></span>
+            </div>
             <p>{{ localize(selectedCaseStudy.roleAndScope) }}</p>
           </div>
           <div class="case-study-narrative">
-            <h2>{{ label('solutionAndArchitecture') }}</h2>
+            <div class="section__title-lockup">
+              <h2>{{ label('solutionAndArchitecture') }}</h2>
+              <span class="section__title-line" aria-hidden="true"></span>
+            </div>
             <p>{{ localize(selectedCaseStudy.solutionAndArchitecture) }}</p>
           </div>
         </div>
@@ -63,7 +78,10 @@
         >
           <div class="section__shell">
             <div class="section__title-group" data-reveal-block>
-              <h2 id="case-system-maps-title">{{ label('systemMaps') }}</h2>
+              <div class="section__title-lockup">
+                <h2 id="case-system-maps-title">{{ label('systemMaps') }}</h2>
+                <span class="section__title-line" aria-hidden="true"></span>
+              </div>
             </div>
 
             <div class="section__body case-diagrams">
@@ -81,7 +99,10 @@
       >
         <div class="section__shell">
           <div class="section__title-group" data-reveal-block>
-            <h2 id="case-technologies-title">{{ label('technologies') }}</h2>
+            <div class="section__title-lockup">
+              <h2 id="case-technologies-title">{{ label('technologies') }}</h2>
+              <span class="section__title-line" aria-hidden="true"></span>
+            </div>
           </div>
 
           <div class="section__body technology-groups">
@@ -114,7 +135,10 @@
           <div class="section__shell case-study-grid" data-reveal-block>
             @if (selectedCaseStudy.decisions?.length) {
               <div class="case-study-narrative">
-                <h2 id="case-decisions-title">{{ label('decisionsAndTradeoffs') }}</h2>
+                <div class="section__title-lockup">
+                  <h2 id="case-decisions-title">{{ label('decisionsAndTradeoffs') }}</h2>
+                  <span class="section__title-line" aria-hidden="true"></span>
+                </div>
                 <ol class="decision-list">
                   @for (decision of selectedCaseStudy.decisions; track decision.id) {
                     <li>
@@ -134,7 +158,10 @@
 
             @if (selectedCaseStudy.challenges?.length) {
               <div class="case-study-narrative">
-                <h2 id="case-challenges-title">{{ label('challenges') }}</h2>
+                <div class="section__title-lockup">
+                  <h2 id="case-challenges-title">{{ label('challenges') }}</h2>
+                  <span class="section__title-line" aria-hidden="true"></span>
+                </div>
                 <ul class="challenge-list">
                   @for (challenge of selectedCaseStudy.challenges; track $index) {
                     <li>{{ localize(challenge) }}</li>
@@ -158,13 +185,19 @@
           <div class="section__shell case-study-grid" data-reveal-block>
             @if (selectedCaseStudy.engineeringQuality; as engineeringQuality) {
               <div class="case-study-narrative">
-                <h2 id="case-quality-title">{{ label('engineeringQuality') }}</h2>
+                <div class="section__title-lockup">
+                  <h2 id="case-quality-title">{{ label('engineeringQuality') }}</h2>
+                  <span class="section__title-line" aria-hidden="true"></span>
+                </div>
                 <p>{{ localize(engineeringQuality) }}</p>
               </div>
             }
             @if (selectedCaseStudy.outcome; as outcome) {
               <div class="case-study-narrative">
-                <h2 id="case-outcome-title">{{ label('outcome') }}</h2>
+                <div class="section__title-lockup">
+                  <h2 id="case-outcome-title">{{ label('outcome') }}</h2>
+                  <span class="section__title-line" aria-hidden="true"></span>
+                </div>
                 <p>{{ localize(outcome) }}</p>
               </div>
             }
@@ -175,7 +208,10 @@
   } @else {
     <section class="not-found section section--closing section--surface-brand">
       <div class="section__shell not-found__content" data-reveal-block>
-        <h1 #pageHeading tabindex="-1">{{ label('notFoundTitle') }}</h1>
+        <div class="section__title-lockup">
+          <h1 #pageHeading tabindex="-1">{{ label('notFoundTitle') }}</h1>
+          <span class="section__title-line" aria-hidden="true"></span>
+        </div>
         <p>{{ label('notFoundMessage') }}</p>
         <a routerLink="/" fragment="projects" [queryParams]="backQueryParams()">
           <span aria-hidden="true">←</span>

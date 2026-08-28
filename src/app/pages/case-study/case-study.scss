@@ -12,7 +12,6 @@
 
 .case-study-hero__content {
   width: 100%;
-  max-width: 58rem;
   min-width: 0;
   gap: var(--space-heading-gap);
 }
@@ -40,6 +39,10 @@
   gap: var(--space-5);
 }
 
+.case-study-hero__title-lockup {
+  width: 100%;
+}
+
 .case-study-period {
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
@@ -48,8 +51,7 @@
 }
 
 .case-study-hero h1 {
-  width: fit-content;
-  max-width: 20ch;
+  width: 100%;
   font-size: var(--type-section-title-size);
   letter-spacing: var(--tracking-heading);
 }
@@ -157,6 +159,11 @@
   gap: var(--space-3);
   padding-block-start: var(--space-4);
   border-block-start: var(--border-width-hairline) solid var(--color-border-on-dark);
+}
+
+.decision-list li:first-child {
+  padding-block-start: 0;
+  border-block-start: 0;
 }
 
 .decision-list h3 {

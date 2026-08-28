@@ -120,7 +120,9 @@
 }
 
 .section--chapter-member {
-  padding-block: clamp(var(--space-7), 7vw, var(--space-9));
+  padding-block:
+    var(--section-chapter-padding-start, clamp(var(--space-7), 7vw, var(--space-9)))
+    var(--section-chapter-padding-end, clamp(var(--space-7), 7vw, var(--space-9)));
 }
 
 .section--surface-warm {

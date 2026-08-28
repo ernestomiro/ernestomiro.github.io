@@ -10,9 +10,9 @@
 }
 
 .language-switcher button {
-  min-width: 2.75rem;
-  min-height: 2.75rem;
-  padding: var(--space-2) var(--space-3);
+  min-width: var(--language-option-size, 2.75rem);
+  min-height: var(--language-option-size, 2.75rem);
+  padding: var(--space-2) var(--language-option-padding-inline, var(--space-3));
   border: 0;
   background: transparent;
   color: var(--color-text-on-deep);

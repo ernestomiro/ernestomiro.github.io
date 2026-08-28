@@ -1,5 +1,22 @@
 <header #siteHeader class="site-header">
   <div class="layout-shell site-header__row">
+    <button
+      #menuButton
+      type="button"
+      class="site-header__menu-toggle"
+      aria-controls="mobile-primary-navigation"
+      [attr.aria-expanded]="menuOpen()"
+      [attr.aria-label]="label(menuOpen() ? 'closeMenu' : 'menu')"
+      [class.site-header__menu-toggle--open]="menuOpen()"
+      (click)="toggleMenu()"
+    >
+      <span class="site-header__hamburger" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
     <a
       class="site-header__brand"
       routerLink="/"
@@ -7,7 +24,7 @@
       [queryParams]="homeQueryParams()"
       (click)="closeMenu()"
     >
-      {{ label('identity') }}
+      <span class="site-header__brand-role">{{ label('identity') }}</span>
     </a>
 
     <nav class="site-header__desktop-nav" [attr.aria-label]="label('navigation')">
@@ -22,33 +39,24 @@
           {{ localize(item.label) }}
         </a>
       }
-
-      <a
-        class="site-header__resume"
-        [href]="resume().href"
-        [attr.download]="resume().fileName"
-      >
-        <span>{{ localize(resume().label) }}</span>
-        <span aria-hidden="true">↓</span>
-      </a>
     </nav>
 
     <div class="site-header__controls">
       <div class="site-header__desktop-preferences">
         <app-theme-switcher idPrefix="desktop-theme-switcher" />
         <app-language-switcher />
+        <a
+          class="site-header__resume"
+          [href]="resume().href"
+          [attr.download]="resume().fileName"
+        >
+          <span>{{ localize(resume().label) }}</span>
+          <span aria-hidden="true">↓</span>
+        </a>
       </div>
-      <button
-        #menuButton
-        type="button"
-        class="site-header__menu-toggle"
-        aria-controls="mobile-primary-navigation"
-        [attr.aria-expanded]="menuOpen()"
-        (click)="toggleMenu()"
-      >
-        {{ label('menu') }}
-        <span aria-hidden="true">{{ menuOpen() ? '×' : '+' }}</span>
-      </button>
+      <div class="site-header__mobile-language">
+        <app-language-switcher />
+      </div>
     </div>
   </div>
 
@@ -58,42 +66,61 @@
       class="site-header__mobile-nav"
     >
       <div class="layout-shell site-header__mobile-links">
-        <nav
-          class="site-header__mobile-primary-links"
-          [attr.aria-label]="label('navigation')"
-        >
-          @for (item of navigation(); track item.id) {
-            <a
-              routerLink="/"
-              [fragment]="item.id"
-              [queryParams]="homeQueryParams()"
-              [class.site-header__link--active]="activeSection() === item.id"
-              [attr.aria-current]="activeSection() === item.id ? 'location' : null"
-              (click)="closeMenu()"
-            >
-              {{ localize(item.label) }}
-            </a>
-          }
-        </nav>
-
         <div
-          class="site-header__mobile-preferences"
+          class="site-header__mobile-section"
           role="group"
-          [attr.aria-label]="label('preferences')"
+          aria-labelledby="mobile-navigation-section-title"
         >
-          <app-theme-switcher idPrefix="mobile-theme-switcher" />
-          <app-language-switcher />
+          <p
+            id="mobile-navigation-section-title"
+            class="site-header__mobile-section-title"
+          >
+            {{ label('navigationSection') }}
+          </p>
+          <nav
+            class="site-header__mobile-primary-links"
+            [attr.aria-label]="label('navigation')"
+          >
+            @for (item of navigation(); track item.id) {
+              <a
+                routerLink="/"
+                [fragment]="item.id"
+                [queryParams]="homeQueryParams()"
+                [class.site-header__link--active]="activeSection() === item.id"
+                [attr.aria-current]="activeSection() === item.id ? 'location' : null"
+                (click)="closeMenu()"
+              >
+                {{ localize(item.label) }}
+              </a>
+            }
+          </nav>
+
+          <a
+            class="site-header__resume"
+            [href]="resume().href"
+            [attr.download]="resume().fileName"
+            (click)="closeMenu()"
+          >
+            <span>{{ localize(resume().label) }}</span>
+            <span aria-hidden="true">↓</span>
+          </a>
         </div>
 
-        <a
-          class="site-header__resume"
-          [href]="resume().href"
-          [attr.download]="resume().fileName"
-          (click)="closeMenu()"
+        <div
+          class="site-header__mobile-section site-header__mobile-section--settings"
+          role="group"
+          aria-labelledby="mobile-settings-section-title"
         >
-          <span>{{ localize(resume().label) }}</span>
-          <span aria-hidden="true">↓</span>
-        </a>
+          <p
+            id="mobile-settings-section-title"
+            class="site-header__mobile-section-title"
+          >
+            {{ label('settingsSection') }}
+          </p>
+          <div class="site-header__mobile-preferences">
+            <app-theme-switcher idPrefix="mobile-theme-switcher" />
+          </div>
+        </div>
       </div>
     </div>
   }

@@ -1,4 +1,6 @@
 :host {
+  --section-chapter-padding-start: clamp(var(--space-2), 1vw, var(--space-3));
+
   display: block;
 }
 

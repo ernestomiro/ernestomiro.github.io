@@ -298,7 +298,7 @@ export const contactContent = {
       kind: 'email',
       label: {
         en: 'Email',
-        es: 'Email',
+        es: 'Correo electrónico',
       },
       displayValue: 'emiroperaza@gmail.com',
       href: 'mailto:emiroperaza@gmail.com',

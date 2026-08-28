@@ -42,7 +42,11 @@
 
 .project-card__link h3 {
   color: var(--color-text-heading);
-  font-size: var(--type-panel-title-size);
+  font-size: clamp(
+    var(--font-size-3xl),
+    1.5rem + 1.2vw,
+    var(--font-size-4xl)
+  );
   letter-spacing: var(--tracking-title);
 }
 

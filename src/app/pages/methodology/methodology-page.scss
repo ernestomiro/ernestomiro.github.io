@@ -21,9 +21,12 @@
 
 .hero-content {
   width: 100%;
-  max-width: 62rem;
   min-width: 0;
   gap: var(--space-heading-gap);
+}
+
+.hero-title-lockup {
+  width: 100%;
 }
 
 .back,
@@ -52,8 +55,7 @@
 }
 
 h1 {
-  width: fit-content;
-  max-width: 18ch;
+  width: 100%;
   font-size: var(--type-section-title-size);
   letter-spacing: var(--tracking-heading);
 }

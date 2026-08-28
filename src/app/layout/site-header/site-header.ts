@@ -33,13 +33,21 @@ const headerLabels = {
     en: 'Primary navigation',
     es: 'Navegación principal',
   },
-  preferences: {
-    en: 'Display preferences',
-    es: 'Preferencias de visualización',
+  navigationSection: {
+    en: 'Navigation',
+    es: 'Navegación',
+  },
+  settingsSection: {
+    en: 'Settings',
+    es: 'Ajustes',
   },
   menu: {
-    en: 'Menu',
-    es: 'Menú',
+    en: 'Open menu',
+    es: 'Abrir menú',
+  },
+  closeMenu: {
+    en: 'Close menu',
+    es: 'Cerrar menú',
   },
 } as const satisfies Record<string, LocalizedText>;
 
