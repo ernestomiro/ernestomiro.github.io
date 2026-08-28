@@ -7,7 +7,6 @@ import { NavigationSectionId, SectionId } from '../content/portfolio-content.mod
 const observedSectionIds: readonly NavigationSectionId[] = [
   'services',
   'projects',
-  'experience',
   'capabilities',
   'contact',
 ];
@@ -18,7 +17,6 @@ const sectionHeadingIds: Readonly<Record<SectionId, string>> = {
   expertise: 'expertise-title',
   technologies: 'technologies-title',
   projects: 'projects-title',
-  experience: 'experience-title',
   capabilities: 'capabilities-title',
   services: 'services-title',
   contact: 'contact-title',

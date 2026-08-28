@@ -2,6 +2,7 @@ import { CaseStudy, CaseStudySlug } from './case-study.models';
 import { pc01CaseStudy } from './pc-01.data';
 import { pc02CaseStudy } from './pc-02.data';
 import { pc04CaseStudy } from './pc-04.data';
+import { pc09CaseStudy } from './pc-09.data';
 
 const caseStudySlugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -9,6 +10,7 @@ const publishedCaseStudies = [
   pc01CaseStudy,
   pc02CaseStudy,
   pc04CaseStudy,
+  pc09CaseStudy,
 ] as const satisfies readonly CaseStudy[];
 
 function assertValidCaseStudies(caseStudies: readonly CaseStudy[]): void {

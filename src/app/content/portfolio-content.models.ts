@@ -12,14 +12,13 @@ export type SectionId =
   | 'expertise'
   | 'technologies'
   | 'projects'
-  | 'experience'
   | 'capabilities'
   | 'services'
   | 'contact';
 
 export type NavigationSectionId = Extract<
   SectionId,
-  'projects' | 'experience' | 'capabilities' | 'services' | 'contact'
+  'projects' | 'capabilities' | 'services' | 'contact'
 >;
 
 export type SectionHref = `#${SectionId}`;
@@ -92,20 +91,6 @@ export interface ProjectsContent {
   readonly items: readonly ProjectSummary[];
 }
 
-export interface ExperienceEntry {
-  readonly id: ContentId;
-  readonly title: LocalizedText;
-  readonly period: string;
-  readonly role: LocalizedText;
-  readonly summary: LocalizedText;
-}
-
-export interface ExperienceContent {
-  readonly title: LocalizedText;
-  readonly introduction?: LocalizedText;
-  readonly items: readonly ExperienceEntry[];
-}
-
 export interface ServiceItem {
   readonly id: ContentId;
   readonly title: LocalizedText;
@@ -156,7 +141,6 @@ export interface PortfolioContent {
   readonly expertise: ExpertiseContent;
   readonly technologies: TechnologiesContent;
   readonly projects: ProjectsContent;
-  readonly experience: ExperienceContent;
   readonly services: ServicesContent;
   readonly contact: ContactContent;
   readonly footer: FooterContent;

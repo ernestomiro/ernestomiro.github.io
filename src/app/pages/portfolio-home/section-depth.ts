@@ -15,7 +15,6 @@ const depthGroupSections = [
   { id: 'about', group: 'profile' },
   { id: 'services', group: 'profile' },
   { id: 'projects', group: 'evidence' },
-  { id: 'experience', group: 'evidence' },
   { id: 'expertise', group: 'evidence' },
   { id: 'technologies', group: 'evidence' },
   { id: 'contact', group: 'contact' },

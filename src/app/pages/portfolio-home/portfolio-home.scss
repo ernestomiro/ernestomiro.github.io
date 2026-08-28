@@ -4,7 +4,6 @@
 
 .portfolio-home {
   --depth-surface-coverage: 78%;
-  --depth-chapter-header-coverage: 88%;
 
   position: relative;
   isolation: isolate;
@@ -168,20 +167,20 @@
   padding-block: clamp(var(--space-7), 6vw, var(--space-8));
   background: color-mix(
     in srgb,
-    var(--color-section-deep) var(--depth-chapter-header-coverage),
+    var(--color-section-cool) var(--depth-surface-coverage),
     transparent
   );
-  color: var(--color-text-on-deep);
+  color: var(--color-text-primary);
 }
 
 .portfolio-home__capabilities-header h2 {
-  color: var(--color-text-on-deep);
+  color: var(--color-text-heading);
   font-size: var(--type-section-title-size);
   letter-spacing: var(--tracking-heading);
 }
 
 .portfolio-home__capabilities-header h2:focus {
-  outline: var(--focus-ring-width) solid var(--color-focus-on-dark);
+  outline: var(--focus-ring-width) solid var(--color-focus-outer);
   outline-offset: var(--focus-ring-offset);
   border-radius: var(--radius-control);
 }

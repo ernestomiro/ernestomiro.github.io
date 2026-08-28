@@ -4,7 +4,6 @@ import {
   CapabilitiesContent,
   ContactContent,
   ExpertiseContent,
-  ExperienceContent,
   FooterContent,
   HeroContent,
   NavigationItem,
@@ -24,11 +23,6 @@ export const navigationContent = [
     id: 'projects',
     label: { en: 'Projects', es: 'Proyectos' },
     href: '#projects',
-  },
-  {
-    id: 'experience',
-    label: { en: 'Experience', es: 'Experiencia' },
-    href: '#experience',
   },
   {
     id: 'capabilities',
@@ -228,63 +222,6 @@ export const projectsContent = {
     period,
   })),
 } satisfies ProjectsContent;
-
-export const experienceContent = {
-  title: {
-    en: 'Experience',
-    es: 'Experiencia',
-  },
-  items: [
-    {
-      id: 'enterprise-crm-automotive-sector',
-      title: {
-        en: 'Enterprise CRM — Automotive Sector',
-        es: 'CRM empresarial — sector automotriz',
-      },
-      period: '2026',
-      role: {
-        en: 'Full-Stack Engineering & Technical Leadership',
-        es: 'Ingeniería Full Stack y liderazgo técnico',
-      },
-      summary: {
-        en: 'Design and development of an enterprise CRM for a confidential client, including architecture, end-to-end development, infrastructure planning, and coordination of a small team.',
-        es: 'Diseño y desarrollo de un CRM empresarial para un cliente confidencial, incluyendo arquitectura, desarrollo integral, planificación de infraestructura y coordinación de un equipo pequeño.',
-      },
-    },
-    {
-      id: 'saas-cloud-platforms-itopia',
-      title: {
-        en: 'SaaS & Cloud Platforms — Itopia',
-        es: 'Plataformas SaaS y cloud — Itopia',
-      },
-      period: '2019–2026',
-      role: {
-        en: 'Software Engineering, Architecture & Technical Leadership',
-        es: 'Ingeniería de software, arquitectura y liderazgo técnico',
-      },
-      summary: {
-        en: 'Work across two generations of multi-tenant SaaS platforms, distributed services, cloud architecture, identity, integrations, frontend applications, and technical leadership.',
-        es: 'Trabajo en dos generaciones de plataformas SaaS multi-tenant, servicios distribuidos, arquitectura cloud, identidad, integraciones, aplicaciones frontend y liderazgo técnico.',
-      },
-    },
-    {
-      id: 'enterprise-systems-xetid',
-      title: {
-        en: 'Enterprise Systems — XETID',
-        es: 'Sistemas empresariales — XETID',
-      },
-      period: '2017–2019',
-      role: {
-        en: 'Full-Stack Development & Requirements Analysis',
-        es: 'Desarrollo Full Stack y análisis de requisitos',
-      },
-      summary: {
-        en: 'Development and maintenance of enterprise systems across backend, frontend, and data, translating functional and technical requirements into working solutions.',
-        es: 'Desarrollo y mantenimiento de sistemas empresariales en backend, frontend y datos, convirtiendo requisitos funcionales y técnicos en soluciones operativas.',
-      },
-    },
-  ],
-} as const satisfies ExperienceContent;
 
 export const servicesContent = {
   title: {

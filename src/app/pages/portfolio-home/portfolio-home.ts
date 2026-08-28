@@ -4,7 +4,6 @@ import {
   capabilitiesContent,
   contactContent,
   expertiseContent,
-  experienceContent,
   heroContent,
   projectsContent,
   servicesContent,
@@ -19,7 +18,6 @@ import {
 import { AboutSection } from '../../sections/about/about-section';
 import { ContactSection } from '../../sections/contact/contact-section';
 import { ExpertiseSection } from '../../sections/expertise/expertise-section';
-import { ExperienceSection } from '../../sections/experience/experience-section';
 import { HeroSection } from '../../sections/hero/hero-section';
 import { ProjectsSection } from '../../sections/projects/projects-section';
 import { ServicesSection } from '../../sections/services/services-section';
@@ -50,7 +48,6 @@ const homeMetadata = {
     AboutSection,
     ContactSection,
     ExpertiseSection,
-    ExperienceSection,
     HeroSection,
     ProjectsSection,
     SectionDepth,
@@ -73,7 +70,6 @@ export class PortfolioHomePage {
   protected readonly methodologyTeaser = methodologyContent.teaser;
   protected readonly technologiesContent = technologiesContent;
   protected readonly projectsContent = projectsContent;
-  protected readonly experienceContent = experienceContent;
   protected readonly servicesContent = servicesContent;
   protected readonly contactContent = contactContent;
 
