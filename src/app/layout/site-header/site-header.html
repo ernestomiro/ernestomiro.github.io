@@ -43,8 +43,6 @@
 
     <div class="c">
       <div class="p">
-        <app-theme-switcher idPrefix="desktop-theme-switcher" />
-        <app-language-switcher />
         <a
           class="cv"
           [href]="resume().href"
@@ -53,6 +51,8 @@
           <span>{{ localize(resume().label) }}</span>
           <span aria-hidden="true">↓</span>
         </a>
+        <app-language-switcher />
+        <app-theme-switcher idPrefix="desktop-theme-switcher" />
       </div>
       <div class="l">
         <app-language-switcher />
