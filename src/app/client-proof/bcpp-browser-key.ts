@@ -38,6 +38,10 @@ export class BcppBrowserKey {
     return encodeBase64Url(signature);
   }
 
+  rotate(): void {
+    this.keyPair = undefined;
+  }
+
   private async getOrCreateKeyPair(): Promise<CryptoKeyPair> {
     this.assertBrowserCrypto();
 

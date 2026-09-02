@@ -26,11 +26,34 @@ export class BcppEnrollment {
 
   readonly session = this.sessionState.asReadonly();
 
+  getOrEnroll(): Promise<BcppEnrollmentSession> {
+    const session = this.sessionState();
+    if (
+      session &&
+      Date.parse(session.expiresAtUtc) > Date.now() + 5_000
+    ) {
+      return Promise.resolve(session);
+    }
+
+    if (session) {
+      this.sessionState.set(undefined);
+      this.browserKey.rotate();
+    }
+
+    return this.enroll();
+  }
+
   enroll(): Promise<BcppEnrollmentSession> {
     if (!this.enrollmentInFlight) {
-      this.enrollmentInFlight = this.runEnrollment().finally(() => {
-        this.enrollmentInFlight = undefined;
-      });
+      this.enrollmentInFlight = this.runEnrollment()
+        .catch((error: unknown) => {
+          this.sessionState.set(undefined);
+          this.browserKey.rotate();
+          throw error;
+        })
+        .finally(() => {
+          this.enrollmentInFlight = undefined;
+        });
     }
 
     return this.enrollmentInFlight;

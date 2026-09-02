@@ -5,7 +5,7 @@ export interface BcppProtectedEchoRequest {
 export interface BcppProtectedEchoResponse {
   readonly message: string;
   readonly acceptedAtUtc: string;
-  readonly protectionStage: 'browser-context-v1';
+  readonly protectionStage: 'request-signature-v1';
 }
 
 export interface BcppClientCapabilities {
