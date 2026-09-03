@@ -5,7 +5,7 @@ export interface BcppProtectedEchoRequest {
 export interface BcppProtectedEchoResponse {
   readonly message: string;
   readonly acceptedAtUtc: string;
-  readonly protectionStage: 'request-signature-v1';
+  readonly protectionStage: 'rotating-token-v1';
 }
 
 export interface BcppClientCapabilities {
@@ -38,7 +38,13 @@ export interface BcppEnrollmentSession {
   readonly sessionId: string;
   readonly publicKeyThumbprint: string;
   readonly expiresAtUtc: string;
+  readonly nextToken: BcppProofToken;
   readonly protectionStage: 'enrollment-v1';
+}
+
+export interface BcppProofToken {
+  readonly value: string;
+  readonly expiresAtUtc: string;
 }
 
 export interface BcppChallengeWorkRequest {

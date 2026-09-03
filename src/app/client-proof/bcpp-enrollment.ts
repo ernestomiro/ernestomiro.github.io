@@ -10,6 +10,7 @@ import { BcppBrowserKey } from './bcpp-browser-key';
 import { BcppChallengeWorker } from './bcpp-challenge-worker';
 import { BcppClient } from './bcpp-client';
 import { BcppEnrollmentSession } from './bcpp.models';
+import { parseBcppProofToken } from './bcpp-proof-token';
 
 @Injectable({
   providedIn: 'root',
@@ -30,7 +31,8 @@ export class BcppEnrollment {
     const session = this.sessionState();
     if (
       session &&
-      Date.parse(session.expiresAtUtc) > Date.now() + 5_000
+      Date.parse(session.expiresAtUtc) > Date.now() + 5_000 &&
+      Date.parse(session.nextToken.expiresAtUtc) > Date.now() + 5_000
     ) {
       return Promise.resolve(session);
     }
@@ -43,12 +45,43 @@ export class BcppEnrollment {
     return this.enroll();
   }
 
+  acceptNextToken(value: string | null): boolean {
+    const session = this.sessionState();
+    if (!session || !value) {
+      return false;
+    }
+
+    try {
+      const token = parseBcppProofToken(value);
+      if (token.expiresUnixMilliseconds <= Date.now() + 1_000) {
+        return false;
+      }
+
+      this.sessionState.set({
+        ...session,
+        nextToken: {
+          value,
+          expiresAtUtc: new Date(
+            token.expiresUnixMilliseconds,
+          ).toISOString(),
+        },
+      });
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  invalidate(): void {
+    this.sessionState.set(undefined);
+    this.browserKey.rotate();
+  }
+
   enroll(): Promise<BcppEnrollmentSession> {
     if (!this.enrollmentInFlight) {
       this.enrollmentInFlight = this.runEnrollment()
         .catch((error: unknown) => {
-          this.sessionState.set(undefined);
-          this.browserKey.rotate();
+          this.invalidate();
           throw error;
         })
         .finally(() => {
