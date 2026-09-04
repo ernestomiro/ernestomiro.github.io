@@ -1,13 +1,3 @@
-export interface BcppProtectedEchoRequest {
-  readonly message: string;
-}
-
-export interface BcppProtectedEchoResponse {
-  readonly message: string;
-  readonly acceptedAtUtc: string;
-  readonly protectionStage: 'rotating-token-v1';
-}
-
 export interface BcppClientCapabilities {
   readonly webCrypto: boolean;
   readonly dedicatedWorker: boolean;

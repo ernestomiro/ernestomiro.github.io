@@ -407,17 +407,20 @@ export const contactContent = {
       },
     },
     {
-      id: 'phone',
-      kind: 'phone',
+      id: 'message',
+      kind: 'message',
       label: {
-        en: 'Phone',
-        es: 'Teléfono',
+        en: 'Message',
+        es: 'Mensaje',
       },
-      displayValue: '+52 33 1788 8852',
-      href: 'tel:+523317888852',
+      displayValue: {
+        en: 'Leave a message',
+        es: 'Dejar un mensaje',
+      },
+      path: '/contact',
       accessibleName: {
-        en: 'Call +52 33 1788 8852',
-        es: 'Llamar al +52 33 1788 8852',
+        en: 'Open the contact form',
+        es: 'Abrir el formulario de contacto',
       },
     },
   ],

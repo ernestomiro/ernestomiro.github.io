@@ -7,8 +7,6 @@ import {
   BcppEnrollmentCompleteRequest,
   BcppEnrollmentSession,
   BcppEnrollmentStartRequest,
-  BcppProtectedEchoRequest,
-  BcppProtectedEchoResponse,
 } from './bcpp.models';
 
 @Injectable({
@@ -32,17 +30,6 @@ export class BcppClient {
   ): Observable<BcppEnrollmentSession> {
     return this.post<BcppEnrollmentSession>(
       '/api/client-proof/enrollment/complete',
-      request,
-    );
-  }
-
-  protectedEcho(message: string): Observable<BcppProtectedEchoResponse> {
-    const request: BcppProtectedEchoRequest = {
-      message,
-    };
-
-    return this.post<BcppProtectedEchoResponse>(
-      '/api/protected-test/echo',
       request,
     );
   }

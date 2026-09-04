@@ -111,16 +111,28 @@ export interface ServicesContent {
   readonly contactAction: ActionLink;
 }
 
-export type ContactChannelKind = 'email' | 'phone';
+export type ContactChannelKind = 'email' | 'message';
 
-export interface ContactChannel {
+interface ContactChannelBase {
   readonly id: ContentId;
   readonly kind: ContactChannelKind;
   readonly label: LocalizedText;
-  readonly displayValue: string;
-  readonly href: string;
   readonly accessibleName: LocalizedText;
 }
+
+export interface DirectContactChannel extends ContactChannelBase {
+  readonly kind: 'email';
+  readonly displayValue: string;
+  readonly href: string;
+}
+
+export interface RouteContactChannel extends ContactChannelBase {
+  readonly kind: 'message';
+  readonly displayValue: LocalizedText;
+  readonly path: `/${string}`;
+}
+
+export type ContactChannel = DirectContactChannel | RouteContactChannel;
 
 export interface ContactContent {
   readonly title: LocalizedText;

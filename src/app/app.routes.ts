@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { contactFormRoutePath } from './content/contact-form/contact-form.data';
 import { methodologyRoutePath } from './content/methodology/methodology.data';
 import { PortfolioHomePage } from './pages/portfolio-home/portfolio-home';
 
@@ -10,6 +11,11 @@ const loadMethodologyPage = () =>
     ({ MethodologyPage }) => MethodologyPage,
   );
 
+const loadContactPage = () =>
+  import('./pages/contact/contact-page').then(
+    ({ ContactPage }) => ContactPage,
+  );
+
 export const routes: Routes = [
   {
     path: '',
@@ -19,6 +25,10 @@ export const routes: Routes = [
   {
     path: methodologyRoutePath,
     loadComponent: loadMethodologyPage,
+  },
+  {
+    path: contactFormRoutePath,
+    loadComponent: loadContactPage,
   },
   {
     path: 'projects/:slug',

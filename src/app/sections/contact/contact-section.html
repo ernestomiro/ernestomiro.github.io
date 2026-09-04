@@ -19,11 +19,30 @@
     <ul class="section__body contact-list">
       @for (channel of content().channels; track channel.id) {
         <li>
-          <a class="contact-channel" [href]="channel.href" [attr.aria-label]="localize(channel.accessibleName)">
-            <span class="contact-channel__label">{{ localize(channel.label) }}</span>
-            <span class="contact-channel__value">{{ channel.displayValue }}</span>
-            <span aria-hidden="true">→</span>
-          </a>
+          @if (channel.kind === 'message') {
+            <a
+              class="contact-channel"
+              [routerLink]="channel.path"
+              [queryParams]="contactQueryParams()"
+              [attr.aria-label]="localize(channel.accessibleName)"
+            >
+              <span class="contact-channel__label">{{ localize(channel.label) }}</span>
+              <span class="contact-channel__value">
+                {{ localize(channel.displayValue) }}
+              </span>
+              <span aria-hidden="true">→</span>
+            </a>
+          } @else {
+            <a
+              class="contact-channel"
+              [href]="channel.href"
+              [attr.aria-label]="localize(channel.accessibleName)"
+            >
+              <span class="contact-channel__label">{{ localize(channel.label) }}</span>
+              <span class="contact-channel__value">{{ channel.displayValue }}</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          }
         </li>
       }
     </ul>

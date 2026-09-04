@@ -1,0 +1,211 @@
+<main
+  id="main-content"
+  class="contact-page route-depth-page page-reveal"
+  appSectionReveal
+>
+  <header class="hero section section--feature section--surface-brand">
+    <div class="section__shell hero__content">
+      <a
+        class="back"
+        routerLink="/"
+        fragment="contact"
+        [queryParams]="homeQueryParams()"
+      >
+        <span aria-hidden="true">←</span>
+        {{ localize(content.hero.backLabel) }}
+      </a>
+
+      <div class="hero__copy">
+        <p class="eyebrow">{{ localize(content.hero.label) }}</p>
+        <div class="section__title-lockup">
+          <h1 #pageHeading tabindex="-1">
+            {{ localize(content.hero.title) }}
+          </h1>
+          <span class="section__title-line" aria-hidden="true"></span>
+        </div>
+        <p class="lead">{{ localize(content.hero.lead) }}</p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section section--collection section--surface-warm">
+    <div class="section__shell contact-layout">
+      <div class="form-card" data-reveal-block>
+        @if (!isConfigured) {
+          <div class="status-panel" role="status">
+            <h2>{{ localize(content.status.unavailableTitle) }}</h2>
+            <p>{{ localize(content.status.unavailableBody) }}</p>
+          </div>
+        } @else if (submissionState() === 'success') {
+          <div class="status-panel" role="status" aria-live="polite">
+            <h2>{{ localize(content.status.successTitle) }}</h2>
+            <p>{{ localize(content.status.successBody) }}</p>
+            <button type="button" (click)="startAnotherMessage()">
+              {{ localize(content.status.sendAnother) }}
+            </button>
+          </div>
+        } @else {
+          <form
+            [formGroup]="form"
+            [attr.aria-busy]="submissionState() === 'submitting'"
+            (ngSubmit)="submit()"
+            novalidate
+          >
+            <p class="required-hint">{{ localize(content.form.requiredHint) }}</p>
+
+            @if (submissionState() === 'error') {
+              <div
+                #errorSummary
+                class="error-summary"
+                role="alert"
+                tabindex="-1"
+              >
+                <h2>{{ localize(content.status.errorTitle) }}</h2>
+                <p>{{ localize(content.status.errorBody) }}</p>
+              </div>
+            } @else if (submitted() && form.invalid) {
+              <div
+                #errorSummary
+                class="error-summary"
+                role="alert"
+                tabindex="-1"
+              >
+                <p>{{ localize(content.validation.summary) }}</p>
+              </div>
+            }
+
+            <div class="field">
+              <label for="contact-name">
+                {{ localize(content.form.name) }} <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id="contact-name"
+                type="text"
+                formControlName="name"
+                autocomplete="name"
+                maxlength="100"
+                [attr.aria-invalid]="showControlError('name')"
+                [attr.aria-describedby]="showControlError('name') ? 'contact-name-error' : null"
+              />
+              @if (showControlError('name')) {
+                <p id="contact-name-error" class="field-error">
+                  {{ localize(content.validation.name) }}
+                </p>
+              }
+            </div>
+
+            <fieldset
+              class="contact-methods"
+              [attr.aria-describedby]="showContactError() ? 'contact-method-error' : null"
+            >
+              <legend>{{ localize(content.form.contactHint) }}</legend>
+
+              <div class="field">
+                <label for="contact-email">{{ localize(content.form.email) }}</label>
+                <input
+                  id="contact-email"
+                  type="email"
+                  formControlName="email"
+                  autocomplete="email"
+                  maxlength="254"
+                  [attr.aria-invalid]="showControlError('email')"
+                  [attr.aria-describedby]="showControlError('email') ? 'contact-email-error' : null"
+                />
+                @if (showControlError('email')) {
+                  <p id="contact-email-error" class="field-error">
+                    {{ localize(content.validation.email) }}
+                  </p>
+                }
+              </div>
+
+              <div class="field">
+                <label for="contact-phone">{{ localize(content.form.phone) }}</label>
+                <input
+                  id="contact-phone"
+                  type="tel"
+                  formControlName="phone"
+                  autocomplete="tel"
+                  maxlength="32"
+                  [attr.aria-invalid]="showControlError('phone')"
+                  [attr.aria-describedby]="showControlError('phone') ? 'contact-phone-error' : null"
+                />
+                @if (showControlError('phone')) {
+                  <p id="contact-phone-error" class="field-error">
+                    {{ localize(content.validation.phone) }}
+                  </p>
+                }
+              </div>
+
+              @if (showContactError()) {
+                <p id="contact-method-error" class="field-error" role="alert">
+                  {{ localize(content.validation.contact) }}
+                </p>
+              }
+            </fieldset>
+
+            <div class="field">
+              <label for="contact-message">
+                {{ localize(content.form.message) }} <span aria-hidden="true">*</span>
+              </label>
+              <textarea
+                id="contact-message"
+                formControlName="message"
+                rows="8"
+                maxlength="2000"
+                [attr.aria-invalid]="showControlError('message')"
+                [attr.aria-describedby]="showControlError('message') ? 'contact-message-error' : null"
+              ></textarea>
+              @if (showControlError('message')) {
+                <p id="contact-message-error" class="field-error">
+                  {{ localize(content.validation.message) }}
+                </p>
+              }
+            </div>
+
+            <div class="consent">
+              <input
+                id="contact-consent"
+                type="checkbox"
+                formControlName="consent"
+                [attr.aria-invalid]="showControlError('consent')"
+                [attr.aria-describedby]="showControlError('consent') ? 'contact-consent-error' : null"
+              />
+              <div>
+                <label for="contact-consent">
+                  {{ localize(content.form.consent) }}
+                  <span aria-hidden="true">*</span>
+                </label>
+                @if (showControlError('consent')) {
+                  <p id="contact-consent-error" class="field-error">
+                    {{ localize(content.validation.consent) }}
+                  </p>
+                }
+              </div>
+            </div>
+
+            <button type="submit" [disabled]="submissionState() === 'submitting'">
+              {{
+                localize(
+                  submissionState() === 'submitting'
+                    ? content.form.submitting
+                    : content.form.submit
+                )
+              }}
+            </button>
+          </form>
+        }
+      </div>
+
+      @if (emailChannel; as email) {
+        <aside class="email-card" data-reveal-block>
+          <h2>{{ localize(content.fallback.title) }}</h2>
+          <p>{{ localize(content.fallback.body) }}</p>
+          <a [href]="email.href">
+            {{ localize(content.fallback.action) }}
+            <span aria-hidden="true">→</span>
+          </a>
+        </aside>
+      }
+    </div>
+  </section>
+</main>

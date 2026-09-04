@@ -3,6 +3,6 @@ export const environment = {
   bcpp: {
     enabled: true,
     apiBaseUrl: 'https://localhost:7088',
-    protectedPaths: ['/api/protected-test/echo'],
+    protectedPaths: ['/api/contact-messages'],
   },
 } as const;
