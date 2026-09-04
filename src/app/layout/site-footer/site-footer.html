@@ -2,14 +2,11 @@
   <div class="layout-shell site-footer__inner">
     <p class="site-footer__name">{{ content().name }}</p>
 
-    <a
+    <app-resume-download
       class="site-footer__resume"
-      [href]="content().resume.href"
-      [attr.download]="content().resume.fileName"
-    >
-      <span>{{ localize(content().resume.label) }}</span>
-      <span aria-hidden="true">↓</span>
-    </a>
+      [content]="content().resume"
+      placement="above"
+    />
 
     <p class="site-footer__copyright">
       © {{ currentYear }} {{ content().copyrightOwner }}

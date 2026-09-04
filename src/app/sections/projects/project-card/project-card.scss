@@ -14,6 +14,7 @@
 }
 
 .project-card__link {
+  grid-template-rows: minmax(0, 1fr) auto;
   min-height: 100%;
   gap: var(--space-6);
   padding: var(--space-card-inset);
@@ -29,6 +30,7 @@
 }
 
 .project-card__content {
+  align-content: start;
   gap: var(--space-4);
 }
 

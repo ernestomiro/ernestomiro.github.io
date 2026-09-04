@@ -43,8 +43,7 @@
 }
 
 .n a,
-.d a,
-.cv {
+.d a {
   color: var(--color-text-on-deep);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
@@ -57,18 +56,6 @@
 
 .n a {
   white-space: nowrap;
-}
-
-.cv {
-  display: inline-flex;
-  min-height: var(--header-action-height, 2.75rem);
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
-  border: var(--border-width-hairline) solid var(--color-border-on-dark);
-  border-radius: var(--radius-pill);
-  text-decoration: none;
 }
 
 .n .a,
@@ -164,6 +151,10 @@
   width: 100%;
 }
 
+.ds app-resume-download {
+  width: 100%;
+}
+
 .dc a {
   display: flex;
   min-height: 2.75rem;
@@ -179,8 +170,7 @@
 @media (hover: hover) and (pointer: fine) {
   .b:hover,
   .n a:hover,
-  .d a:hover,
-  .cv:hover {
+  .d a:hover {
     color: var(--color-text-on-deep);
     text-decoration-color: currentcolor;
     transform: scale(var(--motion-hover-scale-compact));

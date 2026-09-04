@@ -24,23 +24,40 @@
       }
     </ul>
 
-    <a
-      class="expertise-methodology"
-      [routerLink]="methodology().path"
-      [queryParams]="methodologyQueryParams()"
+    <section
+      class="expertise-card expertise-delivery"
+      aria-labelledby="expertise-delivery-title"
+      data-reveal-block
     >
-      <div class="expertise-methodology__content">
-        <p class="expertise-methodology__label">
-          {{ localize(methodology().label) }}
-        </p>
-        <h4>{{ localize(methodology().title) }}</h4>
-        <p>{{ localize(methodology().description) }}</p>
-      </div>
+      <p class="expertise-delivery__label">
+        {{ localize(teamDelivery().label) }}
+      </p>
+      <h4 id="expertise-delivery-title">
+        {{ localize(teamDelivery().title) }}
+      </h4>
+      <p>{{ localize(teamDelivery().description) }}</p>
+      <p>{{ localize(teamDelivery().tools) }}</p>
+    </section>
 
-      <span class="expertise-methodology__link">
-        {{ localize(methodology().actionLabel) }}
-        <span aria-hidden="true">→</span>
-      </span>
-    </a>
+    <div class="expertise-methodology-reveal" data-reveal-block>
+      <a
+        class="expertise-methodology"
+        [routerLink]="methodology().path"
+        [queryParams]="methodologyQueryParams()"
+      >
+        <div class="expertise-methodology__content">
+          <p class="expertise-methodology__label">
+            {{ localize(methodology().label) }}
+          </p>
+          <h4>{{ localize(methodology().title) }}</h4>
+          <p>{{ localize(methodology().description) }}</p>
+        </div>
+
+        <span class="expertise-methodology__link">
+          {{ localize(methodology().actionLabel) }}
+          <span aria-hidden="true">→</span>
+        </span>
+      </a>
+    </div>
   </div>
 </section>

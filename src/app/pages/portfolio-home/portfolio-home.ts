@@ -7,6 +7,7 @@ import {
   heroContent,
   projectsContent,
   servicesContent,
+  teamDeliveryContent,
   technologiesContent,
 } from '../../content/portfolio-content.data';
 import { methodologyContent } from '../../content/methodology/methodology.data';
@@ -67,6 +68,7 @@ export class PortfolioHomePage {
   protected readonly aboutContent = aboutContent;
   protected readonly capabilitiesContent = capabilitiesContent;
   protected readonly expertiseContent = expertiseContent;
+  protected readonly teamDeliveryContent = teamDeliveryContent;
   protected readonly methodologyTeaser = methodologyContent.teaser;
   protected readonly technologiesContent = technologiesContent;
   protected readonly projectsContent = projectsContent;

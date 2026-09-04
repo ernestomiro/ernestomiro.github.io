@@ -43,14 +43,7 @@
 
     <div class="c">
       <div class="p">
-        <a
-          class="cv"
-          [href]="resume().href"
-          [attr.download]="resume().fileName"
-        >
-          <span>{{ localize(resume().label) }}</span>
-          <span aria-hidden="true">↓</span>
-        </a>
+        <app-resume-download [content]="resume()" />
         <app-language-switcher />
         <app-theme-switcher idPrefix="desktop-theme-switcher" />
       </div>
@@ -83,15 +76,12 @@
 
         <div class="ds s">
           <app-theme-switcher idPrefix="mobile-theme-switcher" />
-          <a
-            class="cv"
-            [href]="resume().href"
-            [attr.download]="resume().fileName"
-            (click)="closeMenu()"
-          >
-            <span>{{ localize(resume().label) }}</span>
-            <span aria-hidden="true">↓</span>
-          </a>
+          <app-resume-download
+            class="mobile-resume"
+            [content]="resume()"
+            placement="inline"
+            (optionSelected)="closeMenu()"
+          />
         </div>
       </div>
     </div>

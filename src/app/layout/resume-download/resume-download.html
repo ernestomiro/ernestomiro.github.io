@@ -1,0 +1,29 @@
+<details
+  #details
+  class="resume-download"
+  [class.resume-download--above]="placement() === 'above'"
+  [class.resume-download--inline]="placement() === 'inline'"
+  (keydown.escape)="closeFromEscape($event)"
+>
+  <summary #trigger class="resume-download__trigger">
+    <span>{{ localize(content().label) }}</span>
+    <span class="resume-download__chevron" aria-hidden="true">▾</span>
+  </summary>
+
+  <ul class="resume-download__options">
+    @for (option of content().options; track option.id) {
+      <li>
+        <a
+          class="resume-download__option"
+          [href]="localize(option.href)"
+          [attr.download]="localize(option.fileName)"
+          [attr.aria-label]="localize(option.accessibleName)"
+          (click)="closeAfterSelection()"
+        >
+          <span>{{ localize(option.label) }}</span>
+          <span aria-hidden="true">↓</span>
+        </a>
+      </li>
+    }
+  </ul>
+</details>

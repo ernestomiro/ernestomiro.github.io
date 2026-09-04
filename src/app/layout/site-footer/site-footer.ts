@@ -1,25 +1,16 @@
-import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
-import {
-  FooterContent,
-  LocalizedText,
-  selectLocalizedText,
-} from '../../content/portfolio-content.models';
-import { LanguageState } from '../../language/language-state';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { FooterContent } from '../../content/portfolio-content.models';
+import { ResumeDownload } from '../resume-download/resume-download';
 
 @Component({
   selector: 'app-site-footer',
+  imports: [ResumeDownload],
   templateUrl: './site-footer.html',
   styleUrl: './site-footer.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SiteFooter {
-  private readonly languageState = inject(LanguageState);
-
   readonly content = input.required<FooterContent>();
 
   protected readonly currentYear = new Date().getFullYear();
-
-  protected localize(text: LocalizedText): string {
-    return selectLocalizedText(text, this.languageState.language());
-  }
 }

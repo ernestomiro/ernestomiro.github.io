@@ -63,6 +63,13 @@ export interface ExpertiseContent {
   readonly items: readonly Capability[];
 }
 
+export interface TeamDeliveryContent {
+  readonly label: LocalizedText;
+  readonly title: LocalizedText;
+  readonly description: LocalizedText;
+  readonly tools: LocalizedText;
+}
+
 export interface TechnologyGroup {
   readonly id: ContentId;
   readonly label: LocalizedText;
@@ -121,10 +128,19 @@ export interface ContactContent {
   readonly channels: readonly ContactChannel[];
 }
 
+export type ResumeVariantId = 'ats' | 'executive';
+
+export interface ResumeOption {
+  readonly id: ResumeVariantId;
+  readonly label: LocalizedText;
+  readonly accessibleName: LocalizedText;
+  readonly href: LocalizedText;
+  readonly fileName: LocalizedText;
+}
+
 export interface ResumeContent {
   readonly label: LocalizedText;
-  readonly href: string;
-  readonly fileName: string;
+  readonly options: readonly ResumeOption[];
 }
 
 export interface FooterContent {

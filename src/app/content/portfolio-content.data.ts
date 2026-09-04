@@ -10,6 +10,7 @@ import {
   ProjectsContent,
   ResumeContent,
   ServicesContent,
+  TeamDeliveryContent,
   TechnologiesContent,
 } from './portfolio-content.models';
 
@@ -133,6 +134,25 @@ export const expertiseContent = {
     },
   ],
 } as const satisfies ExpertiseContent;
+
+export const teamDeliveryContent = {
+  label: {
+    en: 'Project delivery with teams',
+    es: 'Entrega de proyectos en equipo',
+  },
+  title: {
+    en: 'Agile delivery with Scrum.',
+    es: 'Entrega ágil con Scrum.',
+  },
+  description: {
+    en: 'At project level, Scrum gives the team a shared cadence to refine and prioritize the backlog, plan sprints, coordinate delivery, review outcomes, and improve the process.',
+    es: 'A nivel de proyecto, Scrum aporta al equipo una cadencia compartida para refinar y priorizar el backlog, planificar sprints, coordinar la entrega, revisar resultados y mejorar el proceso.',
+  },
+  tools: {
+    en: 'Azure DevOps or Jira can support backlog management, sprint planning, work tracking, and shared visibility of progress and blockers.',
+    es: 'Azure DevOps o Jira pueden apoyar la gestión del backlog, la planificación de sprints, el seguimiento del trabajo y la visibilidad compartida del avance y los bloqueos.',
+  },
+} as const satisfies TeamDeliveryContent;
 
 export const technologiesContent = {
   title: {
@@ -405,11 +425,49 @@ export const contactContent = {
 
 export const resumeContent = {
   label: {
-    en: 'Download resume (English)',
-    es: 'Descargar CV (inglés)',
+    en: 'Download resume',
+    es: 'Descargar CV',
   },
-  href: '/documents/ernesto-miro-resume-en.pdf',
-  fileName: 'Ernesto_Miro_Peraza_Resume_EN.pdf',
+  options: [
+    {
+      id: 'ats',
+      label: {
+        en: 'ATS',
+        es: 'ATS',
+      },
+      accessibleName: {
+        en: 'Download ATS resume',
+        es: 'Descargar CV ATS',
+      },
+      href: {
+        en: '/documents/CV/EN/Ernesto_Miro_Peraza_CV_EN_ATS.pdf',
+        es: '/documents/CV/ESP/Ernesto_Miro_Peraza_CV_ES_ATS.pdf',
+      },
+      fileName: {
+        en: 'Ernesto_Miro_Peraza_CV_EN_ATS.pdf',
+        es: 'Ernesto_Miro_Peraza_CV_ES_ATS.pdf',
+      },
+    },
+    {
+      id: 'executive',
+      label: {
+        en: 'Executive',
+        es: 'Ejecutivo',
+      },
+      accessibleName: {
+        en: 'Download executive resume',
+        es: 'Descargar CV ejecutivo',
+      },
+      href: {
+        en: '/documents/CV/EN/Ernesto_Miro_Peraza_CV_EN_Executive.pdf',
+        es: '/documents/CV/ESP/Ernesto_Miro_Peraza_CV_ES_Ejecutivo.pdf',
+      },
+      fileName: {
+        en: 'Ernesto_Miro_Peraza_CV_EN_Executive.pdf',
+        es: 'Ernesto_Miro_Peraza_CV_ES_Ejecutivo.pdf',
+      },
+    },
+  ],
 } as const satisfies ResumeContent;
 
 export const footerContent = {

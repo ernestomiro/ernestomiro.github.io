@@ -16,8 +16,8 @@ export const methodologyContent = {
   },
   teaser: {
     label: {
-      en: 'Engineering approach',
-      es: 'Enfoque de ingeniería',
+      en: 'Individual engineering workflow',
+      es: 'Flujo individual de ingeniería',
     },
     title: {
       en: 'AI-assisted engineering with explicit guardrails.',
@@ -28,8 +28,8 @@ export const methodologyContent = {
       es: 'Un flujo documentado que mantiene visibles el contexto, la arquitectura, la verificación y las decisiones humanas de un cambio al siguiente.',
     },
     actionLabel: {
-      en: 'See how I work',
-      es: 'Conocer cómo trabajo',
+      en: 'See my individual workflow',
+      es: 'Conocer mi flujo individual',
     },
     path: methodologyPath,
   },
@@ -39,8 +39,8 @@ export const methodologyContent = {
       es: 'Volver a especialización',
     },
     label: {
-      en: 'Engineering methodology',
-      es: 'Metodología de ingeniería',
+      en: 'Individual engineering workflow',
+      es: 'Flujo individual de ingeniería',
     },
     headline: {
       en: 'AI assistance, grounded in engineering context.',
@@ -57,8 +57,8 @@ export const methodologyContent = {
       es: 'Un flujo repetible',
     },
     introduction: {
-      en: 'Each change moves through a shared operating structure. The details adapt to the project, while context, boundaries, evidence, and continuity remain explicit.',
-      es: 'Cada cambio avanza mediante una estructura operativa compartida. Los detalles se adaptan al proyecto, mientras el contexto, los límites, la evidencia y la continuidad permanecen explícitos.',
+      en: 'Each change moves through a consistent individual workflow. The details adapt to the project, while context, boundaries, evidence, and continuity remain explicit.',
+      es: 'Cada cambio avanza mediante un flujo individual consistente. Los detalles se adaptan al proyecto, mientras el contexto, los límites, la evidencia y la continuidad permanecen explícitos.',
     },
     stages: [
       {
@@ -193,12 +193,12 @@ export const methodologyContent = {
   },
   closing: {
     title: {
-      en: 'The method adapts to the project.',
-      es: 'El método se adapta al proyecto.',
+      en: 'The individual workflow adapts to the project.',
+      es: 'El flujo individual se adapta al proyecto.',
     },
     body: {
-      en: 'The same operating structure can coordinate a multi-repository business application or a static bilingual portfolio, while guardrails and verification change with the architecture and risk.',
-      es: 'La misma estructura operativa puede coordinar una aplicación empresarial distribuida en varios repositorios o un portafolio estático y bilingüe, mientras los límites y la verificación cambian con la arquitectura y el riesgo.',
+      en: 'This individual engineering workflow complements the team’s delivery methodology. It can support a multi-repository business application or a static bilingual portfolio, while guardrails and verification change with the architecture and risk.',
+      es: 'Este flujo individual de ingeniería complementa la metodología de entrega del equipo. Puede apoyar una aplicación empresarial distribuida en varios repositorios o un portafolio estático y bilingüe, mientras los límites y la verificación cambian con la arquitectura y el riesgo.',
     },
     primaryAction: {
       label: {

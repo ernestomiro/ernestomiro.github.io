@@ -11,6 +11,7 @@ import {
   ExpertiseContent,
   LocalizedText,
   selectLocalizedText,
+  TeamDeliveryContent,
 } from '../../content/portfolio-content.models';
 import { LanguageState } from '../../language/language-state';
 
@@ -25,6 +26,7 @@ export class ExpertiseSection {
   private readonly languageState = inject(LanguageState);
 
   readonly content = input.required<ExpertiseContent>();
+  readonly teamDelivery = input.required<TeamDeliveryContent>();
   readonly methodology = input.required<MethodologyTeaser>();
 
   protected readonly methodologyQueryParams = computed(() =>
