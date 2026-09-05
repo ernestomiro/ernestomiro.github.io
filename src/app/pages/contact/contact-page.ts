@@ -34,6 +34,7 @@ import {
 import { LanguageState } from '../../language/language-state';
 import { PageMetadata } from '../../metadata/page-metadata';
 import { SectionReveal } from '../../motion/section-reveal';
+import { ContactEmailCard } from './contact-email-card/contact-email-card';
 
 type SubmissionState = 'idle' | 'submitting' | 'success' | 'error';
 type ContactControlName = 'name' | 'email' | 'phone' | 'message' | 'consent';
@@ -62,7 +63,7 @@ const contactMethodRequired: ValidatorFn = (
 
 @Component({
   selector: 'app-contact-page',
-  imports: [ReactiveFormsModule, RouterLink, SectionReveal],
+  imports: [ContactEmailCard, ReactiveFormsModule, RouterLink, SectionReveal],
   templateUrl: './contact-page.html',
   styleUrl: './contact-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

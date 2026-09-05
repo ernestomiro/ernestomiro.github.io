@@ -6,8 +6,7 @@
 .hero__copy,
 .form-card form,
 .field,
-.status-panel,
-.email-card__link {
+.status-panel {
   display: grid;
 }
 
@@ -67,8 +66,7 @@ h1:focus {
   align-items: start;
 }
 
-.form-card,
-.email-card__link {
+.form-card {
   border: var(--border-width-hairline) solid var(--color-border-subtle);
   border-radius: var(--radius-card);
   background: var(--color-surface-raised);
@@ -174,8 +172,7 @@ textarea[aria-invalid='true'] {
 }
 
 .error-summary h2,
-.status-panel h2,
-.email-card h2 {
+.status-panel h2 {
   font-size: var(--font-size-xl);
   letter-spacing: var(--tracking-title);
 }
@@ -189,59 +186,16 @@ textarea[aria-invalid='true'] {
   width: fit-content;
 }
 
-.email-card__link {
-  gap: var(--space-4);
-  padding: var(--space-card-inset);
-  color: var(--color-text-primary);
-  text-decoration: none;
-  transition:
-    box-shadow var(--motion-duration-standard) var(--motion-ease-standard),
-    transform var(--motion-duration-standard) var(--motion-ease-emphasized);
-}
-
-.email-card__address {
-  overflow-wrap: anywhere;
-  color: var(--color-text-heading);
-  font-weight: var(--font-weight-semibold);
-}
-
-.email-card__action {
-  display: inline-flex;
-  gap: var(--space-2);
-  align-items: center;
-  width: fit-content;
-  color: var(--color-link);
-  font-weight: var(--font-weight-bold);
-  text-decoration: underline;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.18em;
-}
-
-.back:focus-visible,
-.email-card__link:focus-visible {
-  outline: var(--focus-ring-width) solid var(--color-focus-outer);
-  outline-offset: var(--focus-ring-offset);
-}
-
 .back:focus-visible {
-  outline-color: var(--color-focus-on-dark);
+  outline: var(--focus-ring-width) solid var(--color-focus-on-dark);
+  outline-offset: var(--focus-ring-offset);
   box-shadow: none;
-}
-
-.email-card__link:active {
-  transform: translateY(var(--motion-press-distance));
 }
 
 @media (hover: hover) and (pointer: fine) {
   .back:hover {
     color: var(--color-text-on-brand);
     transform: scale(var(--motion-hover-scale-compact));
-  }
-
-  .email-card__link:not(:active):hover {
-    box-shadow: var(--shadow-elevated);
-    color: var(--color-text-primary);
-    transform: scale(var(--motion-hover-scale-card));
   }
 }
 

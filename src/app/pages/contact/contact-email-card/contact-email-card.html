@@ -1,0 +1,15 @@
+<aside>
+  <a
+    class="email-card"
+    [href]="email().href"
+    [attr.aria-label]="accessibleName()"
+  >
+    <h2>{{ title() }}</h2>
+    <p>{{ body() }}</p>
+    <span class="email-card__address">{{ email().displayValue }}</span>
+    <span class="email-card__action">
+      {{ action() }}
+      <span aria-hidden="true">→</span>
+    </span>
+  </a>
+</aside>

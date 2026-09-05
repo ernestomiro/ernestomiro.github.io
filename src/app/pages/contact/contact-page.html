@@ -197,21 +197,14 @@
       </div>
 
       @if (emailChannel; as email) {
-        <aside class="email-card" data-reveal-block>
-          <a
-            class="email-card__link"
-            [href]="email.href"
-            [attr.aria-label]="localize(email.accessibleName)"
-          >
-            <h2>{{ localize(content.fallback.title) }}</h2>
-            <p>{{ localize(content.fallback.body) }}</p>
-            <span class="email-card__address">{{ email.displayValue }}</span>
-            <span class="email-card__action">
-              {{ localize(content.fallback.action) }}
-              <span aria-hidden="true">→</span>
-            </span>
-          </a>
-        </aside>
+        <app-contact-email-card
+          data-reveal-block
+          [email]="email"
+          [title]="localize(content.fallback.title)"
+          [body]="localize(content.fallback.body)"
+          [action]="localize(content.fallback.action)"
+          [accessibleName]="localize(email.accessibleName)"
+        />
       }
     </div>
   </section>
