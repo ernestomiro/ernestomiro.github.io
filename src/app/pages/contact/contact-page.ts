@@ -131,10 +131,15 @@ export class ContactPage {
   });
 
   constructor() {
-    afterNextRender(() => {
-      this.document.defaultView?.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      this.pageHeading().nativeElement.focus({ preventScroll: true });
+    afterNextRender({
+      write: () => {
+        this.document.defaultView?.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      },
     });
+  }
+
+  protected focusPageHeading(): void {
+    this.pageHeading().nativeElement.focus({ preventScroll: true });
   }
 
   protected localize(text: LocalizedText): string {

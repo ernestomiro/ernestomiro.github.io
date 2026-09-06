@@ -2,6 +2,7 @@
   id="main-content"
   class="case-study-page route-depth-page page-reveal"
   appSectionReveal
+  (initialRevealReady)="focusPageHeading()"
 >
   @if (caseStudy(); as selectedCaseStudy) {
     <article>

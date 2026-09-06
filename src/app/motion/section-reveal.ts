@@ -5,6 +5,7 @@ import {
   Directive,
   ElementRef,
   inject,
+  output,
   PLATFORM_ID,
 } from '@angular/core';
 
@@ -16,6 +17,8 @@ const revealStateAttribute = 'data-reveal-state';
   selector: '[appSectionReveal]',
 })
 export class SectionReveal {
+  readonly initialRevealReady = output<void>();
+
   private readonly destroyRef = inject(DestroyRef);
   private readonly document = inject(DOCUMENT);
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
@@ -52,6 +55,7 @@ export class SectionReveal {
         this.reveal(target);
       }
 
+      this.initialRevealReady.emit();
       return;
     }
 
@@ -84,6 +88,7 @@ export class SectionReveal {
     });
 
     if (pendingTargets.length === 0 && initialTargets.length === 0) {
+      this.initialRevealReady.emit();
       return;
     }
 
@@ -98,8 +103,12 @@ export class SectionReveal {
           for (const target of initialTargets) {
             this.reveal(target);
           }
+
+          this.initialRevealReady.emit();
         });
       });
+    } else {
+      this.initialRevealReady.emit();
     }
 
     if (pendingTargets.length === 0) {
