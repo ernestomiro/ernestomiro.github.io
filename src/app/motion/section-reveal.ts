@@ -55,11 +55,15 @@ export class SectionReveal {
       return;
     }
 
-    const revealLine = browserWindow.innerHeight * 0.88;
+    const revealTogether = this.host.hasAttribute('data-reveal-together');
+    const revealLine = browserWindow.innerHeight * (revealTogether ? 1 : 0.88);
+    const triggerBounds = revealTogether
+      ? this.host.getBoundingClientRect()
+      : undefined;
     const initialTargets: HTMLElement[] = [];
     const pendingTargets = targets.filter((target) => {
       const revealOnLoad = target.hasAttribute('data-reveal-on-load');
-      const bounds = target.getBoundingClientRect();
+      const bounds = triggerBounds ?? target.getBoundingClientRect();
 
       if (
         target.contains(this.document.activeElement) ||
@@ -109,19 +113,25 @@ export class SectionReveal {
             continue;
           }
 
-          const target = entry.target as HTMLElement;
+          const revealedTargets = revealTogether
+            ? pendingTargets
+            : [entry.target as HTMLElement];
 
-          this.reveal(target);
-          this.observer?.unobserve(target);
+          for (const target of revealedTargets) {
+            this.reveal(target);
+          }
+
+          this.observer?.unobserve(entry.target);
         }
       },
       {
-        rootMargin: '0px 0px -12% 0px',
-        threshold: 0.1,
+        rootMargin: revealTogether ? '0px' : '0px 0px -12% 0px',
+        threshold: revealTogether ? 0 : 0.1,
       },
     );
 
-    for (const target of pendingTargets) {
+    // A grouped reveal observes the stable host, never its translated children.
+    for (const target of revealTogether ? [this.host] : pendingTargets) {
       this.observer.observe(target);
     }
   }
