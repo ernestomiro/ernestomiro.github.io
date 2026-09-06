@@ -21,6 +21,7 @@ export class SectionReveal {
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
   private readonly isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
   private observer?: IntersectionObserver;
+  private initialRevealFrame?: number;
   private started = false;
 
   constructor() {
@@ -55,22 +56,52 @@ export class SectionReveal {
     }
 
     const revealLine = browserWindow.innerHeight * 0.88;
+    const initialTargets: HTMLElement[] = [];
     const pendingTargets = targets.filter((target) => {
-      if (target.getBoundingClientRect().top <= revealLine) {
+      const revealOnLoad = target.hasAttribute('data-reveal-on-load');
+      const bounds = target.getBoundingClientRect();
+
+      if (
+        target.contains(this.document.activeElement) ||
+        (!revealOnLoad && bounds.bottom <= 0)
+      ) {
         this.reveal(target);
         return false;
       }
 
       target.setAttribute(revealStateAttribute, 'pending');
+
+      if (revealOnLoad || bounds.top <= revealLine) {
+        initialTargets.push(target);
+        return false;
+      }
+
       return true;
     });
 
-    if (pendingTargets.length === 0) {
+    if (pendingTargets.length === 0 && initialTargets.length === 0) {
       return;
     }
 
     this.host.setAttribute('data-reveal-ready', 'true');
     this.host.addEventListener('focusin', this.handleFocusIn, true);
+
+    if (initialTargets.length > 0) {
+      // Commit the pending style before starting the shared CSS transition.
+      this.initialRevealFrame = browserWindow.requestAnimationFrame(() => {
+        this.initialRevealFrame = browserWindow.requestAnimationFrame(() => {
+          this.initialRevealFrame = undefined;
+          for (const target of initialTargets) {
+            this.reveal(target);
+          }
+        });
+      });
+    }
+
+    if (pendingTargets.length === 0) {
+      return;
+    }
+
     this.observer = new browserWindow.IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -120,6 +151,11 @@ export class SectionReveal {
   }
 
   private stop(): void {
+    if (this.initialRevealFrame !== undefined) {
+      this.document.defaultView?.cancelAnimationFrame(this.initialRevealFrame);
+      this.initialRevealFrame = undefined;
+    }
+
     this.observer?.disconnect();
     this.observer = undefined;
     this.host.removeEventListener('focusin', this.handleFocusIn, true);

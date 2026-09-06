@@ -5,7 +5,7 @@
 >
   <div class="section__shell">
     <header class="section__intro">
-      <div class="section__title-group">
+      <div class="section__title-group" data-reveal-block>
         <div class="section__title-lockup">
           <h2 id="about-title" tabindex="-1">{{ localize(content().title) }}</h2>
           <span class="section__title-line" aria-hidden="true"></span>
@@ -14,7 +14,7 @@
 
       <div class="about-copy">
         @for (paragraph of content().paragraphs; track $index) {
-          <p>{{ localize(paragraph) }}</p>
+          <p data-reveal-item>{{ localize(paragraph) }}</p>
         }
       </div>
     </header>
