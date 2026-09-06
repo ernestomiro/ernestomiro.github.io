@@ -18,7 +18,7 @@
 
     <div class="section__body projects-list">
       @for (project of content().items; track project.id) {
-        <app-project-card [project]="project" />
+        <app-project-card [project]="project" data-reveal-item />
       }
     </div>
   </div>

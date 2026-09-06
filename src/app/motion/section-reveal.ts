@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 
 const revealTargetSelector =
-  '[data-reveal-block], .section__intro, .section__body';
+  '[data-reveal-block], [data-reveal-item], .section__intro, .section__body';
 const revealStateAttribute = 'data-reveal-state';
 
 @Directive({
@@ -36,8 +36,11 @@ export class SectionReveal {
     }
 
     this.started = true;
-    const targets = Array.from(
+    const candidates = Array.from(
       this.host.querySelectorAll<HTMLElement>(revealTargetSelector),
+    );
+    const targets = candidates.filter(
+      (candidate) => !candidate.querySelector(revealTargetSelector),
     );
     const reduceMotion = browserWindow.matchMedia(
       '(prefers-reduced-motion: reduce)',

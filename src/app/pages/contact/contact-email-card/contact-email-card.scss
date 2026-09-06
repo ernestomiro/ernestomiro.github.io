@@ -12,9 +12,6 @@
   box-shadow: var(--shadow-surface);
   color: var(--color-text-primary);
   text-decoration: none;
-  transition:
-    box-shadow var(--motion-duration-standard) var(--motion-ease-standard),
-    transform var(--motion-duration-standard) var(--motion-ease-emphasized);
 }
 
 h2 {
@@ -43,14 +40,8 @@ h2 {
   outline-offset: var(--focus-ring-offset);
 }
 
-.email-card:active {
-  transform: translateY(var(--motion-press-distance));
-}
-
 @media (hover: hover) and (pointer: fine) {
   .email-card:not(:active):hover {
-    box-shadow: var(--shadow-elevated);
     color: var(--color-text-primary);
-    transform: scale(var(--motion-hover-scale-card));
   }
 }

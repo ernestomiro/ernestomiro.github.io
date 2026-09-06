@@ -18,10 +18,10 @@
 
     <ul class="section__body contact-list">
       @for (channel of content().channels; track channel.id) {
-        <li>
+        <li data-reveal-item>
           @if (channel.kind === 'message') {
             <a
-              class="contact-channel"
+              class="contact-channel card-motion"
               [routerLink]="channel.path"
               [queryParams]="contactQueryParams()"
               [attr.aria-label]="localize(channel.accessibleName)"
@@ -34,7 +34,7 @@
             </a>
           } @else {
             <a
-              class="contact-channel"
+              class="contact-channel card-motion"
               [href]="channel.href"
               [attr.aria-label]="localize(channel.accessibleName)"
             >

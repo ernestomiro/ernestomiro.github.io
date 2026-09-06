@@ -7,7 +7,7 @@
     <article>
       <header class="case-study-hero section section--feature section--surface-brand">
         <div class="section__shell">
-          <div class="case-study-hero__content">
+          <div class="case-study-hero__content" data-reveal-block>
             <a
               class="case-study-back-link"
               routerLink="/"
@@ -35,14 +35,14 @@
 
       <section class="section section--editorial" aria-labelledby="case-context-title">
         <div class="section__shell case-study-grid" data-reveal-block>
-          <div class="case-study-narrative">
+          <div class="case-study-narrative" data-reveal-item>
             <div class="section__title-lockup">
               <h2 id="case-context-title">{{ label('context') }}</h2>
               <span class="section__title-line" aria-hidden="true"></span>
             </div>
             <p>{{ localize(selectedCaseStudy.context) }}</p>
           </div>
-          <div class="case-study-narrative">
+          <div class="case-study-narrative" data-reveal-item>
             <div class="section__title-lockup">
               <h2>{{ label('problem') }}</h2>
               <span class="section__title-line" aria-hidden="true"></span>
@@ -54,14 +54,14 @@
 
       <section class="section section--editorial section--surface-deep" aria-labelledby="case-role-title">
         <div class="section__shell case-study-grid" data-reveal-block>
-          <div class="case-study-narrative">
+          <div class="case-study-narrative" data-reveal-item>
             <div class="section__title-lockup">
               <h2 id="case-role-title">{{ label('roleAndScope') }}</h2>
               <span class="section__title-line" aria-hidden="true"></span>
             </div>
             <p>{{ localize(selectedCaseStudy.roleAndScope) }}</p>
           </div>
-          <div class="case-study-narrative">
+          <div class="case-study-narrative" data-reveal-item>
             <div class="section__title-lockup">
               <h2>{{ label('solutionAndArchitecture') }}</h2>
               <span class="section__title-line" aria-hidden="true"></span>
@@ -86,7 +86,7 @@
 
             <div class="section__body case-diagrams">
               @for (diagram of selectedCaseStudy.diagrams; track diagram.id) {
-                <app-case-study-diagram [diagram]="diagram" />
+                <app-case-study-diagram [diagram]="diagram" data-reveal-item />
               }
             </div>
           </div>
@@ -107,7 +107,11 @@
 
           <div class="section__body technology-groups">
             @for (group of selectedCaseStudy.technologies; track group.id) {
-              <section class="technology-group" [attr.aria-labelledby]="group.id + '-title'">
+              <section
+                class="technology-group"
+                [attr.aria-labelledby]="group.id + '-title'"
+                data-reveal-item
+              >
                 <h3 [id]="group.id + '-title'">{{ localize(group.label) }}</h3>
                 @if (group.rationale; as rationale) {
                   <p>{{ localize(rationale) }}</p>
@@ -134,7 +138,7 @@
         >
           <div class="section__shell case-study-grid" data-reveal-block>
             @if (selectedCaseStudy.decisions?.length) {
-              <div class="case-study-narrative">
+              <div class="case-study-narrative" data-reveal-item>
                 <div class="section__title-lockup">
                   <h2 id="case-decisions-title">{{ label('decisionsAndTradeoffs') }}</h2>
                   <span class="section__title-line" aria-hidden="true"></span>
@@ -157,7 +161,7 @@
             }
 
             @if (selectedCaseStudy.challenges?.length) {
-              <div class="case-study-narrative">
+              <div class="case-study-narrative" data-reveal-item>
                 <div class="section__title-lockup">
                   <h2 id="case-challenges-title">{{ label('challenges') }}</h2>
                   <span class="section__title-line" aria-hidden="true"></span>
@@ -184,7 +188,7 @@
         >
           <div class="section__shell case-study-grid" data-reveal-block>
             @if (selectedCaseStudy.engineeringQuality; as engineeringQuality) {
-              <div class="case-study-narrative">
+              <div class="case-study-narrative" data-reveal-item>
                 <div class="section__title-lockup">
                   <h2 id="case-quality-title">{{ label('engineeringQuality') }}</h2>
                   <span class="section__title-line" aria-hidden="true"></span>
@@ -193,7 +197,7 @@
               </div>
             }
             @if (selectedCaseStudy.outcome; as outcome) {
-              <div class="case-study-narrative">
+              <div class="case-study-narrative" data-reveal-item>
                 <div class="section__title-lockup">
                   <h2 id="case-outcome-title">{{ label('outcome') }}</h2>
                   <span class="section__title-line" aria-hidden="true"></span>

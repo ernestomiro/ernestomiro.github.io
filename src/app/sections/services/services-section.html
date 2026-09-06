@@ -13,17 +13,34 @@
     <div class="section__body services-body">
       <ul class="services-list">
         @for (service of content().items; track service.id) {
-          <li class="service-card">
+          <li class="service-card" data-reveal-item>
             <h3>{{ localize(service.title) }}</h3>
             <p>{{ localize(service.description) }}</p>
           </li>
         }
       </ul>
 
-      <a class="services-contact" [href]="content().contactAction.href">
-        {{ localize(content().contactAction.label) }}
-        <span aria-hidden="true">→</span>
-      </a>
+      <section
+        class="services-engagements"
+        aria-labelledby="services-engagements-title"
+        data-reveal-item
+      >
+        <h3 id="services-engagements-title">
+          {{ localize(content().typicalEngagements.title) }}
+        </h3>
+        <ul class="services-engagements__list">
+          @for (engagement of content().typicalEngagements.items; track engagement.id) {
+            <li>{{ localize(engagement.description) }}</li>
+          }
+        </ul>
+      </section>
+
+      <div class="services-contact-reveal" data-reveal-item>
+        <a class="services-contact" [href]="content().contactAction.href">
+          {{ localize(content().contactAction.label) }}
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>

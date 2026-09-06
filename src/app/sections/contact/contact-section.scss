@@ -37,9 +37,6 @@
   border-radius: var(--radius-card);
   color: var(--color-text-on-brand);
   text-decoration: none;
-  transition:
-    background-color var(--motion-duration-standard) var(--motion-ease-standard),
-    transform var(--motion-duration-fast) var(--motion-ease-standard);
 }
 
 .contact-channel__label {
@@ -61,14 +58,9 @@
   box-shadow: none;
 }
 
-.contact-channel:active {
-  transform: translateY(var(--motion-press-distance));
-}
-
 @media (hover: hover) and (pointer: fine) {
   .contact-channel:not(:active):hover {
     background: color-mix(in srgb, var(--color-on-brand) 10%, transparent);
     color: var(--color-text-on-brand);
-    transform: scale(var(--motion-hover-scale-card));
   }
 }

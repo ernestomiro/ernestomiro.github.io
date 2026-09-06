@@ -17,7 +17,11 @@
 
     <div class="section__body technology-groups">
       @for (group of content().groups; track group.id) {
-        <section class="technology-group" [attr.aria-labelledby]="group.id + '-title'">
+        <section
+          class="technology-group"
+          [attr.aria-labelledby]="group.id + '-title'"
+          data-reveal-item
+        >
           <h4 [id]="group.id + '-title'">{{ localize(group.label) }}</h4>
           <ul>
             @for (technology of group.items; track technology) {

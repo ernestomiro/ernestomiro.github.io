@@ -39,12 +39,12 @@ export const navigationContent = [
 
 export const heroContent = {
   headline: {
-    en: 'Clear software for complex business challenges.',
-    es: 'Software claro para desafíos empresariales complejos.',
+    en: 'Software solutions at the right scale.',
+    es: 'Soluciones de software a la escala adecuada.',
   },
   lead: {
-    en: 'I build new software and improve existing systems—from targeted changes and integrations to complete business applications.',
-    es: 'Construyo software nuevo y mejoro sistemas existentes: desde cambios puntuales e integraciones hasta aplicaciones empresariales completas.',
+    en: 'I build, improve, and troubleshoot software—from focused fixes, features, APIs, and integrations to complete business applications and complex systems.',
+    es: 'Construyo, mejoro y resuelvo problemas de software: desde correcciones puntuales, funcionalidades, APIs e integraciones hasta aplicaciones empresariales completas y sistemas complejos.',
   },
   primaryAction: {
     label: {
@@ -55,8 +55,8 @@ export const heroContent = {
   },
   secondaryAction: {
     label: {
-      en: 'Let’s talk',
-      es: 'Hablemos',
+      en: 'Tell me what you need to solve',
+      es: 'Cuéntame qué necesitas resolver',
     },
     href: '#contact',
   },
@@ -328,59 +328,145 @@ export const servicesContent = {
     es: 'Servicios',
   },
   introduction: {
-    en: 'I work on complete applications, defined phases, and focused improvements—adapting the scope to what each system actually needs.',
-    es: 'Trabajo en aplicaciones completas, fases definidas y mejoras puntuales, adaptando el alcance a lo que cada sistema realmente necesita.',
+    en: 'Projects do not need to be large to benefit from experienced engineering. I can help with a focused problem, a defined phase, or a complete application—adapting the scope to what the system actually needs.',
+    es: 'Los proyectos no necesitan ser grandes para beneficiarse de ingeniería experimentada. Puedo ayudar con un problema puntual, una fase definida o una aplicación completa, adaptando el alcance a lo que el sistema realmente necesita.',
   },
   items: [
     {
-      id: 'custom-business-software',
+      id: 'custom-software-mvps',
       title: {
-        en: 'Custom Business Software',
-        es: 'Software empresarial a medida',
+        en: 'Custom Software & MVPs',
+        es: 'Software a medida y MVP',
       },
       description: {
-        en: 'New applications and modules designed around real workflows, data, and operational needs.',
-        es: 'Aplicaciones y módulos nuevos diseñados alrededor de flujos, datos y necesidades operativas reales.',
+        en: 'Applications, internal tools, and functional first versions designed around real workflows without overbuilding the initial scope.',
+        es: 'Aplicaciones, herramientas internas y primeras versiones funcionales diseñadas alrededor de flujos reales sin sobredimensionar el alcance inicial.',
       },
     },
     {
-      id: 'existing-software-evolution',
+      id: 'features-focused-improvements',
       title: {
-        en: 'Existing Software Evolution',
-        es: 'Evolución de software existente',
+        en: 'Features & Focused Improvements',
+        es: 'Funcionalidades y mejoras puntuales',
       },
       description: {
-        en: 'Targeted changes, new capabilities, and modernization without assuming a complete rewrite.',
-        es: 'Cambios puntuales, nuevas funcionalidades y modernización sin asumir una reescritura completa.',
+        en: 'Screens, endpoints, workflows, validations, reports, permissions, and other targeted changes to existing applications.',
+        es: 'Pantallas, endpoints, flujos, validaciones, reportes, permisos y otros cambios definidos sobre aplicaciones existentes.',
       },
     },
     {
-      id: 'systems-integration',
+      id: 'apis-integrations',
       title: {
-        en: 'Systems Integration',
-        es: 'Integración de sistemas',
+        en: 'APIs & Integrations',
+        es: 'APIs e integraciones',
       },
       description: {
-        en: 'Reliable connections between applications, services, and data through clear, maintainable contracts.',
-        es: 'Conexiones confiables entre aplicaciones, servicios y datos mediante contratos claros y mantenibles.',
+        en: 'REST or GraphQL APIs, webhooks, authentication, synchronization, and connections to external services.',
+        es: 'APIs REST o GraphQL, webhooks, autenticación, sincronización y conexiones con servicios externos.',
       },
     },
     {
-      id: 'architecture-technical-problem-solving',
+      id: 'troubleshooting-performance',
       title: {
-        en: 'Architecture & Technical Problem Solving',
-        es: 'Arquitectura y resolución técnica',
+        en: 'Troubleshooting & Performance',
+        es: 'Diagnóstico y rendimiento',
       },
       description: {
-        en: 'Architecture review, technical diagnosis, and implementation support for complex or constrained systems.',
-        es: 'Revisión de arquitectura, diagnóstico técnico y apoyo de implementación para sistemas complejos o con restricciones.',
+        en: 'Diagnosis and resolution of persistent bugs, unexpected behavior, performance issues, and difficult-to-isolate failures.',
+        es: 'Diagnóstico y resolución de errores persistentes, comportamientos inesperados, problemas de rendimiento y fallos difíciles de aislar.',
+      },
+    },
+    {
+      id: 'automation-internal-tools',
+      title: {
+        en: 'Automation & Internal Tools',
+        es: 'Automatización y herramientas internas',
+      },
+      description: {
+        en: 'Utilities, dashboards, data-processing tools, and workflow automation for specific operational needs.',
+        es: 'Utilidades, paneles, herramientas de procesamiento de datos y automatización de flujos para necesidades operativas específicas.',
+      },
+    },
+    {
+      id: 'architecture-deployment-support',
+      title: {
+        en: 'Architecture, Deployment & Technical Support',
+        es: 'Arquitectura, despliegue y apoyo técnico',
+      },
+      description: {
+        en: 'Architecture review, modernization, environment configuration, CI/CD, cloud deployment, and implementation support for evolving systems.',
+        es: 'Revisión de arquitectura, modernización, configuración de entornos, CI/CD, despliegue cloud y apoyo de implementación para sistemas en evolución.',
       },
     },
   ],
+  typicalEngagements: {
+    title: {
+      en: 'Typical engagements',
+      es: 'Necesidades habituales',
+    },
+    items: [
+      {
+        id: 'persistent-bug',
+        description: {
+          en: 'Fix a persistent application or production bug.',
+          es: 'Corregir un error persistente de aplicación o producción.',
+        },
+      },
+      {
+        id: 'existing-application-feature',
+        description: {
+          en: 'Add a feature to an existing application.',
+          es: 'Añadir una funcionalidad a una aplicación existente.',
+        },
+      },
+      {
+        id: 'api-development',
+        description: {
+          en: 'Build or extend a REST or GraphQL API.',
+          es: 'Construir o ampliar una API REST o GraphQL.',
+        },
+      },
+      {
+        id: 'service-integration',
+        description: {
+          en: 'Integrate a third-party service or synchronize data.',
+          es: 'Integrar un servicio externo o sincronizar datos.',
+        },
+      },
+      {
+        id: 'workflow-automation',
+        description: {
+          en: 'Automate a repetitive workflow or create an internal tool.',
+          es: 'Automatizar un flujo repetitivo o crear una herramienta interna.',
+        },
+      },
+      {
+        id: 'database-performance',
+        description: {
+          en: 'Improve database queries or application performance.',
+          es: 'Mejorar consultas de base de datos o el rendimiento de una aplicación.',
+        },
+      },
+      {
+        id: 'application-deployment',
+        description: {
+          en: 'Deploy an application or configure its environment.',
+          es: 'Desplegar una aplicación o configurar su entorno.',
+        },
+      },
+      {
+        id: 'mvp-system-change',
+        description: {
+          en: 'Build an MVP or plan a larger system change.',
+          es: 'Construir un MVP o planificar un cambio mayor de sistema.',
+        },
+      },
+    ],
+  },
   contactAction: {
     label: {
-      en: 'Let’s talk',
-      es: 'Hablemos',
+      en: 'Tell me what you need to solve',
+      es: 'Cuéntame qué necesitas resolver',
     },
     href: '#contact',
   },

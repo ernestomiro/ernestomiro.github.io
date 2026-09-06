@@ -303,6 +303,19 @@ button:disabled {
   box-shadow: 0 0 0 var(--focus-ring-inner-width) var(--color-focus-inner);
 }
 
+.card-motion {
+  transition:
+    background-color var(--motion-duration-standard) var(--motion-ease-standard),
+    border-color var(--motion-duration-standard) var(--motion-ease-standard),
+    box-shadow var(--motion-duration-standard) var(--motion-ease-standard),
+    color var(--motion-duration-fast) var(--motion-ease-standard),
+    transform var(--motion-duration-standard) var(--motion-ease-emphasized);
+}
+
+a.card-motion:active {
+  transform: translateY(var(--motion-press-distance));
+}
+
 @media (hover: hover) and (pointer: fine) {
   a[href]:hover {
     color: var(--color-link-hover);
@@ -312,6 +325,11 @@ button:disabled {
     border-color: var(--color-action-primary-background-hover);
     background: var(--color-action-primary-background-hover);
     transform: scale(var(--motion-hover-scale-control));
+  }
+
+  a.card-motion:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: scale(var(--motion-hover-scale-card));
   }
 }
 

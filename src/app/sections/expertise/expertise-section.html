@@ -17,31 +17,32 @@
 
     <ul class="section__body expertise-list">
       @for (item of content().items; track item.id) {
-        <li class="expertise-card">
+        <li class="expertise-card" data-reveal-item>
           <h4>{{ localize(item.title) }}</h4>
           <p>{{ localize(item.description) }}</p>
         </li>
       }
     </ul>
 
-    <section
-      class="expertise-card expertise-delivery"
-      aria-labelledby="expertise-delivery-title"
-      data-reveal-block
-    >
-      <p class="expertise-delivery__label">
-        {{ localize(teamDelivery().label) }}
-      </p>
-      <h4 id="expertise-delivery-title">
-        {{ localize(teamDelivery().title) }}
-      </h4>
-      <p>{{ localize(teamDelivery().description) }}</p>
-      <p>{{ localize(teamDelivery().tools) }}</p>
-    </section>
+    <div class="expertise-delivery-reveal" data-reveal-block>
+      <section
+        class="expertise-card expertise-delivery"
+        aria-labelledby="expertise-delivery-title"
+      >
+        <p class="expertise-delivery__label">
+          {{ localize(teamDelivery().label) }}
+        </p>
+        <h4 id="expertise-delivery-title">
+          {{ localize(teamDelivery().title) }}
+        </h4>
+        <p>{{ localize(teamDelivery().description) }}</p>
+        <p>{{ localize(teamDelivery().tools) }}</p>
+      </section>
+    </div>
 
     <div class="expertise-methodology-reveal" data-reveal-block>
       <a
-        class="expertise-methodology"
+        class="expertise-methodology card-motion"
         [routerLink]="methodology().path"
         [queryParams]="methodologyQueryParams()"
       >

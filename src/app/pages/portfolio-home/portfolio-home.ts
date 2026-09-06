@@ -32,12 +32,12 @@ const homeMetadata = {
   en: {
     title: 'Ernesto Miró Peraza | Senior Software Engineer',
     description:
-      'Senior software engineer specializing in full-stack development, enterprise software, cloud architecture, SaaS platforms, integrations, and technical leadership.',
+      'Senior software engineer for custom software, focused improvements, troubleshooting, APIs, integrations, automation, and complex system evolution.',
   },
   es: {
     title: 'Ernesto Miró Peraza | Ingeniero de software sénior',
     description:
-      'Ingeniero de software sénior especializado en desarrollo Full Stack, software empresarial, arquitectura cloud, plataformas SaaS, integraciones y liderazgo técnico.',
+      'Ingeniero de software sénior para software a medida, mejoras puntuales, diagnóstico, APIs, integraciones, automatización y evolución de sistemas complejos.',
   },
 } as const satisfies Readonly<
   Record<LanguageCode, { readonly title: string; readonly description: string }>

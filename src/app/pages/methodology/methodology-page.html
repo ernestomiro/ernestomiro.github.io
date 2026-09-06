@@ -8,7 +8,7 @@
       class="hero section section--feature section--surface-brand"
     >
       <div class="section__shell">
-        <div class="hero-copy grid">
+        <div class="hero-copy grid" data-reveal-block>
           <a
             class="back"
             routerLink="/"
@@ -56,7 +56,7 @@
 
         <ol class="section__body flow copy list center grid">
           @for (stage of content.workflow.stages; track stage.id; let index = $index) {
-            <li>
+            <li data-reveal-item>
               <span class="number" aria-hidden="true">
                 {{ index + 1 }}
               </span>
@@ -106,7 +106,7 @@
 
         <ul class="section__body evidence copy list grid">
           @for (item of content.evidence.items; track item.id) {
-            <li class="grid">
+            <li class="grid" data-reveal-item>
               <h3 class="item">{{ localize(item.title) }}</h3>
               <p>{{ localize(item.description) }}</p>
             </li>
@@ -120,7 +120,7 @@
       aria-labelledby="methodology-closing-title"
     >
       <div class="section__shell closing copy grid" data-reveal-block>
-        <div class="grid gap">
+        <div class="grid gap" data-reveal-item>
           <div class="section__title-lockup">
             <h2 id="methodology-closing-title" class="title">
               {{ localize(content.closing.title) }}
@@ -130,7 +130,7 @@
           <p>{{ localize(content.closing.body) }}</p>
         </div>
 
-        <div class="actions">
+        <div class="actions" data-reveal-item>
           <a
             class="cta primary"
             routerLink="/"

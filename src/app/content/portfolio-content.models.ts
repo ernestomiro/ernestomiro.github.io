@@ -104,10 +104,21 @@ export interface ServiceItem {
   readonly description: LocalizedText;
 }
 
+export interface TypicalEngagement {
+  readonly id: ContentId;
+  readonly description: LocalizedText;
+}
+
+export interface TypicalEngagementsContent {
+  readonly title: LocalizedText;
+  readonly items: readonly TypicalEngagement[];
+}
+
 export interface ServicesContent {
   readonly title: LocalizedText;
   readonly introduction: LocalizedText;
   readonly items: readonly ServiceItem[];
+  readonly typicalEngagements: TypicalEngagementsContent;
   readonly contactAction: ActionLink;
 }
 
