@@ -47,7 +47,7 @@ export class InterfaceSlideshow {
   readonly tone = input<'default' | 'brand'>('default');
   readonly eagerFirst = input(false);
   readonly autoplay = input(true);
-  readonly intervalMs = input(6000);
+  readonly intervalMs = input(4000);
 
   protected readonly activeIndex = linkedSignal({
     source: this.slides,

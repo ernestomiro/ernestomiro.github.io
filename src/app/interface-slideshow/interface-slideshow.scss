@@ -1,4 +1,6 @@
 :host {
+  --slideshow-transition-duration: 1800ms;
+  --slideshow-transition-easing: ease-in-out;
   --slideshow-text: var(--color-text-primary);
   --slideshow-border: var(--color-border-functional);
   --slideshow-focus: var(--color-focus-outer);
@@ -80,8 +82,8 @@
   pointer-events: none;
   transform: scale(var(--slideshow-side-scale));
   transition:
-    opacity var(--motion-duration-standard) var(--motion-ease-standard),
-    transform var(--motion-duration-standard) var(--motion-ease-standard);
+    opacity var(--slideshow-transition-duration) var(--slideshow-transition-easing),
+    transform var(--slideshow-transition-duration) var(--slideshow-transition-easing);
 }
 
 .slide.previous,
@@ -126,7 +128,7 @@
   line-height: var(--line-height-compact);
   text-align: center;
   opacity: 0;
-  transition: opacity var(--motion-duration-standard) var(--motion-ease-standard);
+  transition: opacity var(--slideshow-transition-duration) var(--slideshow-transition-easing);
 }
 
 .slide.active figcaption {
