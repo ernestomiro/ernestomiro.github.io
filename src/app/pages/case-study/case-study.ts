@@ -16,6 +16,7 @@ import { LocalizedText, selectLocalizedText } from '../../content/portfolio-cont
 import { LanguageState } from '../../language/language-state';
 import { PageMetadata } from '../../metadata/page-metadata';
 import { SectionReveal } from '../../motion/section-reveal';
+import { InterfaceSlideshow } from '../../interface-slideshow/interface-slideshow';
 import { CaseStudyDiagramComponent } from './case-study-diagram/case-study-diagram';
 
 const pageLabels = {
@@ -28,6 +29,7 @@ const pageLabels = {
   engineeringQuality: { en: 'Engineering quality', es: 'Calidad de ingeniería' },
   outcome: { en: 'Technical outcome', es: 'Resultado técnico' },
   systemMaps: { en: 'System maps', es: 'Mapas del sistema' },
+  interfaceExamples: { en: 'Interface examples', es: 'Ejemplos de interfaces' },
   decisionsAndTradeoffs: {
     en: 'Decisions & tradeoffs',
     es: 'Decisiones y tradeoffs',
@@ -45,7 +47,7 @@ type PageLabel = keyof typeof pageLabels;
 
 @Component({
   selector: 'app-case-study',
-  imports: [CaseStudyDiagramComponent, RouterLink, SectionReveal],
+  imports: [CaseStudyDiagramComponent, InterfaceSlideshow, RouterLink, SectionReveal],
   templateUrl: './case-study.html',
   styleUrl: './case-study.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

@@ -52,6 +52,32 @@
   gap: var(--space-5);
 }
 
+.hero-section__heading,
+.hero-section__copy {
+  display: grid;
+  min-width: 0;
+  align-content: start;
+  gap: var(--space-5);
+}
+
+.hero-section__body {
+  display: grid;
+  min-width: 0;
+  align-items: start;
+  gap: var(--space-heading-gap);
+}
+
+.hero-section__slideshow {
+  --slideshow-image-height: 24rem;
+}
+
+@media (min-width: 70rem) {
+  .hero-section__body--with-slides {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: var(--space-layout-gap);
+  }
+}
+
 .hero-section__name {
   display: flex;
   align-items: center;

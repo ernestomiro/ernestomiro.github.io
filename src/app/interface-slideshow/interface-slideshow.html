@@ -1,0 +1,78 @@
+@if (slides().length) {
+  <div
+    class="slideshow"
+    role="group"
+    [attr.aria-roledescription]="label('carousel')"
+    [attr.aria-label]="accessibleLabel()"
+    (mouseenter)="hovered.set(true)"
+    (mouseleave)="hovered.set(false)"
+    (focusin)="stopRotation()"
+  >
+    @if (slides().length > 1) {
+      <div class="controls">
+        @if (autoplay() && !reducedMotion()) {
+          <button
+            type="button"
+            [attr.aria-label]="label(paused() ? 'play' : 'pause')"
+            (pointerdown)="rememberRotationState()"
+            (pointercancel)="clearPointerState()"
+            (keydown)="clearPointerState()"
+            (click)="toggleRotation()"
+          >
+            <span aria-hidden="true">{{ paused() ? '▶' : 'Ⅱ' }}</span>
+          </button>
+        }
+        <button type="button" [attr.aria-label]="label('previous')" (click)="move(-1)">
+          <span aria-hidden="true">←</span>
+        </button>
+        <span class="position" aria-hidden="true">
+          {{ activeIndex() + 1 }} / {{ slides().length }}
+        </span>
+        <button type="button" [attr.aria-label]="label('next')" (click)="move(1)">
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    }
+
+    <div
+      class="stage"
+      [class.single]="slides().length === 1"
+      [attr.aria-live]="rotating() ? 'off' : 'polite'"
+      aria-atomic="false"
+    >
+      @for (slide of slides(); track slide.id; let index = $index) {
+        <figure
+          class="slide"
+          [class.active]="slidePosition(index) === 'active'"
+          [class.previous]="slidePosition(index) === 'previous'"
+          [class.next]="slidePosition(index) === 'next'"
+          role="group"
+          [attr.aria-roledescription]="label('slide')"
+          [attr.aria-label]="(index + 1) + ' / ' + slides().length"
+          [attr.aria-hidden]="index !== activeIndex()"
+          [attr.inert]="index !== activeIndex() ? '' : null"
+        >
+          <img
+            [src]="slide.src"
+            [alt]="localize(slide.alt)"
+            [width]="slide.width"
+            [height]="slide.height"
+            [style.--image-native-width]="slide.width + 'px'"
+            [style.--image-ratio]="slide.width / slide.height"
+            [attr.loading]="eagerFirst() && index === 0 ? 'eager' : 'lazy'"
+            decoding="async"
+          />
+          <figcaption>
+            {{ localize(slide.caption) }}
+            @if (slide.projectTitle; as projectTitle) {
+              <span>{{ localize(projectTitle) }}</span>
+            }
+            @if (slide.note; as note) {
+              <span>{{ localize(note) }}</span>
+            }
+          </figcaption>
+        </figure>
+      }
+    </div>
+  </div>
+}

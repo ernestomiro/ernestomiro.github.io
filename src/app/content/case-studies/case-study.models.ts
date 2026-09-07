@@ -30,6 +30,16 @@ export interface CaseStudyDiagram {
   readonly annotations?: readonly LocalizedText[];
 }
 
+export interface CaseStudyScreenshot {
+  readonly id: ContentId;
+  readonly src: string;
+  readonly width: number;
+  readonly height: number;
+  readonly alt: LocalizedText;
+  readonly caption: LocalizedText;
+  readonly note?: LocalizedText;
+}
+
 export interface CaseStudy {
   readonly id: CaseStudyId;
   readonly slug: CaseStudySlug;
@@ -43,6 +53,7 @@ export interface CaseStudy {
   readonly solutionAndArchitecture: LocalizedText;
   readonly technologies: readonly CaseStudyTechnologyGroup[];
   readonly diagrams?: readonly CaseStudyDiagram[];
+  readonly screenshots?: readonly CaseStudyScreenshot[];
   readonly decisions?: readonly CaseStudyDecision[];
   readonly challenges?: readonly LocalizedText[];
   readonly engineeringQuality?: LocalizedText;

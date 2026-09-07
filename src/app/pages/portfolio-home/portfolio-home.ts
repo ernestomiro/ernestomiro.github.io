@@ -11,6 +11,8 @@ import {
   technologiesContent,
 } from '../../content/portfolio-content.data';
 import { methodologyContent } from '../../content/methodology/methodology.data';
+import { caseStudies } from '../../content/case-studies/case-studies.data';
+import { InterfaceSlide } from '../../interface-slideshow/interface-slideshow';
 import {
   LanguageCode,
   LocalizedText,
@@ -65,6 +67,14 @@ export class PortfolioHomePage {
   private readonly pageMetadata = inject(PageMetadata);
 
   protected readonly heroContent = heroContent;
+  protected readonly interfaceSlides: readonly InterfaceSlide[] = caseStudies.flatMap(
+    (project) =>
+      (project.screenshots ?? []).map((screenshot) => ({
+        ...screenshot,
+        id: `${project.id}:${screenshot.id}`,
+        projectTitle: project.title,
+      })),
+  );
   protected readonly aboutContent = aboutContent;
   protected readonly capabilitiesContent = capabilitiesContent;
   protected readonly expertiseContent = expertiseContent;

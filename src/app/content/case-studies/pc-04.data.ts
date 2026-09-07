@@ -32,6 +32,44 @@ export const pc04CaseStudy = {
     en: 'C#/.NET and Node.js/TypeScript services ran on managed GCP compute services, keeping business and operational responsibilities outside the browser. Angular applications provided tailored experiences for administration, end users and support through typed GraphQL contracts, PWA capabilities and a remote-desktop viewer integration. Public identity and education ecosystems connected through OAuth 2.0, SAML 2.0, directory, classroom and rostering APIs. Compute Engine orchestration and BigQuery workflows supported virtual-machine operations and usage processing. Pub/Sub, retry queues, callbacks and SSE handled asynchronous work and real-time updates. A Windows agent, envelope encryption, secret rotation, Terraform and Cloud Build extended the engineering boundary into managed machines, security, infrastructure and delivery.',
     es: 'Servicios C#/.NET y Node.js/TypeScript se ejecutaron sobre servicios de cómputo administrados de GCP, manteniendo las responsabilidades operativas y de negocio fuera del navegador. Aplicaciones Angular ofrecieron experiencias enfocadas para administración, usuarios finales y soporte mediante contratos GraphQL tipados, capacidades PWA e integración de un viewer de escritorio remoto. Ecosistemas públicos de identidad y educación se conectaron mediante OAuth 2.0, SAML 2.0 y APIs de directorio, aulas y rostering. La orquestación en Compute Engine y los flujos de BigQuery respaldaron operaciones de máquinas virtuales y procesamiento de uso. Pub/Sub, colas de retry, callbacks y SSE atendieron trabajo asíncrono y actualizaciones en tiempo real. Un agente de Windows, cifrado envelope, rotación de secretos, Terraform y Cloud Build extendieron la frontera de ingeniería hacia máquinas administradas, seguridad, infraestructura y entrega.',
   },
+  screenshots: [
+    {
+      id: 'sign-in',
+      src: '/images/case-studies/pc-04/sign-in.png',
+      width: 2516,
+      height: 1202,
+      alt: {
+        en: 'Itopia sign-in interface with Microsoft, Google, ClassLink and Clever options.',
+        es: 'Interfaz de acceso de Itopia con opciones de Microsoft, Google, ClassLink y Clever.',
+      },
+      caption: { en: 'Login', es: 'Acceso' },
+    },
+    {
+      id: 'administration',
+      src: '/images/case-studies/pc-04/admin-illustrative.png',
+      width: 1810,
+      height: 869,
+      alt: {
+        en: 'Itopia administration interface with usage summary cards and illustrative activity and application charts.',
+        es: 'Interfaz de administración de Itopia con tarjetas de resumen de uso y gráficas ilustrativas de actividad y aplicaciones.',
+      },
+      caption: { en: 'Administration', es: 'Administración' },
+    },
+    {
+      id: 'user-portal',
+      src: '/images/case-studies/pc-04/user-portal.png',
+      width: 1129,
+      height: 976,
+      alt: {
+        en: 'Itopia session-start portal with class cards, session status and start controls.',
+        es: 'Portal de inicio de sesión de Itopia con tarjetas de clases, estado de sesión y controles de inicio.',
+      },
+      caption: {
+        en: 'Start session portal',
+        es: 'Portal de inicio de sesión',
+      },
+    },
+  ],
   technologies: [
     {
       id: 'backend-and-apis',

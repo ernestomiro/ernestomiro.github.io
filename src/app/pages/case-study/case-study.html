@@ -51,6 +51,7 @@
             <p>{{ localize(selectedCaseStudy.problem) }}</p>
           </div>
         </div>
+
       </section>
 
       <section class="section section--editorial section--surface-deep" aria-labelledby="case-role-title">
@@ -92,6 +93,27 @@
             </div>
           </div>
         </section>
+      }
+
+      @if (selectedCaseStudy.screenshots; as screenshots) {
+        @if (screenshots.length) {
+          <section class="section section--collection" aria-labelledby="case-interfaces-title">
+            <div class="section__shell">
+              <div class="section__title-group" data-reveal-block>
+                <div class="section__title-lockup">
+                  <h2 id="case-interfaces-title">{{ label('interfaceExamples') }}</h2>
+                  <span class="section__title-line" aria-hidden="true"></span>
+                </div>
+              </div>
+              <app-interface-slideshow
+                class="section__body"
+                [slides]="screenshots"
+                [accessibleLabel]="label('interfaceExamples')"
+                data-reveal-block
+              />
+            </div>
+          </section>
+        }
       }
 
       <section

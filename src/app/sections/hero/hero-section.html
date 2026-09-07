@@ -1,23 +1,41 @@
 <section id="top" class="hero-section" aria-labelledby="hero-title">
   <div class="layout-shell hero-section__shell">
-    <div class="hero-section__content" data-reveal-block data-reveal-on-load>
-      <p class="hero-section__name">
-        <span class="hero-section__marker" aria-hidden="true"></span>
-        Ernesto Miró Peraza
-      </p>
-      <div class="hero-section__title">
-        <h1 id="hero-title" tabindex="-1">{{ localize(content().headline) }}</h1>
-        <span class="hero-section__title-line" aria-hidden="true"></span>
+    <div class="hero-section__content">
+      <div class="hero-section__heading" data-reveal-block data-reveal-on-load>
+        <p class="hero-section__name">
+          <span class="hero-section__marker" aria-hidden="true"></span>
+          Ernesto Miró Peraza
+        </p>
+        <div class="hero-section__title">
+          <h1 id="hero-title" tabindex="-1">{{ localize(content().headline) }}</h1>
+          <span class="hero-section__title-line" aria-hidden="true"></span>
+        </div>
       </div>
-      <p class="hero-section__lead">{{ localize(content().lead) }}</p>
 
-      <div class="hero-section__actions">
-        <a class="hero-action hero-action--primary" [href]="content().primaryAction.href">
-          {{ localize(content().primaryAction.label) }}
-        </a>
-        <a class="hero-action hero-action--secondary" [href]="content().secondaryAction.href">
-          {{ localize(content().secondaryAction.label) }}
-        </a>
+      <div class="hero-section__body" [class.hero-section__body--with-slides]="slides().length > 0">
+        <div class="hero-section__copy" data-reveal-block data-reveal-on-load>
+          <p class="hero-section__lead">{{ localize(content().lead) }}</p>
+          <div class="hero-section__actions">
+            <a class="hero-action hero-action--primary" [href]="content().primaryAction.href">
+              {{ localize(content().primaryAction.label) }}
+            </a>
+            <a class="hero-action hero-action--secondary" [href]="content().secondaryAction.href">
+              {{ localize(content().secondaryAction.label) }}
+            </a>
+          </div>
+        </div>
+
+        @if (slides().length) {
+          <app-interface-slideshow
+            class="hero-section__slideshow"
+            [slides]="slides()"
+            [accessibleLabel]="localize(interfaceLabel)"
+            [eagerFirst]="true"
+            tone="brand"
+            data-reveal-block
+            data-reveal-on-load
+          />
+        }
       </div>
     </div>
   </div>
