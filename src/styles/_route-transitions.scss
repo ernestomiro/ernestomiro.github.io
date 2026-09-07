@@ -1,0 +1,49 @@
+// Router snapshots cover the current viewport, including shared page chrome.
+::view-transition-group(root) {
+  animation-duration: var(--motion-duration-route);
+  animation-timing-function: var(--motion-ease-standard);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--motion-duration-route);
+  animation-timing-function: var(--motion-ease-standard);
+  animation-fill-mode: both;
+  mix-blend-mode: plus-lighter;
+}
+
+::view-transition-old(root) {
+  animation-name: route-fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: route-fade-in;
+}
+
+@keyframes route-fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes route-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(root),
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}

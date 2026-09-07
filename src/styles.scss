@@ -1,6 +1,7 @@
 @use "styles/themes";
 @use "styles/section-layout";
 @use "styles/route-depth";
+@use "styles/route-transitions";
 
 @font-face {
   font-family: "Manrope";
@@ -179,6 +180,7 @@
   --motion-duration-fast: 250ms;
   --motion-duration-standard: 350ms;
   --motion-duration-slow: 2000ms;
+  --motion-duration-route: 850ms;
   --motion-ease-standard: cubic-bezier(0.2, 0, 0, 1);
   --motion-ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
   --motion-press-distance: 1px;
@@ -342,6 +344,7 @@ a.card-motion:active {
     --motion-duration-fast: 0ms;
     --motion-duration-standard: 0ms;
     --motion-duration-slow: 0ms;
+    --motion-duration-route: 0ms;
     --motion-press-distance: 0px;
     --motion-hover-scale-compact: 1;
     --motion-hover-scale-control: 1;
