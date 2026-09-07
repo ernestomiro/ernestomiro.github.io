@@ -82,15 +82,26 @@ export interface TechnologiesContent {
   readonly groups: readonly TechnologyGroup[];
 }
 
-export interface ProjectSummary {
+interface ProjectSummaryContent {
   readonly id: ContentId;
-  readonly caseStudyId: ContentId;
-  readonly slug: string;
   readonly title: LocalizedText;
   readonly summary: LocalizedText;
   readonly role: LocalizedText;
   readonly period?: string;
 }
+
+export type ProjectSummary = ProjectSummaryContent &
+  (
+    | {
+        readonly kind: 'case-study';
+        readonly caseStudyId: ContentId;
+        readonly slug: string;
+      }
+    | {
+        readonly kind: 'current-project';
+        readonly currentLocation: LocalizedText;
+      }
+  );
 
 export interface ProjectsContent {
   readonly title: LocalizedText;

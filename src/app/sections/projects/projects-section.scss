@@ -15,9 +15,38 @@
 
 .projects-list {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(100%, 19rem), 1fr)
-  );
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-grid-gap);
+}
+
+@media (min-width: 48rem) {
+  .projects-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .projects-list > app-project-card {
+    grid-column: span 2;
+  }
+
+  .projects-list > app-project-card:last-child:nth-child(odd) {
+    grid-column: 2 / span 2;
+  }
+}
+
+@media (min-width: 70rem) {
+  .projects-list {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .projects-list > app-project-card:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
+
+  .projects-list > app-project-card:nth-last-child(2):nth-child(3n + 1) {
+    grid-column: 2 / span 2;
+  }
+
+  .projects-list > app-project-card:last-child:nth-child(3n + 1) {
+    grid-column: 3 / span 2;
+  }
 }

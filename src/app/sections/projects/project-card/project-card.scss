@@ -4,7 +4,7 @@
 }
 
 .project-card,
-.project-card__link,
+.project-card__surface,
 .project-card__content {
   display: grid;
 }
@@ -13,7 +13,7 @@
   min-height: 100%;
 }
 
-.project-card__link {
+.project-card__surface {
   grid-template-rows: minmax(0, 1fr) auto;
   min-height: 100%;
   gap: var(--space-6);
@@ -39,7 +39,7 @@
   text-transform: uppercase;
 }
 
-.project-card__link h3 {
+.project-card__surface h3 {
   color: var(--color-text-heading);
   font-size: clamp(
     var(--font-size-3xl),
@@ -72,6 +72,13 @@
   text-decoration: underline;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
+}
+
+.project-card__status {
+  align-self: end;
+  color: var(--color-text-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
 }
 
 .project-card__link:focus-visible {

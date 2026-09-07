@@ -13,6 +13,7 @@ import {
 import { methodologyContent } from '../../content/methodology/methodology.data';
 import { caseStudies } from '../../content/case-studies/case-studies.data';
 import { InterfaceSlide } from '../../interface-slideshow/interface-slideshow';
+import { portfolioPreview } from '../../content/portfolio-preview.data';
 import {
   LanguageCode,
   LocalizedText,
@@ -67,14 +68,20 @@ export class PortfolioHomePage {
   private readonly pageMetadata = inject(PageMetadata);
 
   protected readonly heroContent = heroContent;
-  protected readonly interfaceSlides: readonly InterfaceSlide[] = caseStudies.flatMap(
-    (project) =>
+  protected readonly interfaceSlides: readonly InterfaceSlide[] = [
+    ...caseStudies.flatMap((project) =>
       (project.screenshots ?? []).map((screenshot) => ({
         ...screenshot,
         id: `${project.id}:${screenshot.id}`,
         projectTitle: project.title,
       })),
-  );
+    ),
+    ...portfolioPreview.screenshots.map((screenshot) => ({
+      ...screenshot,
+      id: `${portfolioPreview.id}:${screenshot.id}`,
+      projectTitle: portfolioPreview.title,
+    })),
+  ];
   protected readonly aboutContent = aboutContent;
   protected readonly capabilitiesContent = capabilitiesContent;
   protected readonly expertiseContent = expertiseContent;

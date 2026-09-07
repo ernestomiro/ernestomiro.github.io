@@ -1,21 +1,33 @@
-<article class="project-card">
-  <a
-    class="project-card__link card-motion"
-    [routerLink]="['/projects', project().slug]"
-    [queryParams]="detailQueryParams()"
-  >
-    <div class="project-card__content">
-      @if (project().period; as period) {
-        <p class="project-card__period">{{ period }}</p>
-      }
-      <h3>{{ localize(project().title) }}</h3>
-      <p class="project-card__role">{{ localize(project().role) }}</p>
-      <p class="project-card__summary">{{ localize(project().summary) }}</p>
-    </div>
+@let item = project();
 
-    <span class="project-card__action">
-      {{ actionLabel() }}
-      <span aria-hidden="true">→</span>
-    </span>
-  </a>
+<ng-template #cardContent>
+  <div class="project-card__content">
+    @if (item.period; as period) {
+      <p class="project-card__period">{{ period }}</p>
+    }
+    <h3>{{ localize(item.title) }}</h3>
+    <p class="project-card__role">{{ localize(item.role) }}</p>
+    <p class="project-card__summary">{{ localize(item.summary) }}</p>
+  </div>
+</ng-template>
+
+<article class="project-card">
+  @if (item.kind === 'case-study') {
+    <a
+      class="project-card__surface project-card__link card-motion"
+      [routerLink]="['/projects', item.slug]"
+      [queryParams]="detailQueryParams()"
+    >
+      <ng-container [ngTemplateOutlet]="cardContent" />
+      <span class="project-card__action">
+        {{ actionLabel() }}
+        <span aria-hidden="true">→</span>
+      </span>
+    </a>
+  } @else {
+    <div class="project-card__surface">
+      <ng-container [ngTemplateOutlet]="cardContent" />
+      <p class="project-card__status">{{ localize(item.currentLocation) }}</p>
+    </div>
+  }
 </article>

@@ -1,4 +1,5 @@
 import { caseStudies } from './case-studies/case-studies.data';
+import { portfolioPreview } from './portfolio-preview.data';
 import {
   AboutContent,
   CapabilitiesContent,
@@ -311,15 +312,35 @@ export const projectsContent = {
     en: 'Projects / Case Studies',
     es: 'Proyectos / Casos de estudio',
   },
-  items: caseStudies.map(({ id, slug, title, role, summary, period }) => ({
-    id,
-    caseStudyId: id,
-    slug,
-    title,
-    role,
-    summary,
-    period,
-  })),
+  items: [
+    ...caseStudies.map(({ id, slug, title, role, summary, period }) => ({
+      kind: 'case-study' as const,
+      id,
+      caseStudyId: id,
+      slug,
+      title,
+      role,
+      summary,
+      period,
+    })),
+    {
+      kind: 'current-project',
+      id: portfolioPreview.id,
+      title: portfolioPreview.title,
+      role: {
+        en: 'Design & development',
+        es: 'Diseño y desarrollo',
+      },
+      summary: {
+        en: 'I created this site to present my projects and how I work, with the portfolio itself as a practical example.',
+        es: 'Creé este sitio para presentar mis proyectos y mi forma de trabajar, con el propio portafolio como ejemplo práctico.',
+      },
+      currentLocation: {
+        en: 'You are viewing this project.',
+        es: 'Estás justo en este proyecto.',
+      },
+    },
+  ],
 } satisfies ProjectsContent;
 
 export const servicesContent = {
