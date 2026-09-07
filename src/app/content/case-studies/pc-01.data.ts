@@ -143,8 +143,8 @@ export const pc01CaseStudy = {
     {
       id: 'login',
       src: '/images/case-studies/pc-01/login.png',
-      width: 2140,
-      height: 1067,
+      width: 1775,
+      height: 886,
       alt: {
         en: 'CRM login interface with username and masked password fields.',
         es: 'Interfaz de acceso al CRM con campos de usuario y contraseña oculta.',
@@ -154,8 +154,8 @@ export const pc01CaseStudy = {
     {
       id: 'dashboard',
       src: '/images/case-studies/pc-01/dashboard.png',
-      width: 2135,
-      height: 1071,
+      width: 1770,
+      height: 888,
       alt: {
         en: 'CRM dashboard with service and appointment statistics and charts for demo branches.',
         es: 'Panel del CRM con estadísticas y gráficas de servicios y citas de sucursales de demostración.',
@@ -165,8 +165,8 @@ export const pc01CaseStudy = {
     {
       id: 'appointments',
       src: '/images/case-studies/pc-01/appointments.png',
-      width: 2136,
-      height: 1071,
+      width: 1780,
+      height: 884,
       alt: {
         en: 'CRM weekly appointment calendar with demo customers, time slots and appointment statuses.',
         es: 'Calendario semanal de citas del CRM con clientes de demostración, horarios y estados de las citas.',
@@ -176,8 +176,8 @@ export const pc01CaseStudy = {
     {
       id: 'new-appointment',
       src: '/images/case-studies/pc-01/new-appointment.png',
-      width: 2141,
-      height: 1073,
+      width: 1773,
+      height: 887,
       alt: {
         en: 'CRM new appointment dialog with a selected date and a table of demo services to choose from.',
         es: 'Diálogo de nueva cita del CRM con fecha seleccionada y tabla de servicios de demostración para elegir.',

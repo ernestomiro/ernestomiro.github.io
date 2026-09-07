@@ -36,11 +36,11 @@ export const pc04CaseStudy = {
     {
       id: 'sign-in',
       src: '/images/case-studies/pc-04/sign-in.png',
-      width: 2516,
-      height: 1202,
+      width: 1815,
+      height: 867,
       alt: {
-        en: 'Itopia sign-in interface with Microsoft, Google, ClassLink and Clever options.',
-        es: 'Interfaz de acceso de Itopia con opciones de Microsoft, Google, ClassLink y Clever.',
+        en: 'Sign-in interface with Microsoft, Google, ClassLink and Clever options.',
+        es: 'Interfaz de acceso con opciones de Microsoft, Google, ClassLink y Clever.',
       },
       caption: { en: 'Login', es: 'Acceso' },
     },
@@ -50,19 +50,19 @@ export const pc04CaseStudy = {
       width: 1810,
       height: 869,
       alt: {
-        en: 'Itopia administration interface with usage summary cards and illustrative activity and application charts.',
-        es: 'Interfaz de administración de Itopia con tarjetas de resumen de uso y gráficas ilustrativas de actividad y aplicaciones.',
+        en: 'Administration interface with usage summary cards and illustrative activity and application charts.',
+        es: 'Interfaz de administración con tarjetas de resumen de uso y gráficas ilustrativas de actividad y aplicaciones.',
       },
       caption: { en: 'Administration', es: 'Administración' },
     },
     {
       id: 'user-portal',
       src: '/images/case-studies/pc-04/user-portal.png',
-      width: 1129,
-      height: 976,
+      width: 1349,
+      height: 1166,
       alt: {
-        en: 'Itopia session-start portal with class cards, session status and start controls.',
-        es: 'Portal de inicio de sesión de Itopia con tarjetas de clases, estado de sesión y controles de inicio.',
+        en: 'Session-start portal with class cards, session status and start controls.',
+        es: 'Portal de inicio de sesión con tarjetas de clases, estado de sesión y controles de inicio.',
       },
       caption: {
         en: 'Start session portal',
