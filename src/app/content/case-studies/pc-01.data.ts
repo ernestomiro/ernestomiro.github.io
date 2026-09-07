@@ -139,6 +139,52 @@ export const pc01CaseStudy = {
       ],
     },
   ],
+  screenshots: [
+    {
+      id: 'login',
+      src: '/images/case-studies/pc-01/login.png',
+      width: 2140,
+      height: 1067,
+      alt: {
+        en: 'CRM login interface with username and masked password fields.',
+        es: 'Interfaz de acceso al CRM con campos de usuario y contraseña oculta.',
+      },
+      caption: { en: 'Login', es: 'Acceso' },
+    },
+    {
+      id: 'dashboard',
+      src: '/images/case-studies/pc-01/dashboard.png',
+      width: 2135,
+      height: 1071,
+      alt: {
+        en: 'CRM dashboard with service and appointment statistics and charts for demo branches.',
+        es: 'Panel del CRM con estadísticas y gráficas de servicios y citas de sucursales de demostración.',
+      },
+      caption: { en: 'Dashboard', es: 'Panel de control' },
+    },
+    {
+      id: 'appointments',
+      src: '/images/case-studies/pc-01/appointments.png',
+      width: 2136,
+      height: 1071,
+      alt: {
+        en: 'CRM weekly appointment calendar with demo customers, time slots and appointment statuses.',
+        es: 'Calendario semanal de citas del CRM con clientes de demostración, horarios y estados de las citas.',
+      },
+      caption: { en: 'Appointments', es: 'Citas' },
+    },
+    {
+      id: 'new-appointment',
+      src: '/images/case-studies/pc-01/new-appointment.png',
+      width: 2141,
+      height: 1073,
+      alt: {
+        en: 'CRM new appointment dialog with a selected date and a table of demo services to choose from.',
+        es: 'Diálogo de nueva cita del CRM con fecha seleccionada y tabla de servicios de demostración para elegir.',
+      },
+      caption: { en: 'New appointment', es: 'Nueva cita' },
+    },
+  ],
   technologies: [
     {
       id: 'representative-stack',
