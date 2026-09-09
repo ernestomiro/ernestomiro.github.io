@@ -12,8 +12,8 @@ export const pc02CaseStudy = {
     es: 'Ingeniería Full Stack, arquitectura distribuida y liderazgo técnico',
   },
   summary: {
-    en: 'Design and implementation of a new generation of multi-tenant SaaS capabilities, combining a single-entry gateway, distributed services, tenant-aware authorization and cross-cloud orchestration.',
-    es: 'Diseño e implementación de una nueva generación de capacidades SaaS multi-tenant, combinando un gateway de entrada único, servicios distribuidos, autorización consciente del tenant y orquestación entre clouds.',
+    en: 'I defined the architecture and helped implement a new foundation for coordinating school district services. The work introduced organization-specific permissions and controlled workflows for onboarding and long-running operations, with retries and protection against duplicate execution.',
+    es: 'Definí la arquitectura y contribuí a implementar una nueva base para coordinar servicios de distritos escolares. El trabajo incorporó permisos por organización y flujos controlados para altas y operaciones prolongadas, con reintentos y protección frente a ejecuciones duplicadas.',
   },
   period: '2025–2026',
   context: {
@@ -154,7 +154,7 @@ export const pc02CaseStudy = {
     es: 'Las convenciones compartidas cubrieron logging estructurado, dependency injection, gestión de secretos, validación y revisión de código. Los flujos sensibles de seguridad se revisaron alrededor de la validación de tokens, el contexto del tenant y los datos protegidos, sin exponer hallazgos privados.',
   },
   outcome: {
-    en: 'The work established a consistent architectural and engineering foundation for a new platform generation, with explicit service boundaries, reusable security patterns and controlled asynchronous workflows.',
-    es: 'El trabajo estableció una base arquitectónica y de ingeniería consistente para una nueva generación de la plataforma, con límites de servicio explícitos, patrones reutilizables de seguridad y flujos asíncronos controlados.',
+    en: 'The work established a foundation for adding new capabilities with shared rules for access and communication between services. Long-running operations had defined states, controlled retries, and protection against duplicate execution.',
+    es: 'Quedó establecida una base para incorporar nuevas capacidades con reglas compartidas de acceso y comunicación entre servicios. Las operaciones prolongadas contaron con estados definidos, reintentos controlados y protección frente a ejecuciones duplicadas.',
   },
 } as const satisfies CaseStudy;

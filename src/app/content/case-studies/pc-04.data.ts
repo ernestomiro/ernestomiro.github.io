@@ -12,8 +12,8 @@ export const pc04CaseStudy = {
     es: 'Ingeniería Full Stack, evolución de plataforma cloud e integraciones',
   },
   summary: {
-    en: 'Long-term evolution of a multi-tenant EdTech platform spanning distributed services, role-specific web applications, identity and rostering integrations, virtual-machine operations, data workflows and cloud delivery.',
-    es: 'Evolución prolongada de una plataforma EdTech multi-tenant que integraba servicios distribuidos, aplicaciones web por tipo de usuario, identidad y rostering, operaciones de máquinas virtuales, flujos de datos y entrega cloud.',
+    en: 'I helped expand an existing education platform with new features for administrators, users, and support. The work connected identity and education data providers, applications, and virtual desktops, combining new capabilities with system modernization.',
+    es: 'Contribuí a ampliar una plataforma educativa existente con nuevas funciones para administradores, usuarios y soporte. El trabajo conectó proveedores de acceso y datos educativos, aplicaciones y escritorios virtuales, combinando nuevas capacidades con la modernización del sistema.',
   },
   period: '2019–2025',
   context: {
@@ -243,7 +243,7 @@ export const pc04CaseStudy = {
     es: 'Contratos de API tipados, servicios cloud administrados, infraestructura como código, pipelines de entrega repetibles, cifrado, rotación de secretos y patrones asíncronos explícitos respaldaron la mantenibilidad y una evolución más segura entre las distintas superficies técnicas de la plataforma.',
   },
   outcome: {
-    en: 'The work sustained the technical evolution of an established EdTech platform across user experiences, services, integrations, data, virtual-machine operations, security and delivery.',
-    es: 'El trabajo sostuvo la evolución técnica de una plataforma EdTech existente a través de experiencias de usuario, servicios, integraciones, datos, operaciones de máquinas virtuales, seguridad y entrega.',
+    en: 'The existing platform gained new features, integrations, and modernized components for its different users. The work expanded its capabilities by building on the foundation already supporting its operations.',
+    es: 'La plataforma existente incorporó nuevas funcionalidades, integraciones y componentes modernizados para sus distintos usuarios. El trabajo amplió sus capacidades aprovechando la base que ya sostenía la operación.',
   },
 } as const satisfies CaseStudy;

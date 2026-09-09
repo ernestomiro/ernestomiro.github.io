@@ -12,8 +12,8 @@ export const pc09CaseStudy = {
     es: 'Desarrollo Full Stack y análisis de requisitos',
   },
   summary: {
-    en: 'Development and maintenance of enterprise software across backend, frontend and data, translating requirements into focused functional and technical changes.',
-    es: 'Desarrollo y mantenimiento de software empresarial en backend, frontend y datos, convirtiendo requisitos en cambios funcionales y técnicos concretos.',
+    en: 'I turned enterprise software requirements into features and maintenance improvements, working with a multidisciplinary team to keep the interface, logic, and data consistent.',
+    es: 'Convertí requisitos de software empresarial en funcionalidades y mejoras de mantenimiento, trabajando junto a un equipo multidisciplinario para mantener coherentes la interfaz, la lógica y los datos.',
   },
   period: '2017–2019',
   context: {

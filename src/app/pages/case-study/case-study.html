@@ -54,6 +54,20 @@
 
       </section>
 
+      @if (selectedCaseStudy.outcome; as outcome) {
+        <section class="section section--editorial" aria-labelledby="case-outcome-title">
+          <div class="section__shell case-study-grid" data-reveal-block>
+            <div class="case-study-narrative" data-reveal-item>
+              <div class="section__title-lockup">
+                <h2 id="case-outcome-title">{{ label('outcome') }}</h2>
+                <span class="section__title-line" aria-hidden="true"></span>
+              </div>
+              <p>{{ localize(outcome) }}</p>
+            </div>
+          </div>
+        </section>
+      }
+
       <section class="section section--editorial section--surface-deep" aria-labelledby="case-role-title">
         <div class="section__shell case-study-grid" data-reveal-block>
           <div class="case-study-narrative" data-reveal-item>
@@ -200,34 +214,16 @@
         </section>
       }
 
-      @if (selectedCaseStudy.engineeringQuality || selectedCaseStudy.outcome) {
-        <section
-          class="section section--editorial"
-          [attr.aria-labelledby]="
-            selectedCaseStudy.engineeringQuality
-              ? 'case-quality-title'
-              : 'case-outcome-title'
-          "
-        >
+      @if (selectedCaseStudy.engineeringQuality; as engineeringQuality) {
+        <section class="section section--editorial" aria-labelledby="case-quality-title">
           <div class="section__shell case-study-grid" data-reveal-block>
-            @if (selectedCaseStudy.engineeringQuality; as engineeringQuality) {
-              <div class="case-study-narrative" data-reveal-item>
-                <div class="section__title-lockup">
-                  <h2 id="case-quality-title">{{ label('engineeringQuality') }}</h2>
-                  <span class="section__title-line" aria-hidden="true"></span>
-                </div>
-                <p>{{ localize(engineeringQuality) }}</p>
+            <div class="case-study-narrative" data-reveal-item>
+              <div class="section__title-lockup">
+                <h2 id="case-quality-title">{{ label('engineeringQuality') }}</h2>
+                <span class="section__title-line" aria-hidden="true"></span>
               </div>
-            }
-            @if (selectedCaseStudy.outcome; as outcome) {
-              <div class="case-study-narrative" data-reveal-item>
-                <div class="section__title-lockup">
-                  <h2 id="case-outcome-title">{{ label('outcome') }}</h2>
-                  <span class="section__title-line" aria-hidden="true"></span>
-                </div>
-                <p>{{ localize(outcome) }}</p>
-              </div>
-            }
+              <p>{{ localize(engineeringQuality) }}</p>
+            </div>
           </div>
         </section>
       }

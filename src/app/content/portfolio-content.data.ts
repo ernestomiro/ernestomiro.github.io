@@ -40,12 +40,12 @@ export const navigationContent = [
 
 export const heroContent = {
   headline: {
-    en: 'Software solutions at the right scale.',
-    es: 'Soluciones de software a la escala adecuada.',
+    en: 'Software that simplifies work and adapts to your business.',
+    es: 'Software que simplifica el trabajo y se adapta a tu negocio.',
   },
   lead: {
-    en: 'I build, improve, and troubleshoot software—from focused fixes, features, APIs, and integrations to complete business applications and complex systems.',
-    es: 'Construyo, mejoro y resuelvo problemas de software: desde correcciones puntuales, funcionalidades, APIs e integraciones hasta aplicaciones empresariales completas y sistemas complejos.',
+    en: 'I help you fix bugs, reduce manual work, and connect your systems. I build new applications and improve the ones you already use, from a focused need to the evolution of a complete product.',
+    es: 'Te ayudo a resolver fallos, reducir tareas manuales y conectar tus sistemas. Desarrollo nuevas aplicaciones y mejoro las que ya utilizas, desde una necesidad puntual hasta la evolución de un producto completo.',
   },
   primaryAction: {
     label: {
@@ -70,8 +70,8 @@ export const aboutContent = {
   },
   paragraphs: [
     {
-      en: 'I’m a full-stack software developer focused on business applications and complex systems. I work on both new products and existing software, designing, extending, integrating, and modernizing applications with a practical approach to architecture and long-term evolution.',
-      es: 'Soy desarrollador de software Full Stack enfocado en aplicaciones empresariales y sistemas complejos. Trabajo tanto en productos nuevos como en software existente, diseñando, ampliando, integrando y modernizando aplicaciones con un enfoque práctico de arquitectura y evolución a largo plazo.',
+      en: 'I’m a full-stack software developer specializing in business applications. My experience combines implementation, needs analysis, and technical team coordination. I connect business decisions with work across interfaces, services, and data to turn requirements into concrete features and keep systems ready for future changes.',
+      es: 'Soy desarrollador de software Full Stack especializado en aplicaciones empresariales. Mi experiencia combina implementación, análisis de necesidades y coordinación técnica de equipos. Conecto las decisiones de negocio con el trabajo en interfaces, servicios y datos para convertir requisitos en funcionalidades concretas y mantener los sistemas preparados para nuevos cambios.',
     },
   ],
 } as const satisfies AboutContent;
@@ -96,8 +96,8 @@ export const expertiseContent = {
         es: 'Aplicaciones empresariales',
       },
       description: {
-        en: 'Building clear, reliable software around complex business processes and operational needs.',
-        es: 'Crear software claro y confiable alrededor de procesos y necesidades operativas complejas.',
+        en: 'Translate complex business processes into features that keep information, permissions, and work across departments consistent.',
+        es: 'Traducir procesos de negocio complejos en funcionalidades que mantengan coherentes la información, los permisos y el trabajo entre áreas.',
       },
     },
     {
@@ -107,8 +107,8 @@ export const expertiseContent = {
         es: 'Evolución de software',
       },
       description: {
-        en: 'Improving existing systems through targeted changes, new capabilities, modernization, and maintainable architecture.',
-        es: 'Mejorar sistemas existentes mediante cambios puntuales, nuevas capacidades, modernización y arquitectura mantenible.',
+        en: 'Add new capabilities by building on the existing foundation while keeping the system maintainable and ready to expand.',
+        es: 'Incorporar nuevas capacidades aprovechando la base existente y cuidando que el sistema pueda seguir manteniéndose y ampliándose.',
       },
     },
     {
@@ -118,8 +118,8 @@ export const expertiseContent = {
         es: 'Integraciones y APIs',
       },
       description: {
-        en: 'Connecting applications, services, and data through reliable integrations and well-defined contracts.',
-        es: 'Conectar aplicaciones, servicios y datos mediante integraciones confiables y contratos bien definidos.',
+        en: 'Define how systems share information and respond to failures so their connections can be maintained and evolve.',
+        es: 'Definir cómo comparten información los sistemas y cómo responden ante fallos, para que sus conexiones puedan mantenerse y evolucionar.',
       },
     },
     {
@@ -129,8 +129,8 @@ export const expertiseContent = {
         es: 'Desarrollo integral',
       },
       description: {
-        en: 'Taking features from logic and data through to coherent, usable user experiences.',
-        es: 'Llevar funcionalidades desde la lógica y los datos hasta experiencias de usuario coherentes y utilizables.',
+        en: 'Deliver a feature from end to end, connecting the interface, business logic, and data so the different parts work together consistently.',
+        es: 'Resolver una funcionalidad de principio a fin, conectando interfaz, lógica de negocio y datos para que las distintas partes funcionen de forma coherente.',
       },
     },
   ],
@@ -142,16 +142,16 @@ export const teamDeliveryContent = {
     es: 'Entrega de proyectos en equipo',
   },
   title: {
-    en: 'Agile delivery with Scrum.',
-    es: 'Entrega ágil con Scrum.',
+    en: 'Clear priorities and visible progress with Scrum.',
+    es: 'Prioridades claras y avance visible con Scrum.',
   },
   description: {
-    en: 'At project level, Scrum gives the team a shared cadence to refine and prioritize the backlog, plan sprints, coordinate delivery, review outcomes, and improve the process.',
-    es: 'A nivel de proyecto, Scrum aporta al equipo una cadencia compartida para refinar y priorizar el backlog, planificar sprints, coordinar la entrega, revisar resultados y mejorar el proceso.',
+    en: 'Sprint planning helps the team share priorities, review progress, and adjust the work with each delivery. Results and blockers become visible to support decisions throughout the project.',
+    es: 'La planificación por sprints ayuda a que el equipo comparta prioridades, revise avances y ajuste el trabajo con cada entrega. Los resultados y los bloqueos se hacen visibles para tomar decisiones durante el proyecto.',
   },
   tools: {
-    en: 'Azure DevOps or Jira can support backlog management, sprint planning, work tracking, and shared visibility of progress and blockers.',
-    es: 'Azure DevOps o Jira pueden apoyar la gestión del backlog, la planificación de sprints, el seguimiento del trabajo y la visibilidad compartida del avance y los bloqueos.',
+    en: 'Azure DevOps or Jira make it possible to see what is pending, what is in progress, and where intervention is needed.',
+    es: 'Azure DevOps o Jira permiten consultar qué está pendiente, qué está en curso y dónde hace falta intervenir.',
   },
 } as const satisfies TeamDeliveryContent;
 
@@ -332,8 +332,8 @@ export const projectsContent = {
         es: 'Diseño y desarrollo',
       },
       summary: {
-        en: 'I created this site to present my projects and how I work, with the portfolio itself as a practical example.',
-        es: 'Creé este sitio para presentar mis proyectos y mi forma de trabajar, con el propio portafolio como ejemplo práctico.',
+        en: 'I designed and developed this site so clients and employers can understand the problems I can address, review my experience, and contact me. The portfolio itself is a practical example of my work.',
+        es: 'Diseñé y desarrollé este sitio para que clientes y empleadores puedan conocer qué problemas puedo abordar, revisar mi experiencia y contactarme. El propio portafolio es una muestra práctica de mi trabajo.',
       },
       currentLocation: {
         en: 'You are viewing this project.',
@@ -349,8 +349,8 @@ export const servicesContent = {
     es: 'Servicios',
   },
   introduction: {
-    en: 'Projects do not need to be large to benefit from experienced engineering. I can help with a focused problem, a defined phase, or a complete application—adapting the scope to what the system actually needs.',
-    es: 'Los proyectos no necesitan ser grandes para beneficiarse de ingeniería experimentada. Puedo ayudar con un problema puntual, una fase definida o una aplicación completa, adaptando el alcance a lo que el sistema realmente necesita.',
+    en: 'You can count on me to solve a focused problem, complete a project phase, or develop an application. The scope adapts to what you need to achieve and what you have already built.',
+    es: 'Puedes contar conmigo para resolver un problema puntual, completar una etapa o desarrollar una aplicación. El alcance se adapta a lo que necesitas conseguir y a lo que ya tienes construido.',
   },
   items: [
     {
@@ -360,8 +360,8 @@ export const servicesContent = {
         es: 'Software a medida y MVP',
       },
       description: {
-        en: 'Applications, internal tools, and functional first versions designed around real workflows without overbuilding the initial scope.',
-        es: 'Aplicaciones, herramientas internas y primeras versiones funcionales diseñadas alrededor de flujos reales sin sobredimensionar el alcance inicial.',
+        en: 'Turn an idea or operational need into a usable application. I build an initial version focused on the essentials so you can try it out and decide how to grow it.',
+        es: 'Convierte una idea o necesidad operativa en una aplicación utilizable. Desarrollo una primera versión centrada en lo esencial para que puedas ponerla a prueba y decidir cómo hacerla crecer.',
       },
     },
     {
@@ -371,8 +371,8 @@ export const servicesContent = {
         es: 'Funcionalidades y mejoras puntuales',
       },
       description: {
-        en: 'Screens, endpoints, workflows, validations, reports, permissions, and other targeted changes to existing applications.',
-        es: 'Pantallas, endpoints, flujos, validaciones, reportes, permisos y otros cambios definidos sobre aplicaciones existentes.',
+        en: 'Adapt your application to new needs with focused features: reports to access information, permissions to organize responsibilities, and improvements to the workflows your team already uses.',
+        es: 'Adapta tu aplicación a nuevas necesidades con funcionalidades concretas: reportes para consultar información, permisos para organizar responsabilidades y mejoras en los flujos de trabajo que ya utiliza tu equipo.',
       },
     },
     {
@@ -382,8 +382,8 @@ export const servicesContent = {
         es: 'APIs e integraciones',
       },
       description: {
-        en: 'REST or GraphQL APIs, webhooks, authentication, synchronization, and connections to external services.',
-        es: 'APIs REST o GraphQL, webhooks, autenticación, sincronización y conexiones con servicios externos.',
+        en: 'Connect your applications to share information and reduce manual data entry. I develop APIs and integrations with external services around your operational needs.',
+        es: 'Conecta tus aplicaciones para compartir información y reducir la captura manual de datos. Desarrollo APIs e integraciones con servicios externos según las necesidades de tu operación.',
       },
     },
     {
@@ -393,8 +393,8 @@ export const servicesContent = {
         es: 'Diagnóstico y rendimiento',
       },
       description: {
-        en: 'Diagnosis and resolution of persistent bugs, unexpected behavior, performance issues, and difficult-to-isolate failures.',
-        es: 'Diagnóstico y resolución de errores persistentes, comportamientos inesperados, problemas de rendimiento y fallos difíciles de aislar.',
+        en: 'Get work moving again when your application slows tasks down or interrupts them. I investigate and fix persistent bugs and performance issues, addressing their causes and their impact on everyday use.',
+        es: 'Recupera fluidez en las tareas que tu aplicación vuelve lentas o interrumpe. Investigo y corrijo errores persistentes y problemas de rendimiento, atendiendo su causa y su impacto en el uso diario.',
       },
     },
     {
@@ -404,8 +404,8 @@ export const servicesContent = {
         es: 'Automatización y herramientas internas',
       },
       description: {
-        en: 'Utilities, dashboards, data-processing tools, and workflow automation for specific operational needs.',
-        es: 'Utilidades, paneles, herramientas de procesamiento de datos y automatización de flujos para necesidades operativas específicas.',
+        en: 'Reduce your team’s repetitive work with automation and internal tools to process data, access information, and coordinate everyday tasks.',
+        es: 'Reduce el trabajo repetitivo de tu equipo con automatizaciones y herramientas internas para procesar datos, consultar información y coordinar tareas cotidianas.',
       },
     },
     {
@@ -415,8 +415,8 @@ export const servicesContent = {
         es: 'Arquitectura, despliegue y apoyo técnico',
       },
       description: {
-        en: 'Architecture review, modernization, environment configuration, CI/CD, cloud deployment, and implementation support for evolving systems.',
-        es: 'Revisión de arquitectura, modernización, configuración de entornos, CI/CD, despliegue cloud y apoyo de implementación para sistemas en evolución.',
+        en: 'Prepare your application for release, maintenance, and continued evolution. I review its architecture, modernize components, and configure environments and deployment processes around the project’s needs.',
+        es: 'Prepara tu aplicación para publicarse, mantenerse y seguir evolucionando. Reviso su arquitectura, modernizo componentes y configuro entornos y procesos de despliegue según las necesidades del proyecto.',
       },
     },
   ],
@@ -429,57 +429,57 @@ export const servicesContent = {
       {
         id: 'persistent-bug',
         description: {
-          en: 'Fix a persistent application or production bug.',
-          es: 'Corregir un error persistente de aplicación o producción.',
+          en: 'A recurring bug is interrupting our work.',
+          es: 'Hay un error que se repite y está interrumpiendo nuestro trabajo.',
         },
       },
       {
         id: 'existing-application-feature',
         description: {
-          en: 'Add a feature to an existing application.',
-          es: 'Añadir una funcionalidad a una aplicación existente.',
+          en: 'Our application works, but we need to add a feature.',
+          es: 'Nuestra aplicación funciona, pero necesitamos añadir una funcionalidad.',
         },
       },
       {
         id: 'api-development',
         description: {
-          en: 'Build or extend a REST or GraphQL API.',
-          es: 'Construir o ampliar una API REST o GraphQL.',
+          en: 'We need an API so other applications can use our data or features.',
+          es: 'Necesitamos una API para que otras aplicaciones puedan utilizar nuestros datos o funciones.',
         },
       },
       {
         id: 'service-integration',
         description: {
-          en: 'Integrate a third-party service or synchronize data.',
-          es: 'Integrar un servicio externo o sincronizar datos.',
+          en: 'Our systems need to share information and stay in sync.',
+          es: 'Nuestros sistemas necesitan compartir información y mantenerse sincronizados.',
         },
       },
       {
         id: 'workflow-automation',
         description: {
-          en: 'Automate a repetitive workflow or create an internal tool.',
-          es: 'Automatizar un flujo repetitivo o crear una herramienta interna.',
+          en: 'We keep repeating a manual task and want to automate it.',
+          es: 'Repetimos una tarea manual y queremos automatizarla.',
         },
       },
       {
         id: 'database-performance',
         description: {
-          en: 'Improve database queries or application performance.',
-          es: 'Mejorar consultas de base de datos o el rendimiento de una aplicación.',
+          en: 'Accessing information or completing a task in the application takes too long.',
+          es: 'Consultar información o completar una tarea en la aplicación tarda demasiado.',
         },
       },
       {
         id: 'application-deployment',
         description: {
-          en: 'Deploy an application or configure its environment.',
-          es: 'Desplegar una aplicación o configurar su entorno.',
+          en: 'We have an application and need to prepare it for use.',
+          es: 'Tenemos una aplicación y necesitamos prepararla para ponerla en funcionamiento.',
         },
       },
       {
         id: 'mvp-system-change',
         description: {
-          en: 'Build an MVP or plan a larger system change.',
-          es: 'Construir un MVP o planificar un cambio mayor de sistema.',
+          en: 'We want to try out an idea with an initial version or plan a major system improvement.',
+          es: 'Queremos probar una idea con una primera versión o planificar una mejora importante del sistema.',
         },
       },
     ],

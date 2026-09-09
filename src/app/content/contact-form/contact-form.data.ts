@@ -57,8 +57,8 @@ export const contactFormContent = {
       es: 'Déjame un mensaje | Ernesto Miró Peraza',
     },
     description: {
-      en: 'Send Ernesto Miró Peraza a private message and your preferred contact details.',
-      es: 'Envía un mensaje privado a Ernesto Miró Peraza y tus datos de contacto preferidos.',
+      en: 'Contact Ernesto Miró Peraza to address a software need, discuss a project, or share a job opportunity.',
+      es: 'Contacta a Ernesto Miró Peraza para resolver una necesidad de software, conversar sobre un proyecto o compartir una oportunidad laboral.',
     },
   },
   hero: {
@@ -66,8 +66,8 @@ export const contactFormContent = {
     label: { en: 'Contact', es: 'Contacto' },
     title: { en: 'Leave a message.', es: 'Déjame un mensaje.' },
     lead: {
-      en: 'Tell me briefly what you would like to discuss and how I can reach you.',
-      es: 'Cuéntame brevemente qué te gustaría conversar y cómo puedo contactarte.',
+      en: 'Tell me what you need to solve, what you would like to improve, or what opportunity you have on your team. Include how I can reach you; you can explain the situation in your own words.',
+      es: 'Cuéntame qué necesitas resolver, qué te gustaría mejorar o qué oportunidad tienes en tu equipo. Incluye cómo puedo contactarte; puedes explicar la situación con tus propias palabras.',
     },
   },
   form: {
@@ -133,12 +133,12 @@ export const contactFormContent = {
       es: 'Inténtalo nuevamente. También puedes contactarme directamente por correo.',
     },
     unavailableTitle: {
-      en: 'Secure messaging is not available yet.',
-      es: 'La mensajería segura aún no está disponible.',
+      en: 'The contact form is not available.',
+      es: 'El formulario de contacto no está disponible.',
     },
     unavailableBody: {
-      en: 'The service is enabled only in the local proof of concept until production hosting is confirmed.',
-      es: 'El servicio está habilitado solo en la prueba de concepto local hasta confirmar el hosting de producción.',
+      en: 'You can email me directly to tell me about your project or share a job opportunity.',
+      es: 'Puedes escribirme directamente por correo electrónico para contarme tu proyecto o compartir una oportunidad laboral.',
     },
   },
   fallback: {

@@ -10,8 +10,8 @@ export const methodologyContent = {
       es: 'Ingeniería asistida por IA | Ernesto Miró Peraza',
     },
     description: {
-      en: 'A documented engineering workflow combining persistent context, explicit guardrails, incremental implementation, verification, and human decision gates.',
-      es: 'Un flujo de ingeniería documentado que combina contexto persistente, límites explícitos, implementación incremental, verificación y decisiones humanas.',
+      en: 'How I work with AI to produce reviewable changes, preserve decisions, and communicate what is verified and what remains pending.',
+      es: 'Cómo trabajo con IA para producir cambios revisables, conservar decisiones y comunicar qué está verificado y qué queda pendiente.',
     },
   },
   teaser: {
@@ -20,16 +20,16 @@ export const methodologyContent = {
       es: 'Flujo individual de ingeniería',
     },
     title: {
-      en: 'AI-assisted engineering with explicit guardrails.',
-      es: 'Ingeniería asistida por IA con límites explícitos.',
+      en: 'AI with human review and verifiable changes.',
+      es: 'IA con revisión humana y cambios verificables.',
     },
     description: {
-      en: 'A documented workflow that keeps context, architecture, verification, and human decisions visible from one change to the next.',
-      es: 'Un flujo documentado que mantiene visibles el contexto, la arquitectura, la verificación y las decisiones humanas de un cambio al siguiente.',
+      en: 'I use AI within a documented process so each change can be reviewed, decisions are preserved, and work can continue with context.',
+      es: 'Uso la IA dentro de un proceso documentado para que cada cambio pueda revisarse, las decisiones se conserven y el trabajo pueda continuar con contexto.',
     },
     actionLabel: {
-      en: 'See my individual workflow',
-      es: 'Conocer mi flujo individual',
+      en: 'See how I work with AI',
+      es: 'Conocer cómo trabajo con IA',
     },
     path: methodologyPath,
   },
@@ -43,12 +43,12 @@ export const methodologyContent = {
       es: 'Flujo individual de ingeniería',
     },
     headline: {
-      en: 'AI assistance, grounded in engineering context.',
-      es: 'Asistencia con IA, sustentada en contexto de ingeniería.',
+      en: 'Reviewable changes and continuity with AI support.',
+      es: 'Cambios revisables y continuidad del trabajo con apoyo de IA.',
     },
     lead: {
-      en: 'I use AI as part of a documented workflow for planning, implementation, and review—keeping architecture, evidence, and high-impact decisions explicit from one change to the next.',
-      es: 'Uso la IA como parte de un flujo documentado para planificar, implementar y revisar, manteniendo explícitas la arquitectura, la evidencia y las decisiones de alto impacto de un cambio al siguiente.',
+      en: 'I use AI to support planning, implementation, and review. I document decisions, define the scope of each change, and explain what was verified and what remains pending so the work can be evaluated and resumed with clarity.',
+      es: 'Uso la IA para apoyar la planificación, la implementación y la revisión. Documento las decisiones, delimito cada cambio y explico qué se verificó y qué queda pendiente, para que el trabajo pueda evaluarse y retomarse con claridad.',
     },
   },
   workflow: {
@@ -131,12 +131,12 @@ export const methodologyContent = {
   },
   humanGate: {
     title: {
-      en: 'Human decisions stay visible.',
-      es: 'Las decisiones humanas permanecen visibles.',
+      en: 'Important decisions require human review.',
+      es: 'Las decisiones importantes requieren revisión humana.',
     },
     body: {
-      en: 'AI can analyze context, propose changes, and execute defined work. Product direction, personal claims, high-impact tradeoffs, and publication decisions remain explicit human checkpoints. Verification can also send work back to planning or implementation instead of forcing a linear path.',
-      es: 'La IA puede analizar contexto, proponer cambios y ejecutar trabajo definido. La dirección del producto, las afirmaciones personales, los tradeoffs de alto impacto y las decisiones de publicación permanecen como puntos explícitos de revisión humana. La verificación también puede devolver el trabajo al plan o a la implementación en vez de forzar un camino lineal.',
+      en: 'AI helps with analysis, proposals, and implementation. Product decisions, high-impact changes, and publication go through human review. If verification finds a problem, the work is reviewed again before proceeding.',
+      es: 'La IA ayuda a analizar, proponer e implementar. Las decisiones sobre el producto, los cambios de mayor impacto y la publicación pasan por revisión humana. Si la verificación encuentra un problema, el trabajo vuelve a revisarse antes de continuar.',
     },
   },
   evidence: {
@@ -152,8 +152,8 @@ export const methodologyContent = {
           es: 'Continuidad',
         },
         description: {
-          en: 'Persistent documentation carries decisions and the current handoff across sessions.',
-          es: 'La documentación persistente conserva decisiones y el handoff actual entre sesiones.',
+          en: 'Decisions and the current state of work are documented so another person or a later session can continue with context.',
+          es: 'Las decisiones y el estado del trabajo quedan documentados para que otra persona o una sesión posterior puedan continuar con contexto.',
         },
       },
       {
@@ -163,8 +163,8 @@ export const methodologyContent = {
           es: 'Límites específicos del proyecto',
         },
         description: {
-          en: 'Architecture, interface, privacy, and deployment constraints shape what can change.',
-          es: 'Las restricciones de arquitectura, interfaz, privacidad y despliegue determinan qué puede cambiar.',
+          en: 'Each change respects the conditions agreed for the project, including architecture, interface, privacy, and publication.',
+          es: 'Cada cambio respeta las condiciones acordadas para el proyecto, incluidos arquitectura, interfaz, privacidad y publicación.',
         },
       },
       {
@@ -174,8 +174,8 @@ export const methodologyContent = {
           es: 'Alcance trazable',
         },
         description: {
-          en: 'Atomic tasks, dependencies, states, and completion criteria keep the work inspectable.',
-          es: 'Las tareas atómicas, dependencias, estados y criterios de cierre mantienen el trabajo inspeccionable.',
+          en: 'You can see what is being worked on, what it depends on, and what remains before it can be considered complete.',
+          es: 'Se puede consultar qué se está haciendo, de qué depende y qué falta para darlo por terminado.',
         },
       },
       {
@@ -185,8 +185,8 @@ export const methodologyContent = {
           es: 'Verificación honesta',
         },
         description: {
-          en: 'Source inspection, builds, automated tests, runtime, and publication are reported as distinct kinds of evidence.',
-          es: 'La inspección de fuente, compilación, pruebas automatizadas, runtime y publicación se reportan como evidencias distintas.',
+          en: 'The delivery’s actual status is made clear by explaining what was checked, how it was checked, and what remains pending.',
+          es: 'Se explica qué se comprobó, cómo se comprobó y qué sigue pendiente, para evaluar el estado real de la entrega.',
         },
       },
     ],

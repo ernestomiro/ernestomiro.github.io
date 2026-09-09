@@ -12,8 +12,8 @@ export const pc01CaseStudy = {
     es: 'Ingeniería Full Stack y liderazgo técnico',
   },
   summary: {
-    en: 'I led the evolution of an existing CRM into an integrated platform for complex, multi-company and multi-branch operations. The work connected customer, service, scheduling, procurement, records, permissions and notification workflows across an Angular frontend and a .NET backend, with transactional rules protecting cross-module state changes.',
-    es: 'Lideré la evolución de un CRM existente hasta convertirlo en una plataforma integrada para operaciones complejas, multiempresa y multisucursal. El trabajo conectó clientes, servicios, agenda, abastecimiento, expedientes, permisos y notificaciones mediante un frontend Angular y un backend .NET, con reglas transaccionales que protegen los cambios de estado entre módulos.',
+    en: 'I led the evolution of a CRM to connect customer, service, appointment, and procurement management across companies and branches. We built on the existing system and added rules to keep information consistent when an operation affected multiple modules.',
+    es: 'Lideré la evolución de un CRM para conectar la gestión de clientes, servicios, citas y abastecimiento entre empresas y sucursales. Aprovechamos el sistema existente y añadimos reglas para mantener coherente la información cuando una operación afectaba a varios módulos.',
   },
   period: '2026',
   context: {
