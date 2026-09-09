@@ -24,8 +24,8 @@ export const methodologyContent = {
       es: 'IA con revisión humana y cambios verificables.',
     },
     description: {
-      en: 'I use AI within a documented process so each change can be reviewed, decisions are preserved, and work can continue with context.',
-      es: 'Uso la IA dentro de un proceso documentado para que cada cambio pueda revisarse, las decisiones se conserven y el trabajo pueda continuar con contexto.',
+      en: 'I use Codex and Claude Code from Visual Studio Code, including its terminal, within a documented workflow with human review, preserved decisions, and continuity between changes.',
+      es: 'Uso Codex y Claude Code desde Visual Studio Code, incluida su terminal, en un flujo documentado con revisión humana, decisiones conservadas y continuidad entre cambios.',
     },
     actionLabel: {
       en: 'See how I work with AI',
@@ -35,8 +35,8 @@ export const methodologyContent = {
   },
   hero: {
     backLabel: {
-      en: 'Back to expertise',
-      es: 'Volver a especialización',
+      en: 'Back to AI capabilities',
+      es: 'Volver a capacidades de IA',
     },
     label: {
       en: 'Individual engineering workflow',
@@ -47,8 +47,8 @@ export const methodologyContent = {
       es: 'Cambios revisables y continuidad del trabajo con apoyo de IA.',
     },
     lead: {
-      en: 'I use AI to support planning, implementation, and review. I document decisions, define the scope of each change, and explain what was verified and what remains pending so the work can be evaluated and resumed with clarity.',
-      es: 'Uso la IA para apoyar la planificación, la implementación y la revisión. Documento las decisiones, delimito cada cambio y explico qué se verificó y qué queda pendiente, para que el trabajo pueda evaluarse y retomarse con claridad.',
+      en: 'I use Codex and Claude Code from Visual Studio Code and its integrated terminal to support planning, implementation, and review. I document decisions, define the scope of each change, and explain what was verified and what remains pending so the work can be evaluated and resumed with clarity.',
+      es: 'Uso Codex y Claude Code desde Visual Studio Code y su terminal integrada para apoyar la planificación, la implementación y la revisión. Documento las decisiones, delimito cada cambio y explico qué se verificó y qué queda pendiente, para que el trabajo pueda evaluarse y retomarse con claridad.',
     },
   },
   workflow: {

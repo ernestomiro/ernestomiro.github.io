@@ -290,6 +290,21 @@ export const technologiesContent = {
       items: ['xUnit', 'Moq', 'Jasmine / Karma', 'Mocha / Chai'],
     },
     {
+      id: 'ai-and-orchestration',
+      label: {
+        en: 'Artificial Intelligence',
+        es: 'Inteligencia artificial',
+      },
+      items: [
+        'Semantic Kernel',
+        'LLM integration',
+        'Retrieval-Augmented Generation (RAG)',
+        'Tool calling',
+        'Agentic workflows',
+        'Vector search',
+      ],
+    },
+    {
       id: 'specialized-integrations',
       label: {
         en: 'Specialized Integrations',

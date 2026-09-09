@@ -40,25 +40,5 @@
       </section>
     </div>
 
-    <div class="expertise-methodology-reveal" data-reveal-block>
-      <a
-        class="expertise-methodology card-motion"
-        [routerLink]="methodology().path"
-        [queryParams]="methodologyQueryParams()"
-      >
-        <div class="expertise-methodology__content">
-          <p class="expertise-methodology__label">
-            {{ localize(methodology().label) }}
-          </p>
-          <h4>{{ localize(methodology().title) }}</h4>
-          <p>{{ localize(methodology().description) }}</p>
-        </div>
-
-        <span class="expertise-methodology__link">
-          {{ localize(methodology().actionLabel) }}
-          <span aria-hidden="true">→</span>
-        </span>
-      </a>
-    </div>
   </div>
 </section>

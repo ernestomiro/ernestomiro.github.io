@@ -1,0 +1,96 @@
+:host {
+  display: block;
+}
+
+.section__title-group h3 {
+  font-size: var(--type-panel-title-size);
+  letter-spacing: var(--tracking-heading);
+}
+
+.section__title-group h3:focus {
+  outline: var(--focus-ring-width) solid var(--color-focus-outer);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-control);
+}
+
+.ai-list {
+  display: grid;
+  gap: var(--space-heading-gap);
+  margin-block-end: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ai-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: var(--space-6) var(--space-layout-gap);
+  padding: var(--space-card-inset);
+  border: var(--border-width-hairline) solid var(--color-border-on-dark);
+  border-radius: var(--radius-panel);
+  background: var(--color-section-deep);
+  box-shadow: var(--shadow-elevated);
+  color: var(--color-text-on-deep);
+  text-decoration: none;
+}
+
+.ai-card__content {
+  display: grid;
+  flex: 1 1 var(--layout-reading-compact);
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.ai-card__label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--tracking-label);
+  line-height: var(--line-height-compact);
+  text-transform: uppercase;
+}
+
+.ai-card h4 {
+  max-width: 24ch;
+  color: var(--color-text-on-deep);
+  font-size: var(--font-size-3xl);
+  letter-spacing: var(--tracking-title);
+}
+
+.ai-card__content > :last-child {
+  max-width: var(--layout-reading-max);
+  line-height: var(--line-height-relaxed);
+}
+
+.ai-card__link {
+  display: inline-flex;
+  flex: 0 1 auto;
+  max-width: 100%;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 2.75rem;
+  padding: var(--space-3) var(--space-5);
+  border: var(--border-width-hairline) solid var(--color-border-on-dark);
+  border-radius: var(--radius-pill);
+  color: var(--color-text-on-deep);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+}
+
+.ai-card:focus-visible {
+  outline-color: var(--color-focus-on-dark);
+  box-shadow: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ai-card:hover {
+    color: var(--color-text-on-deep);
+  }
+
+  .ai-card:hover .ai-card__link {
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+  }
+}

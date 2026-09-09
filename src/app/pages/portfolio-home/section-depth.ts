@@ -16,6 +16,7 @@ const depthGroupSections = [
   { id: 'services', group: 'profile' },
   { id: 'projects', group: 'evidence' },
   { id: 'expertise', group: 'evidence' },
+  { id: 'artificial-intelligence', group: 'evidence' },
   { id: 'technologies', group: 'evidence' },
   { id: 'contact', group: 'contact' },
 ] as const satisfies readonly { id: string; group: DepthGroup }[];

@@ -10,6 +10,7 @@ export type SectionId =
   | 'top'
   | 'about'
   | 'expertise'
+  | 'artificial-intelligence'
   | 'technologies'
   | 'projects'
   | 'capabilities'
@@ -61,6 +62,21 @@ export interface ExpertiseContent {
   readonly title: LocalizedText;
   readonly introduction?: LocalizedText;
   readonly items: readonly Capability[];
+}
+
+export interface AiCapabilityCard {
+  readonly id: ContentId;
+  readonly label: LocalizedText;
+  readonly title: LocalizedText;
+  readonly description: LocalizedText;
+  readonly actionLabel: LocalizedText;
+  readonly path: `/${string}`;
+}
+
+export interface AiCapabilitiesContent {
+  readonly title: LocalizedText;
+  readonly introduction: LocalizedText;
+  readonly cards: readonly AiCapabilityCard[];
 }
 
 export interface TeamDeliveryContent {
@@ -189,6 +205,7 @@ export interface PortfolioContent {
   readonly about: AboutContent;
   readonly capabilities: CapabilitiesContent;
   readonly expertise: ExpertiseContent;
+  readonly artificialIntelligence: AiCapabilitiesContent;
   readonly technologies: TechnologiesContent;
   readonly projects: ProjectsContent;
   readonly services: ServicesContent;

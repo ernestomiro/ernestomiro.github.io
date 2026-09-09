@@ -178,7 +178,7 @@
   border-radius: var(--radius-control);
 }
 
-.capabilities > :is(app-expertise-section, app-technologies-section) {
+.capabilities > :is(app-expertise-section, app-ai-section, app-technologies-section) {
   display: block;
 }
 

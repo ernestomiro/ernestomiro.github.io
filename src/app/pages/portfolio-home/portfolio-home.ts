@@ -10,7 +10,7 @@ import {
   teamDeliveryContent,
   technologiesContent,
 } from '../../content/portfolio-content.data';
-import { methodologyContent } from '../../content/methodology/methodology.data';
+import { aiCapabilitiesContent } from '../../content/ai-capabilities.data';
 import { caseStudies } from '../../content/case-studies/case-studies.data';
 import { InterfaceSlide } from '../../interface-slideshow/interface-slideshow';
 import { portfolioPreview } from '../../content/portfolio-preview.data';
@@ -19,6 +19,7 @@ import {
   LocalizedText,
   selectLocalizedText,
 } from '../../content/portfolio-content.models';
+import { AiSection } from '../../sections/ai/ai-section';
 import { AboutSection } from '../../sections/about/about-section';
 import { ContactSection } from '../../sections/contact/contact-section';
 import { ExpertiseSection } from '../../sections/expertise/expertise-section';
@@ -50,6 +51,7 @@ const homeMetadata = {
   selector: 'app-portfolio-home',
   imports: [
     AboutSection,
+    AiSection,
     ContactSection,
     ExpertiseSection,
     HeroSection,
@@ -86,7 +88,7 @@ export class PortfolioHomePage {
   protected readonly capabilitiesContent = capabilitiesContent;
   protected readonly expertiseContent = expertiseContent;
   protected readonly teamDeliveryContent = teamDeliveryContent;
-  protected readonly methodologyTeaser = methodologyContent.teaser;
+  protected readonly aiCapabilitiesContent = aiCapabilitiesContent;
   protected readonly technologiesContent = technologiesContent;
   protected readonly projectsContent = projectsContent;
   protected readonly servicesContent = servicesContent;

@@ -1,0 +1,116 @@
+<main
+  id="main-content"
+  class="page route-depth-page page-reveal"
+  appSectionReveal
+  (initialRevealReady)="focusPageHeading()"
+>
+  <article>
+    <header class="hero section section--feature section--surface-brand">
+      <div class="section__shell">
+        <div class="hero-copy grid" data-reveal-block>
+          <a class="back" routerLink="/" fragment="artificial-intelligence" [queryParams]="homeQueryParams()">
+            <span aria-hidden="true">←</span>
+            {{ localize(content.hero.backLabel) }}
+          </a>
+          <div class="grid gap">
+            <p class="label">{{ localize(content.hero.label) }}</p>
+            <div class="section__title-lockup hero-title">
+              <h1 #pageHeading tabindex="-1">{{ localize(content.hero.headline) }}</h1>
+              <span class="section__title-line" aria-hidden="true"></span>
+            </div>
+            <p class="lead">{{ localize(content.hero.lead) }}</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="section section--collection" aria-labelledby="ai-applications-capabilities-title">
+      <div class="section__shell">
+        <header class="section__intro" data-reveal-block>
+          <div class="section__title-group">
+            <div class="section__title-lockup">
+              <h2 id="ai-applications-capabilities-title" class="title">{{ localize(content.applications.title) }}</h2>
+              <span class="section__title-line" aria-hidden="true"></span>
+            </div>
+          </div>
+          <p class="section__lead">{{ localize(content.applications.introduction) }}</p>
+        </header>
+        <ul class="section__body cards copy list grid">
+          @for (item of content.applications.items; track item.id) {
+            <li class="card grid" data-reveal-item>
+              <h3 class="item">{{ localize(item.title) }}</h3>
+              <p>{{ localize(item.description) }}</p>
+            </li>
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--collection section--surface-warm" aria-labelledby="ai-applications-integration-title">
+      <div class="section__shell">
+        <header class="section__intro" data-reveal-block>
+          <div class="section__title-group">
+            <div class="section__title-lockup">
+              <h2 id="ai-applications-integration-title" class="title">{{ localize(content.integration.title) }}</h2>
+              <span class="section__title-line" aria-hidden="true"></span>
+            </div>
+          </div>
+          <p class="section__lead">{{ localize(content.integration.introduction) }}</p>
+        </header>
+        <ul class="section__body cards copy list grid">
+          @for (item of content.integration.items; track item.id) {
+            <li class="card grid" data-reveal-item>
+              <h3 class="item">{{ localize(item.title) }}</h3>
+              <p>{{ localize(item.description) }}</p>
+            </li>
+          }
+        </ul>
+      </div>
+    </section>
+
+
+    <section class="section section--collection" aria-labelledby="ai-applications-technologies-title">
+      <div class="section__shell">
+        <header class="section__intro" data-reveal-block>
+          <div class="section__title-group">
+            <div class="section__title-lockup">
+              <h2 id="ai-applications-technologies-title" class="title">{{ localize(content.technologies.title) }}</h2>
+              <span class="section__title-line" aria-hidden="true"></span>
+            </div>
+          </div>
+          <p class="section__lead">{{ localize(content.technologies.introduction) }}</p>
+        </header>
+        <div class="section__body technology-groups grid">
+          @for (group of content.technologies.groups; track group.id) {
+            <section class="technology-group grid" [attr.aria-labelledby]="'ai-applications-' + group.id + '-title'" data-reveal-item>
+              <h3 class="item" [id]="'ai-applications-' + group.id + '-title'">{{ localize(group.label) }}</h3>
+              <ul class="technology-list">
+                @for (technology of group.items; track technology) {
+                  <li>{{ technology }}</li>
+                }
+              </ul>
+            </section>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--closing section--surface-brand" aria-labelledby="ai-applications-example-title">
+      <div class="section__shell copy grid gap" data-reveal-block>
+        <div class="section__title-lockup">
+          <h2 id="ai-applications-example-title" class="title">{{ localize(content.example.title) }}</h2>
+          <span class="section__title-line" aria-hidden="true"></span>
+        </div>
+        <p class="lead">{{ localize(content.example.body) }}</p>
+        <div class="actions">
+          <a class="cta primary" [routerLink]="content.example.path" [queryParams]="homeQueryParams()">
+            {{ localize(content.example.actionLabel) }}
+          </a>
+          <a class="cta" routerLink="/" fragment="contact" [queryParams]="homeQueryParams()">
+            {{ localize(content.example.contactLabel) }}
+          </a>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>

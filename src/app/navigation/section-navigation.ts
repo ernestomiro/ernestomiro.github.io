@@ -15,6 +15,7 @@ const sectionHeadingIds: Readonly<Record<SectionId, string>> = {
   top: 'hero-title',
   about: 'about-title',
   expertise: 'expertise-title',
+  'artificial-intelligence': 'artificial-intelligence-title',
   technologies: 'technologies-title',
   projects: 'projects-title',
   capabilities: 'capabilities-title',

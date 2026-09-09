@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { aiApplicationsRoutePath } from './content/ai-applications.data';
 import { contactFormRoutePath } from './content/contact-form/contact-form.data';
 import { methodologyRoutePath } from './content/methodology/methodology.data';
 import { PortfolioHomePage } from './pages/portfolio-home/portfolio-home';
@@ -9,6 +10,11 @@ const loadCaseStudyPage = () =>
 const loadMethodologyPage = () =>
   import('./pages/methodology/methodology-page').then(
     ({ MethodologyPage }) => MethodologyPage,
+  );
+
+const loadAiApplicationsPage = () =>
+  import('./pages/ai-applications/ai-applications-page').then(
+    ({ AiApplicationsPage }) => AiApplicationsPage,
   );
 
 const loadContactPage = () =>
@@ -25,6 +31,10 @@ export const routes: Routes = [
   {
     path: methodologyRoutePath,
     loadComponent: loadMethodologyPage,
+  },
+  {
+    path: aiApplicationsRoutePath,
+    loadComponent: loadAiApplicationsPage,
   },
   {
     path: contactFormRoutePath,
