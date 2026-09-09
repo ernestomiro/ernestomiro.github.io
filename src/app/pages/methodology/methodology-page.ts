@@ -1,3 +1,4 @@
+import { AiAssistantTools } from '../../shared/ai-assistant-tools/ai-assistant-tools';
 import { DOCUMENT } from '@angular/common';
 import {
   afterNextRender,
@@ -24,7 +25,7 @@ import { SectionReveal } from '../../motion/section-reveal';
 
 @Component({
   selector: 'app-methodology-page',
-  imports: [RouterLink, SectionReveal],
+  imports: [RouterLink, SectionReveal, AiAssistantTools],
   templateUrl: './methodology-page.html',
   styleUrl: './methodology-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
