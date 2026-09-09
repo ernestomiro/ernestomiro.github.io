@@ -1,3 +1,4 @@
+import { aiTechnologyGroups } from './ai-technologies.data';
 import { caseStudies } from './case-studies/case-studies.data';
 import { portfolioPreview } from './portfolio-preview.data';
 import {
@@ -289,20 +290,11 @@ export const technologiesContent = {
       },
       items: ['xUnit', 'Moq', 'Jasmine / Karma', 'Mocha / Chai'],
     },
+    ...aiTechnologyGroups,
     {
-      id: 'ai-and-orchestration',
-      label: {
-        en: 'Artificial Intelligence',
-        es: 'Inteligencia artificial',
-      },
-      items: [
-        'Semantic Kernel',
-        'LLM integration',
-        'Retrieval-Augmented Generation (RAG)',
-        'Tool calling',
-        'Agentic workflows',
-        'Vector search',
-      ],
+      id: 'development-tools',
+      label: { en: 'Development Tools', es: 'Herramientas de desarrollo' },
+      items: ['Visual Studio Code', 'Codex', 'Claude Code'],
     },
     {
       id: 'specialized-integrations',

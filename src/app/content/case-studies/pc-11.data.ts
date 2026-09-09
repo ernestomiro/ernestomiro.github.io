@@ -9,32 +9,32 @@ export const pc11CaseStudy = {
     es: 'Agente conversacional para búsqueda de especialistas',
   },
   role: {
-    en: 'Solution Design & Partial Implementation',
-    es: 'Diseño de solución e implementación parcial',
+    en: 'Solution Design & Component Development',
+    es: 'Diseño de solución y desarrollo de componentes',
   },
   summary: {
-    en: 'Personal prototype to help people find specialists by describing a problem, even when they do not know which specialty to search for. It combines Semantic Kernel, RAG over a vectorized catalog, and tool calling within an agentic workflow.',
-    es: 'Prototipo personal para ayudar a encontrar especialistas a partir de la descripción de un problema, incluso cuando el usuario no sabe qué especialidad buscar. Combina Semantic Kernel, RAG sobre un catálogo vectorizado y llamada a herramientas dentro de un flujo con agentes.',
+    en: 'Personal applied AI project to help people find specialists by describing a problem, even when they do not know which specialty to search for. It combines Semantic Kernel, RAG over a vectorized catalog, and tool calling within an agentic workflow.',
+    es: 'Proyecto personal de IA aplicada para ayudar a encontrar especialistas a partir de la descripción de un problema, incluso cuando el usuario no sabe qué especialidad buscar. Combina Semantic Kernel, RAG sobre un catálogo vectorizado y llamada a herramientas dentro de un flujo con agentes.',
   },
   context: {
-    en: 'A specialist-search service needs to connect needs expressed in everyday language with catalog information about professional roles, functions, and the problems they address. I explored this scenario through a personal proof of concept with a partial implementation and a design for the complete workflow.',
-    es: 'Un servicio de búsqueda de especialistas necesita relacionar necesidades expresadas en lenguaje cotidiano con información de catálogo sobre perfiles, funciones y problemas que atienden. Exploré este escenario mediante una prueba de concepto personal con implementación parcial y un diseño del flujo completo.',
+    en: 'A specialist-search service needs to connect needs expressed in everyday language with catalog information about professional roles, functions, and the problems they address. I explored this scenario through a personal applied AI project, designing the conversational workflow and developing retrieval and tool-calling components.',
+    es: 'Un servicio de búsqueda de especialistas necesita relacionar necesidades expresadas en lenguaje cotidiano con información de catálogo sobre perfiles, funciones y problemas que atienden. Exploré este escenario mediante un proyecto personal de IA aplicada, diseñando el flujo conversacional y desarrollando componentes de recuperación y llamada a herramientas.',
   },
   problem: {
     en: 'A person may recognize a problem without knowing the professional terms or categories needed to find help. Incomplete descriptions and wording that differs from the catalog make it harder to identify relevant options and create a need for clarification during the search.',
     es: 'Una persona puede reconocer un problema sin conocer los términos profesionales o las categorías necesarias para encontrar ayuda. Las descripciones incompletas y el uso de palabras distintas a las del catálogo dificultan identificar opciones relevantes y hacen necesario aclarar la necesidad durante la búsqueda.',
   },
   roleAndScope: {
-    en: 'I defined the solution and implemented part of the prototype using Semantic Kernel, retrieval from a vectorized catalog, and tool calling. My work combines the design of retrieval, application tools, and conversational interaction.',
-    es: 'Definí la solución e implementé parte del prototipo utilizando Semantic Kernel, recuperación sobre un catálogo vectorizado y llamada a herramientas. Mi trabajo combina el diseño de la recuperación, las herramientas de la aplicación y la interacción conversacional.',
+    en: 'I designed the conversational workflow and developed retrieval and tool-calling components using Semantic Kernel and RAG over a vectorized specialist catalog.',
+    es: 'Diseñé el flujo conversacional y desarrollé componentes de recuperación de información y llamada a herramientas utilizando Semantic Kernel y RAG sobre un catálogo vectorizado de especialistas.',
   },
   solutionAndArchitecture: {
     en: 'The intended flow starts with catalog profiles, their functions, and the problems they address, linked to vector representations and their source records. A user describes a need, the application retrieves related candidates, and an LLM uses that context to explain possible matches. Semantic Kernel coordinates the model and application tools. The design includes follow-up questions, renewed retrieval when the user clarifies the need, and an explicit response when the catalog offers insufficient matches.',
     es: 'El flujo previsto parte de perfiles del catálogo, sus funciones y los problemas que atienden, vinculados a representaciones vectoriales y sus registros de origen. El usuario describe una necesidad, la aplicación recupera candidatos relacionados y un LLM utiliza ese contexto para explicar posibles coincidencias. Semantic Kernel coordina el modelo y las herramientas de la aplicación. El diseño contempla preguntas de seguimiento, nuevas búsquedas cuando el usuario aclara la necesidad y una respuesta explícita cuando el catálogo ofrece coincidencias insuficientes.',
   },
   outcome: {
-    en: 'The work produced a partial prototype and a design that connects catalog retrieval, tool calling, and conversational interaction for specialist search.',
-    es: 'El trabajo dio lugar a un prototipo parcial y a un diseño que relaciona la recuperación en el catálogo, la llamada a herramientas y la interacción conversacional para la búsqueda de especialistas.',
+    en: 'The work produced retrieval and tool-calling components, along with a conversational workflow design for specialist search.',
+    es: 'El trabajo dio lugar a componentes de recuperación y llamada a herramientas, junto con el diseño de un flujo conversacional para la búsqueda de especialistas.',
   },
   diagrams: [
     {
@@ -67,8 +67,8 @@ export const pc11CaseStudy = {
       ],
       annotations: [
         {
-          en: 'Conceptual workflow · Personal prototype',
-          es: 'Flujo conceptual · Prototipo personal',
+          en: 'Conceptual workflow · Personal AI project',
+          es: 'Flujo conceptual · Proyecto personal de IA',
         },
       ],
     },

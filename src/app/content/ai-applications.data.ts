@@ -156,8 +156,8 @@ export const aiApplicationsContent = {
   example: {
     title: { en: 'A personal project exploring these capabilities', es: 'Un proyecto personal que explora estas capacidades' },
     body: {
-      en: 'The specialist-search prototype applies this approach to matching a problem description with catalog profiles. Its case study explains the context, design, and scope of the work.',
-      es: 'El prototipo de búsqueda de especialistas aplica este enfoque a relacionar la descripción de un problema con perfiles de un catálogo. Su caso de estudio explica el contexto, el diseño y el alcance del trabajo.',
+      en: 'The specialist-search project applies this approach to matching a problem description with catalog profiles. Its case study explains the context, design, and scope of the work.',
+      es: 'El proyecto de búsqueda de especialistas aplica este enfoque a relacionar la descripción de un problema con perfiles de un catálogo. Su caso de estudio explica el contexto, el diseño y el alcance del trabajo.',
     },
     actionLabel: { en: 'View the specialist-search project', es: 'Ver el proyecto de búsqueda de especialistas' },
     path: `/projects/${pc11CaseStudy.slug}`,
