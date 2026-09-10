@@ -1,3 +1,4 @@
+import type { ContactFailureReason } from '../../contact/contact-submission-error';
 import { LocalizedText } from '../portfolio-content.models';
 
 export const contactFormRoutePath = 'contact';
@@ -42,6 +43,11 @@ interface ContactFormContent {
     readonly errorBody: LocalizedText;
     readonly unavailableTitle: LocalizedText;
     readonly unavailableBody: LocalizedText;
+  };
+  readonly diagnostics: {
+    readonly code: LocalizedText;
+    readonly reference: LocalizedText;
+    readonly reasons: Record<ContactFailureReason, LocalizedText>;
   };
   readonly fallback: {
     readonly title: LocalizedText;
@@ -139,6 +145,54 @@ export const contactFormContent = {
     unavailableBody: {
       en: 'You can email me directly to tell me about your project or share a job opportunity.',
       es: 'Puedes escribirme directamente por correo electrónico para contarme tu proyecto o compartir una oportunidad laboral.',
+    },
+  },
+  diagnostics: {
+    code: {
+      en: 'Error code',
+      es: 'Código de error',
+    },
+    reference: {
+      en: 'Reference',
+      es: 'Referencia',
+    },
+    reasons: {
+      network: {
+        en: 'No readable response was received from the service. Check your connection. A browser block or service outage can also cause this error.',
+        es: 'No se recibió una respuesta accesible del servicio. Comprueba tu conexión. Un bloqueo del navegador o una caída del servicio también pueden causar este error.',
+      },
+      server: {
+        en: 'The service returned an internal error. Try again later or contact me by email.',
+        es: 'El servicio devolvió un error interno. Inténtalo más tarde o contáctame por correo.',
+      },
+      request: {
+        en: 'The service could not accept the request. The returned details are shown below.',
+        es: 'El servicio no pudo aceptar la solicitud. A continuación se muestran los detalles recibidos.',
+      },
+      browser: {
+        en: 'The browser could not complete the preparation or verification of the message. The error details are shown below.',
+        es: 'El navegador no pudo completar la preparación o verificación del mensaje. A continuación se muestra el detalle del error.',
+      },
+      clock: {
+        en: 'The request time is outside the allowed window. Check your device’s automatic date and time, then try again.',
+        es: 'La hora de la solicitud está fuera del margen permitido. Comprueba la fecha y hora automáticas del dispositivo e inténtalo nuevamente.',
+      },
+      browserContext: {
+        en: 'The service rejected the browser’s request context. Try opening the HTTPS link directly in an updated browser.',
+        es: 'El servicio rechazó el contexto de la solicitud del navegador. Prueba a abrir el enlace HTTPS directamente en un navegador actualizado.',
+      },
+      challenge: {
+        en: 'The security verification was invalid, expired, or could not be completed. Keep this page open and try again.',
+        es: 'La verificación de seguridad no fue válida, caducó o no pudo completarse. Mantén esta página abierta e inténtalo nuevamente.',
+      },
+      rateLimit: {
+        en: 'The service received too many requests. Wait a minute before trying again.',
+        es: 'El servicio recibió demasiadas solicitudes. Espera un minuto antes de reintentarlo.',
+      },
+      unknown: {
+        en: 'An unexpected error prevented confirmation of the submission. Try again or contact me by email.',
+        es: 'Un error inesperado impidió confirmar el envío. Inténtalo nuevamente o contáctame por correo.',
+      },
     },
   },
   fallback: {

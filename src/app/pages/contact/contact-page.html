@@ -54,27 +54,6 @@
           >
             <p class="required-hint">{{ localize(content.form.requiredHint) }}</p>
 
-            @if (submissionState() === 'error') {
-              <div
-                #errorSummary
-                class="error-summary"
-                role="alert"
-                tabindex="-1"
-              >
-                <h2>{{ localize(content.status.errorTitle) }}</h2>
-                <p>{{ localize(content.status.errorBody) }}</p>
-              </div>
-            } @else if (submitted() && form.invalid) {
-              <div
-                #errorSummary
-                class="error-summary"
-                role="alert"
-                tabindex="-1"
-              >
-                <p>{{ localize(content.validation.summary) }}</p>
-              </div>
-            }
-
             <div class="field">
               <label for="contact-name">
                 {{ localize(content.form.name) }} <span aria-hidden="true">*</span>
@@ -183,6 +162,50 @@
                 }
               </div>
             </div>
+
+            @if (submissionState() === 'error') {
+              <div
+                #errorSummary
+                class="error-summary"
+                role="alert"
+                tabindex="-1"
+              >
+                <h2>{{ localize(content.status.errorTitle) }}</h2>
+                @if (submissionError(); as failure) {
+                  <p>{{ localize(content.diagnostics.reasons[failure.reason]) }}</p>
+                  @if (failure.details.length) {
+                    <ul class="error-details">
+                      @for (detail of failure.details; track $index) {
+                        <li>{{ detail }}</li>
+                      }
+                    </ul>
+                  }
+                  @if (failure.httpStatus) {
+                    <p class="error-diagnostics">HTTP {{ failure.httpStatus }}</p>
+                  }
+                  @if (failure.code) {
+                    <p class="error-diagnostics">
+                      {{ localize(content.diagnostics.code) }}: {{ failure.code }}
+                    </p>
+                  }
+                  @if (failure.traceId) {
+                    <p class="error-diagnostics">
+                      {{ localize(content.diagnostics.reference) }}: {{ failure.traceId }}
+                    </p>
+                  }
+                }
+                <p>{{ localize(content.status.errorBody) }}</p>
+              </div>
+            } @else if (submitted() && form.invalid) {
+              <div
+                #errorSummary
+                class="error-summary"
+                role="alert"
+                tabindex="-1"
+              >
+                <p>{{ localize(content.validation.summary) }}</p>
+              </div>
+            }
 
             <button type="submit" [disabled]="submissionState() === 'submitting'">
               {{

@@ -7,6 +7,7 @@ import {
   effect,
   ElementRef,
   inject,
+  Injector,
   signal,
   viewChild,
 } from '@angular/core';
@@ -20,6 +21,10 @@ import {
   Validators,
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import {
+  ContactSubmissionError,
+  describeContactSubmissionError,
+} from '../../contact/contact-submission-error';
 import { ContactMessageClient } from '../../contact/contact-message-client';
 import { ContactMessageRequest } from '../../contact/contact-message.models';
 import {
@@ -70,6 +75,7 @@ const contactMethodRequired: ValidatorFn = (
 })
 export class ContactPage {
   private readonly document = inject(DOCUMENT);
+  private readonly injector = inject(Injector);
   private readonly languageState = inject(LanguageState);
   private readonly pageMetadata = inject(PageMetadata);
   private readonly contactMessageClient = inject(ContactMessageClient);
@@ -81,6 +87,9 @@ export class ContactPage {
   protected readonly isConfigured = this.contactMessageClient.isConfigured;
   protected readonly submissionState = signal<SubmissionState>('idle');
   protected readonly submitted = signal(false);
+  protected readonly submissionError = signal<ContactSubmissionError | undefined>(
+    undefined,
+  );
   protected readonly homeQueryParams = computed(() =>
     this.languageState.language() === 'es' ? { lang: 'es' } : null,
   );
@@ -169,6 +178,7 @@ export class ContactPage {
       this.submissionState.set('idle');
     }
 
+    this.submissionError.set(undefined);
     this.submitted.set(true);
 
     if (this.form.invalid) {
@@ -195,7 +205,8 @@ export class ContactPage {
         this.submitted.set(false);
         this.submissionState.set('success');
       },
-      error: () => {
+      error: (error: unknown) => {
+        this.submissionError.set(describeContactSubmissionError(error));
         this.submissionState.set('error');
         this.focusErrorSummary();
       },
@@ -204,6 +215,7 @@ export class ContactPage {
 
   protected startAnotherMessage(): void {
     this.submissionState.set('idle');
+    this.submissionError.set(undefined);
     this.submitted.set(false);
   }
 
@@ -214,8 +226,15 @@ export class ContactPage {
   }
 
   private focusErrorSummary(): void {
-    this.document.defaultView?.setTimeout(() => {
-      this.errorSummary()?.nativeElement.focus({ preventScroll: true });
-    });
+    afterNextRender(
+      {
+        write: () => {
+          const summary = this.errorSummary()?.nativeElement;
+          summary?.focus({ preventScroll: true });
+          summary?.scrollIntoView({ behavior: 'instant', block: 'nearest' });
+        },
+      },
+      { injector: this.injector },
+    );
   }
 }

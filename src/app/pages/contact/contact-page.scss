@@ -163,12 +163,24 @@ textarea[aria-invalid='true'] {
 }
 
 .error-summary {
+  display: grid;
+  min-width: 0;
+  overflow-wrap: anywhere;
   border: var(--border-width-emphasis) solid var(--color-accent);
   background: color-mix(
     in srgb,
     var(--color-accent) 7%,
     var(--color-surface-raised)
   );
+}
+
+.error-details {
+  margin: 0;
+  padding-inline-start: var(--space-5);
+}
+
+.error-diagnostics {
+  font-size: var(--font-size-sm);
 }
 
 .error-summary h2,
