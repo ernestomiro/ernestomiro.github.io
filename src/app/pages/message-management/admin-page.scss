@@ -1,0 +1,27 @@
+:host { display: grid; }
+.admin-page { background: var(--color-section-warm); }
+.section__shell, .admin-panel, form { display: grid; gap: var(--space-5); min-width: 0; }
+h1 { color: var(--color-text-heading); font-size: var(--type-section-title-size); }
+h2 { color: var(--color-text-heading); font-size: var(--font-size-xl); }
+.admin-panel { padding: var(--space-card-inset); border: var(--border-width-hairline) solid var(--color-border-subtle); border-radius: var(--radius-card); background: var(--color-surface-raised); }
+.login-panel { width: min(100%, 34rem); }
+.toolbar, .actions, .pagination { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-3); }
+button, .actions a { width: fit-content; min-height: 2.75rem; }
+label { font-weight: var(--font-weight-semibold); }
+input:not([type='checkbox']), textarea, select { width: 100%; min-width: 0; padding: var(--space-3); border: var(--border-width-hairline) solid var(--color-border-functional); border-radius: var(--radius-control); background: var(--color-section-warm); }
+textarea { min-height: 10rem; resize: vertical; }
+.toolbar select { width: auto; max-width: 100%; }
+.consent { display: flex; align-items: start; gap: var(--space-3); }
+.consent input { margin-block-start: var(--space-1); flex: 0 0 auto; }
+.feedback { padding: var(--space-4); border: var(--border-width-emphasis) solid var(--color-accent); border-radius: var(--radius-control); overflow-wrap: anywhere; }
+.message-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); }
+.message-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-3); padding-block: var(--space-4); border-block-end: var(--border-width-hairline) solid var(--color-border-subtle); }
+.message-row p, .message-body, dd { overflow-wrap: anywhere; }
+.message-body { white-space: pre-wrap; }
+.message-row strong { color: var(--color-text-heading); }
+.message-row small { color: var(--color-text-secondary); }
+dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-3); margin: 0; }
+dt { font-weight: var(--font-weight-semibold); }
+dd { margin: 0; }
+.edit-fields { display: grid; gap: var(--space-3); }
+@media (max-width: 48rem) { .message-row, dl { grid-template-columns: minmax(0, 1fr); } }

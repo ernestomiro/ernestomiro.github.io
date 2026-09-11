@@ -1,3 +1,4 @@
+import { adminSessionInterceptor } from './admin/admin-session.interceptor';
 import { DOCUMENT } from '@angular/common';
 import {
   ApplicationConfig,
@@ -19,14 +20,16 @@ import {
 import { BCPP_CONFIG } from './client-proof/bcpp.config';
 import { bcppRequestInterceptor } from './client-proof/bcpp-request.interceptor';
 import { routes } from './app.routes';
+import { LanguageState } from './language/language-state';
 import { environment } from '../environments/environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    LanguageState,
     provideBrowserGlobalErrorListeners(),
     provideHttpClient(
       withFetch(),
-      withInterceptors([bcppRequestInterceptor]),
+      withInterceptors([adminSessionInterceptor, bcppRequestInterceptor]),
     ),
     provideClientHydration(withEventReplay()),
     {

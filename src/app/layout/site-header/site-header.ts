@@ -1,5 +1,8 @@
+import { AdminSession } from '../../admin/admin-session';
+import { adminContent, AdminTextKey } from '../../content/admin.data';
 import { DOCUMENT } from '@angular/common';
 import {
+  afterNextRender,
   ChangeDetectionStrategy,
   Component,
   computed,
@@ -10,7 +13,7 @@ import {
   signal,
   viewChild,
 } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import {
   LocalizedText,
   NavigationItem,
@@ -48,12 +51,16 @@ type HeaderLabel = keyof typeof headerLabels;
 
 @Component({
   selector: 'app-site-header',
-  imports: [LanguageSwitcher, ResumeDownload, RouterLink, ThemeSwitcher],
+  imports: [LanguageSwitcher, ResumeDownload, RouterLink, RouterLinkActive, ThemeSwitcher],
   templateUrl: './site-header.html',
   styleUrl: './site-header.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SiteHeader {
+  protected readonly adminSession = inject(AdminSession);
+  protected readonly logoutBusy = signal(false);
+  protected readonly logoutError = signal(false);
+  private readonly router = inject(Router);
   private readonly document = inject(DOCUMENT);
   private readonly languageState = inject(LanguageState);
   private readonly sectionNavigation = inject(SectionNavigation);
@@ -68,6 +75,25 @@ export class SiteHeader {
   protected readonly homeQueryParams = computed(() =>
     this.languageState.language() === 'es' ? { lang: 'es' } : null,
   );
+
+  constructor() {
+    afterNextRender(() => { void this.adminSession.restore().catch(() => {}); });
+  }
+
+  protected adminLabel(key: AdminTextKey): string {
+    return this.localize(adminContent[key]);
+  }
+
+  protected async logout(): Promise<void> {
+    if (this.logoutBusy()) return;
+    this.logoutBusy.set(true); this.logoutError.set(false);
+    try {
+      await this.adminSession.logout();
+      this.closeMenu();
+      await this.router.navigate(['/'], { queryParams: this.homeQueryParams() });
+    } catch { this.logoutError.set(true); }
+    finally { this.logoutBusy.set(false); }
+  }
 
   protected toggleMenu(): void {
     this.menuOpen.update((open) => !open);

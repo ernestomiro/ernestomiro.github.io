@@ -1,3 +1,4 @@
+import { adminGuard } from './admin/admin.guard';
 import { Routes } from '@angular/router';
 import { aiApplicationsRoutePath } from './content/ai-applications.data';
 import { contactFormRoutePath } from './content/contact-form/contact-form.data';
@@ -23,6 +24,15 @@ const loadContactPage = () =>
   );
 
 export const routes: Routes = [
+  {
+    path: 'login',
+    loadComponent: () => import('./pages/login/login-page').then(m => m.LoginPage),
+  },
+  {
+    path: 'admin/messages',
+    canActivate: [adminGuard],
+    loadComponent: () => import('./pages/message-management/message-management').then(m => m.MessageManagement),
+  },
   {
     path: '',
     pathMatch: 'full',

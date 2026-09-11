@@ -43,6 +43,12 @@
 
     <div class="c">
       <div class="p">
+        @if (adminSession.user()) {
+          <a routerLink="/admin/messages" [queryParams]="homeQueryParams()" routerLinkActive="a" ariaCurrentWhenActive="page">{{ adminLabel('manage') }}</a>
+          <button class="auth-action" type="button" (click)="logout()" [disabled]="logoutBusy()">{{ adminLabel('logout') }}</button>
+        } @else {
+          <a routerLink="/login" [queryParams]="homeQueryParams()" routerLinkActive="a" ariaCurrentWhenActive="page">{{ adminLabel('login') }}</a>
+        }
         <app-resume-download [content]="resume()" />
         <app-language-switcher />
         <app-theme-switcher idPrefix="desktop-theme-switcher" />
@@ -72,6 +78,12 @@
               {{ localize(item.label) }}
             </a>
           }
+          @if (adminSession.user()) {
+            <a routerLink="/admin/messages" [queryParams]="homeQueryParams()" routerLinkActive="a" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ adminLabel('manage') }}</a>
+            <button class="auth-action" type="button" (click)="logout()" [disabled]="logoutBusy()">{{ adminLabel('logout') }}</button>
+          } @else {
+            <a routerLink="/login" [queryParams]="homeQueryParams()" routerLinkActive="a" ariaCurrentWhenActive="page" (click)="closeMenu()">{{ adminLabel('login') }}</a>
+          }
         </nav>
 
         <div class="ds s">
@@ -86,4 +98,5 @@
       </div>
     </div>
   }
+  @if (logoutError()) { <p class="layout-shell" role="alert">{{ adminLabel('logoutFailed') }}</p> }
 </header>

@@ -6,6 +6,7 @@ import { LanguageCode } from '../content/portfolio-content.models';
 const siteUrl = 'https://ernestomiro.github.io';
 
 export interface PageMetadataDefinition {
+  readonly robots?: 'index, follow' | 'noindex, nofollow';
   readonly title: string;
   readonly description: string;
   readonly canonicalPath: `/${string}`;
@@ -24,6 +25,7 @@ export class PageMetadata {
     const alternateLocale = metadata.language === 'es' ? 'en_US' : 'es_MX';
 
     this.title.setTitle(metadata.title);
+    this.meta.updateTag({ name: 'robots', content: metadata.robots ?? 'index, follow' });
     this.meta.updateTag({ name: 'description', content: metadata.description });
     this.meta.updateTag({ property: 'og:title', content: metadata.title });
     this.meta.updateTag({ property: 'og:description', content: metadata.description });

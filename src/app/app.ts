@@ -29,7 +29,7 @@ const skipLinkText = {
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, SiteFooter, SiteHeader],
-  providers: [LanguageState, ThemeState],
+  providers: [ThemeState],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })

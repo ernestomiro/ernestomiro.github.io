@@ -1,0 +1,26 @@
+<main id="main-content" class="section admin-page">
+  <div class="section__shell">
+    <a routerLink="/" [queryParams]="query()">{{ t('back') }}</a>
+    <h1>{{ t('loginTitle') }}</h1>
+    <p>{{ t('loginLead') }}</p>
+    <div class="admin-panel login-panel">
+      @if (session.user(); as email) {
+        <p>{{ t('signedIn') }} {{ email }}</p>
+        <a routerLink="/admin/messages" [queryParams]="query()">{{ t('messagesTitle') }}</a>
+        <button type="button" [disabled]="busy()" (click)="logout()">{{ t('logout') }}</button>
+      } @else {
+        <form [formGroup]="form" (ngSubmit)="login()" [attr.aria-busy]="busy()" novalidate>
+          <label for="login-email">{{ t('email') }}</label>
+          <input id="login-email" type="email" autocomplete="username" formControlName="email" maxlength="254"
+            [attr.aria-invalid]="form.controls.email.touched && form.controls.email.invalid" />
+          <label for="login-password">{{ t('password') }}</label>
+          <input id="login-password" type="password" autocomplete="current-password" formControlName="password" maxlength="256"
+            [attr.aria-invalid]="form.controls.password.touched && form.controls.password.invalid" />
+          @if (error()) { <p #feedback class="feedback" role="alert" tabindex="-1">{{ error() }}</p> }
+          <button type="submit" [disabled]="busy()">{{ t(busy() ? 'signingIn' : 'login') }}</button>
+        </form>
+      }
+      @if (session.user() && error()) { <p #feedback class="feedback" role="alert" tabindex="-1">{{ error() }}</p> }
+    </div>
+  </div>
+</main>

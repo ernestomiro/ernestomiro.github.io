@@ -1,0 +1,91 @@
+<main id="main-content" class="section admin-page">
+  <div class="section__shell">
+    <a routerLink="/" [queryParams]="query()">{{ t('back') }}</a>
+    <h1>{{ t('messagesTitle') }}</h1>
+    <p>{{ t('messagesLead') }}</p>
+    @if (error()) { <p #feedback class="feedback" role="alert" tabindex="-1">{{ error() }}</p> }
+    @if (notice()) { <p role="status">{{ notice() }}</p> }
+    <div class="toolbar">
+      <label for="message-filter">{{ t('filter') }}</label>
+      <select id="message-filter" [value]="filter()" (change)="changeFilter($event)" [disabled]="busy()">
+        <option value="">{{ t('all') }}</option><option value="New">{{ t('unread') }}</option><option value="Read">{{ t('read') }}</option>
+      </select>
+      <button type="button" (click)="reload()" [disabled]="busy()">{{ t('refresh') }}</button>
+      <button type="button" (click)="create()" [disabled]="busy()">{{ t('create') }}</button>
+    </div>
+    <section class="admin-panel" [attr.aria-busy]="busy()" [attr.aria-label]="t('all')">
+      @if (busy()) { <p role="status">{{ t('loading') }}</p> }
+      @if (result(); as data) {
+        <p>{{ data.total }} {{ t('total') }}</p>
+        <ul class="message-list">
+          @for (item of data.items; track item.id) {
+            <li class="message-row">
+              <div>
+                <p><strong>{{ item.name }}</strong> · {{ t(item.status === 'Read' ? 'read' : 'unread') }}</p>
+                <p>{{ item.email || item.phone }}</p>
+                <small>{{ item.createdAtUtc | date:'yyyy-MM-dd HH:mm' }}</small>
+              </div>
+              <button type="button" (click)="open(item.id)" [disabled]="busy()"
+                [attr.aria-label]="t('view') + ': ' + item.name">{{ t('view') }}</button>
+            </li>
+          } @empty { <li>{{ t('empty') }}</li> }
+        </ul>
+        <nav class="pagination" [attr.aria-label]="t('page')">
+          <button type="button" (click)="changePage(-1)" [disabled]="busy() || page() <= 1">{{ t('previous') }}</button>
+          <span>{{ t('page') }} {{ page() }} {{ t('of') }} {{ pages() }}</span>
+          <button type="button" (click)="changePage(1)" [disabled]="busy() || page() >= pages()">{{ t('next') }}</button>
+        </nav>
+      }
+    </section>
+    @if (editing()) {
+      <section class="admin-panel">
+        <h2 #detailHeading tabindex="-1">{{ t(selected() ? 'edit' : 'create') }}</h2>
+        <form [formGroup]="form" (ngSubmit)="save()" novalidate>
+          <div class="edit-fields">
+            <label for="admin-name">{{ t('name') }}</label><input id="admin-name" formControlName="name" maxlength="100" />
+            <p>{{ t('contactHint') }}</p>
+            <label for="admin-email">{{ t('email') }}</label><input id="admin-email" type="email" formControlName="email" maxlength="254" />
+            <label for="admin-phone">{{ t('phone') }}</label><input id="admin-phone" type="tel" formControlName="phone" maxlength="32" />
+            <label for="admin-message">{{ t('message') }}</label><textarea id="admin-message" formControlName="message" maxlength="2000"></textarea>
+            <label for="admin-language">{{ t('language') }}</label><select id="admin-language" formControlName="language"><option value="es">Español</option><option value="en">English</option></select>
+            <label for="admin-status">{{ t('status') }}</label><select id="admin-status" formControlName="status"><option value="New">{{ t('unread') }}</option><option value="Read">{{ t('read') }}</option></select>
+            <label class="consent"><input type="checkbox" formControlName="consent" />{{ t('consent') }}</label>
+          </div>
+          <div class="actions">
+            <button type="submit" [disabled]="busy()">{{ t(busy() ? 'saving' : 'save') }}</button>
+            <button type="button" (click)="close()" [disabled]="busy()">{{ t('cancel') }}</button>
+          </div>
+        </form>
+      </section>
+    } @else if (selected(); as item) {
+      <section class="admin-panel">
+        <h2 #detailHeading tabindex="-1">{{ t('detail') }}</h2>
+        <dl>
+          <dt>{{ t('name') }}</dt><dd>{{ item.name }}</dd>
+          <dt>{{ t('email') }}</dt><dd>{{ item.email || '—' }}</dd>
+          <dt>{{ t('phone') }}</dt><dd>{{ item.phone || '—' }}</dd>
+          <dt>{{ t('status') }}</dt><dd>{{ t(item.status === 'Read' ? 'read' : 'unread') }}</dd>
+          <dt>{{ t('created') }}</dt><dd>{{ item.createdAtUtc | date:'yyyy-MM-dd HH:mm' }}</dd>
+          <dt>{{ t('consented') }}</dt><dd>{{ item.consentAtUtc | date:'yyyy-MM-dd HH:mm' }}</dd>
+          <dt>{{ t('expires') }}</dt><dd>{{ item.expiresAtUtc | date:'yyyy-MM-dd HH:mm' }}</dd>
+        </dl>
+        <p class="message-body">{{ item.message }}</p>
+        <div class="actions">
+          <button type="button" (click)="edit()" [disabled]="busy()">{{ t('edit') }}</button>
+          <button type="button" (click)="toggleRead()" [disabled]="busy()">{{ t(item.status === 'Read' ? 'markUnread' : 'markRead') }}</button>
+          <button type="button" (click)="deleting.set(true)" [disabled]="busy()">{{ t('delete') }}</button>
+          <button type="button" (click)="close()" [disabled]="busy()">{{ t('close') }}</button>
+        </div>
+        @if (deleting()) {
+          <div class="feedback" role="alert">
+            <p>{{ t('confirmDelete') }}</p>
+            <div class="actions">
+              <button type="button" (click)="remove()" [disabled]="busy()">{{ t('deleteConfirm') }}</button>
+              <button type="button" (click)="deleting.set(false)" [disabled]="busy()">{{ t('cancel') }}</button>
+            </div>
+          </div>
+        }
+      </section>
+    }
+  </div>
+</main>

@@ -175,6 +175,8 @@ function isProtectedRequest(
   const requestUrl = new URL(request.urlWithParams, apiUrl);
   return (
     requestUrl.origin === apiUrl.origin &&
-    config.protectedPaths.some((path) => requestUrl.pathname === path)
+    (config.protectedPaths.some((path) => requestUrl.pathname === path)
+      || config.protectedPrefixes?.some((prefix) =>
+        requestUrl.pathname === prefix || requestUrl.pathname.startsWith(prefix + '/')) === true)
   );
 }
