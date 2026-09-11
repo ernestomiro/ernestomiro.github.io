@@ -18,8 +18,8 @@ export const adminContent = {
     es: 'Acceso privado',
   },
   loginLead: {
-    en: 'Sign in with an authorized account to manage received messages.',
-    es: 'Inicia sesión con una cuenta autorizada para gestionar los mensajes recibidos.',
+    en: 'Sign in with an authorized account.',
+    es: 'Inicia sesión con una cuenta autorizada.',
   },
   email: {
     en: 'Email',
