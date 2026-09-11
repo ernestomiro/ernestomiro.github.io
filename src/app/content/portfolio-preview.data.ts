@@ -4,7 +4,7 @@ import { LocalizedText } from './portfolio-content.models';
 export const portfolioPreview = {
   id: 'this-portfolio',
   title: { en: 'This portfolio', es: 'Este portafolio' },
-  // Grouped by palette: slate blue, warm beige/dark, then green.
+  // Portfolio sections, including AI after capabilities, then interface examples.
   screenshots: [
     {
       id: 'hero',
@@ -37,6 +37,17 @@ export const portfolioPreview = {
       alt: {
         en: 'Portfolio capabilities, expertise and team delivery in the warm beige theme.',
         es: 'Capacidades, experiencia técnica y trabajo en equipo del portafolio en la paleta beige.',
+      },
+    },
+    {
+      id: 'ai',
+      src: '/images/portfolio/ai.png',
+      width: 2132,
+      height: 1102,
+      caption: { en: 'Artificial intelligence', es: 'Inteligencia artificial' },
+      alt: {
+        en: 'Artificial intelligence section within the portfolio capabilities.',
+        es: 'Sección de inteligencia artificial dentro de las capacidades del portafolio.',
       },
     },
     {

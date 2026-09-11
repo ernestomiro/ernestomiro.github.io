@@ -29,7 +29,7 @@ export const navigationContent = [
   },
   {
     id: 'capabilities',
-    label: { en: 'Capabilities', es: 'Capacidades' },
+    label: { en: 'Capabilities +AI', es: 'Capacidades +IA' },
     href: '#capabilities',
   },
   {
